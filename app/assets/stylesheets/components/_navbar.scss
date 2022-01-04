@@ -1,12 +1,97 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// .navbar-lewagon {
+//   background: red;
+//   height: 100px;
+// }
+
+// .navbar-nav {
+//   display: flex;
+//   width: 100%;
+//   justify-content: end;
+//   font-size: 2rem;
+// }
+
+// .mr-auto {
+//   height: 100px;
+//   background-color: violet;
+// }
+// .navbar-mobile{
+//     display: none;
+// }
+
+
+// @media screen and (max-width : 900px){
+//   .navbar-desktop {
+//     display: none;
+// }
+
+//   .navbar-mobile  {
+//     display: flex;
+//   }
+// }
+
+
+
+.navbar-desktop{
+  background-color: rgb(19, 56, 19);
+  height: 8rem;
+  line-height: 8rem;
+  text-align: right;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-desktop a{
+  padding: 3rem;
+  color: white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-mobile i{
+  position: fixed;
+  z-index: 9999;
+  top: 9px;
+  right: 15px;
+  font-size: 3rem;
+  color: white;
+}
+
+.navbar-mobile .navbar-mobile-list{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-mobile .navbar-mobile-list a{
+  font-size: 5rem;
+  font-weight: 800;
+  color: white;
+  padding: 2rem;
+}
+
+.navbar-mobile{
+  display: none;
+}
+
+.modal-navbar{
+  transition: top 0.9s;
+  background-color: rgb(19, 56, 19);
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.change-modal-navbar{
+  top: 0;
+}
+
+@media screen and (max-width : 700px){
+  .navbar-desktop{
+    display: none;
+  }
+
+  .navbar-mobile{
+    display: block;
+  }
 }
