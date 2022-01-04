@@ -1,2 +1,109 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body>
+  <div class="header">
+        <%# Titre et "slogan" %>
+        <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641302917/Hoo_hoo_mxzi7t.png" alt="logo" width="100">
+        <h1>Panse Bêtes
+          <p>Premiers soins aux animaux blessés</p>
+        </h1>
+  </div>
+  <div class="container m-auto">
+    <%# En-tête principal %>
+    <%# Rang  1 %>
+    <div class="row">
+        <%# Barre de recherches %>
+        <div class="searchbar">
+          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+          <form class="searchform group">
+            <label for="search-box">
+              <span class="fa fa-2x fa-search"></span>
+            </label>
+          <input type="search" id="search-box" placeholder="What is this animal ?">
+          </form>
+        </div>
+    </div>
+
+
+    <%# Cards %>
+    <%# Rang 2 %>
+    <%# <div class="row"> %>
+      <h2>Fréquemment recherchés <i class="fas fa-paw"></i></h1>
+    <%# </div> %>
+
+    <%# Rang 3 %>
+    <div class="row">
+      <%# Carte 1 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/260143/pexels-photo-260143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Hérisson <i class="fas fa-otter"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+      <%# Carte 2 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/5633490/pexels-photo-5633490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Merle <i class="fas fa-crow"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+      <%# Carte 3 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/3387169/pexels-photo-3387169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Tortue <i class="fas fa-frog"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# Rang 4 %>
+    <div class="row">
+      <%# Carte 1 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/2570081/pexels-photo-2570081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Moineau <i class="fas fa-crow"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+      <%# Carte 2 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/2280794/pexels-photo-2280794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Souris <i class="fas fa-otter"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+      <%# Carte 3 %>
+      <div class="card-animal">
+        <img src="https://images.pexels.com/photos/5664407/pexels-photo-5664407.png?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+        <div class="card-animal-infos">
+          <div>
+            <h2>Hirondelle <i class="fas fa-crow"></i></h2>
+            <p>Description <i class="far fa-edit"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# Rang 5 %>
+    <div class="row">
+      <h2>Autour de vous <i class="fas fa-map-signs"></i></h2>
+    </div>
+    <%# Rang 6 %>
+    <div class="row">
+      <p>Insérer carte ici</p>
+    </div>
+
+  </div>
+</body>
