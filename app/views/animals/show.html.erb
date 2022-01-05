@@ -1,0 +1,42 @@
+<div>
+  <div>
+    <h4>fiche d'informations <br>
+      <%= @animal.name %></h4>
+    <div>
+      <% if @animal.photo.attached? %>
+        <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
+      <% else %>
+        <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+      <% end %>
+    </div>
+
+    <div>
+      <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
+    </div>
+
+    <div>
+      <p><%= @animal.description %></p>
+    </div>
+  </div>
+
+  <div>
+    <h4 id="contacts">Contacts utiles</h4>
+    <div>
+      <div>
+        <h5>Associations et ligues</h5>
+      </div>
+
+      <div>
+        <%# Ajouter la liste des associations spécialisés avec cet animal %>
+      </div>
+
+      <div>
+        <h5>Vétérinaires</h5>
+      </div>
+
+      <div>
+        <%# Ajouter la liste des vétérinaires avec cet animal %>
+      </div>
+    </div>
+  </div>
+</div>
