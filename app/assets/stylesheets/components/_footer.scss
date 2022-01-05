@@ -1,0 +1,44 @@
+.container  {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.titre  {
+  color: red;
+
+}
+
+.cookies  {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  opacity: 1;
+  transition: 4000ms;
+}
+
+.cookies-btn  {
+  display: flex;
+}
+
+.btn  {
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn.btn-success  {
+  background-color: #1E2337;
+}
+
+.btn.btn-deny  {
+  background-color: grey;
+}
