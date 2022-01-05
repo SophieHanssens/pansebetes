@@ -1,0 +1,33 @@
+<div>
+  <h1>Tous les contacts spécialisés</h1>
+
+  <% @contacts.each do |contact| %>
+    <% if contact.statut == 'Association' %>
+      <h4>Associations</h4>
+      <ul>
+        <li><%= link_to contact.name, contact_path(contact) %></li>
+        <li>Je peux m'occuper de : <%= contact.speciality %></li>
+        <li>Tel : <%= contact.phone_number %></li>
+        <li><p> Adresse :
+            <%= contact.street %>,
+            <%= contact.zipcode %>,
+            <%= contact.city %>,
+            <%= contact.country %></p>
+        </li>
+      </ul>
+    <% else %>
+      <h4>Vétérinaires</h4>
+      <ul>
+        <li><%= link_to contact.name, contact_path(contact) %></li>
+        <li>Je peux m'occuper de : <%= contact.speciality %></li>
+        <li>Tel : <%= contact.phone_number %></li>
+        <li><p> Adresse :
+            <%= contact.street %>,
+            <%= contact.zipcode %>,
+            <%= contact.city %>,
+            <%= contact.country %></p>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

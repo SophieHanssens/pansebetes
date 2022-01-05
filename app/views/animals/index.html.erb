@@ -7,7 +7,11 @@
         <%= animal.name %>
       </div>
       <div>
-        <img src="" alt="">
+        <% if animal.photo.attached? %>
+          <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
+        <% else %>
+          <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+        <% end %>
       </div>
       </ul>
     </div>
