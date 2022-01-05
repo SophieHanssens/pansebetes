@@ -1,0 +1,15 @@
+<div>
+  <h1>Ajoutez un professionel ici</h1>
+  <div>
+    <%= simple_form_for(@contact) do |f| %>
+      <%= f.input :name, label: false, placeholder: 'Nom', required: true %>
+      <%= f.input :speciality, label: false, placeholder: 'Vos spécialités', required: true %>
+      <%= f.input :phone_number, label: false, placeholder: 'Téléphone', required: true %>
+      <%= f.input :street, label: false, placeholder: 'N° et rue', required: true %>
+      <%= f.input :zipcode, label: false, placeholder: 'Code postal', required: true %>
+      <%= f.input :city, label: false, placeholder: 'Ville', required: true %>
+      <%= f.input :country, label: false, placeholder: 'Pays', required: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

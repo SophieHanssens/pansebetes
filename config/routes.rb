@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :animals, only: %i[show index]
-  resources :contacts, only: %i[index show]
+  resources :contacts
 end
