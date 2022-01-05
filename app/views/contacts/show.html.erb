@@ -1,0 +1,32 @@
+<div>
+  <h1><%= @contact.name %></h1>
+
+  <div>
+    <ul>
+      <li>Spécialités : <%= @contact.speciality %></li>
+      <li>Tel : <%= @contact.phone_number %></li>
+      <li><p> Adresse :
+            <%= @contact.street %>,
+            <%= @contact.zipcode %>
+            <%= @contact.city %>,
+            <%= @contact.country %></p>
+      </li>
+    </ul>
+    <p><% if @user.admin == true || @contact.user == true %>
+      <%= link_to 'Modifier le contact', edit_contact_path(@contact) %>
+      <% end %></p>
+
+    <p><% if @user.admin == true %>
+      <%= link_to 'Supprimer le contact', contact_path(@contact),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+      <% end %></p>
+  </div>
+
+  <div>
+    <h4>Itinéraire</h4>
+    <div>
+      <%# Insérer MapBox ici %>
+    </div>
+  </div>
+</div>
