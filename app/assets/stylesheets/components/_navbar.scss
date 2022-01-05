@@ -29,10 +29,15 @@
 //   }
 // }
 
-
+.navbar-pb {
+  top: 0;
+  padding: 0;
+  width: 100%;
+}
 
 .navbar-desktop{
   background-color: rgb(19, 56, 19);
+  width: 100%;
   height: 8rem;
   line-height: 8rem;
   text-align: right;
@@ -43,7 +48,7 @@
   color: white;
 }
 
-.navbar-mobile i{
+.navbar-mobile .burger{
   position: fixed;
   z-index: 9999;
   top: 9px;
@@ -61,7 +66,7 @@
 }
 
 .navbar-mobile .navbar-mobile-list a{
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 800;
   color: white;
   padding: 2rem;

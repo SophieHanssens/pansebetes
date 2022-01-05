@@ -1,24 +1,46 @@
 
-  <div class="navbar-desktop">
-    <a href="#">ACCUEIL</a>
-    <a href="#">CONTACT</a>
-    <%= link_to new_user_session_path, class: "picto" do %>
-      <i class="fas fa-user"></i>
-    <% end %>
-  </div>
-  <div class="navbar-mobile">
-    <i class="fas fa-bars"></i>
-    <div class="modal-navbar">
-      <div class="navbar-mobile-list">
-        <a href="#">ACCUEIL</a>
-        <a href="#">CONTACT</a>
-        <%= link_to new_user_session_path, class: "picto" do %>
-          <i class="fas fa-user"></i>
-        <% end %>
+<div class="navbar-pb">
+  <% if user_signed_in? %>
+    <div class="navbar-desktop">
+      <a href="#">Mon profil</a>
+      <a href="#">Praticiens</a>
+      <a href="#">Tous les animaux</a>
+      <%= link_to destroy_user_session_path, class: "picto" do %>
+        <%= "logout " %><i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    </div>
+    <div class="navbar-mobile">
+      <i class="fas fa-bars burger"></i>
+      <div class="modal-navbar">
+        <div class="navbar-mobile-list">
+          <a href="#">Mon profil</a>
+          <a href="#">praticiens</a>
+          <a href="#">Tous les animaux</a>
+          <%= link_to destroy_user_session_path, class: "picto" do %>
+            <i class="fas fa-sign-out-alt"><%= " logout" %></i>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="navbar-desktop">
+      <%= link_to new_user_session_path, class: "picto" do %>
+        <i class="fas fa-user"></i>
+      <% end %>
+    </div>
+    <div class="navbar-mobile">
+      <i class="fas fa-bars"></i>
+      <div class="modal-navbar">
+        <div class="navbar-mobile-list">
+          <%= link_to new_user_session_path, class: "picto" do %>
+            <i class="fas fa-user"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
+</div>
 
 
 
