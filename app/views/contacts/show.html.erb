@@ -15,6 +15,12 @@
     <p><% if @user.admin == true || @contact.user == true %>
       <%= link_to 'Modifier le contact', edit_contact_path(@contact) %>
       <% end %></p>
+
+    <p><% if @user.admin == true %>
+      <%= link_to 'Supprimer le contact', contact_path(@contact),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+      <% end %></p>
   </div>
 
   <div>
