@@ -1,42 +1,63 @@
-<div>
-  <div>
-    <h4>fiche d'informations <br>
-      <%= @animal.name %></h4>
-    <div>
+<%# Fiche technique Animal SHOW %>
+
+<div class="animal-card border">
+		<!-- animal's name -->
+		<h3 class="title"><%= @animal.name %></h3>
+		<!-- animal's image -->
+    <div class="animal-img">
       <% if @animal.photo.attached? %>
-        <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
-      <% else %>
-        <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
-      <% end %>
+          <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
+        <% else %>
+          <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+        <% end %>
+        <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
     </div>
+		<div class="factsheet border">
+			<!-- important information -->
+			<p class="interesting-fact">Un hérisson vu de jour est <em>forcément</em> en danger.</p>
+      <br>
+			<ul>
+				<!-- animal's list items -->
+				<li><span class="list-label">Nom</span>: <%= @animal.name %></li>
+				<li><span class="list-label">Couleur</span>: <%= @animal.color %></li>
+				<li><span class="list-label">Espèce</span>: <%= @animal.species %></li>
+				<li><span class="list-label">Poids</span>: <%= @animal.weight %></li>
+			</ul>
+			<!-- advices -->
+        <ul>
+          <span class="list-label">Les bons gestes</span>
+          <%= @animal.description %>
+        </ul>
+		</div>
+	</div>
 
-    <div>
-      <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
-    </div>
+<%# Carte liste vétos compétents %>
 
-    <div>
-      <p><%= @animal.description %></p>
-    </div>
-  </div>
-
-  <div>
-    <h4 id="contacts">Contacts utiles</h4>
-    <div>
-      <div>
-        <h5>Associations et ligues</h5>
-      </div>
-
-      <div>
+<div class="portfoliocard">
+		<div class="coverphoto"></div>
+		<div id="contacts" class="contacts-title"><h2>Contacts utiles</h2></div>
+		<div class="left_col">
+			<div class="contacts-title">
+				Associations
+			</div>
+        <div class="contacts-text">
         <%# Ajouter la liste des associations spécialisés avec cet animal %>
-      </div>
-
-      <div>
-        <h5>Vétérinaires</h5>
-      </div>
-
-      <div>
+         <ul>
+            <li>Les P'tits Kipiks <i class="fas fa-shoe-prints"></i></li>
+            <li>La Féline Meyreuillaise <i class="fas fa-shoe-prints"></i></li>
+          </ul>
+        </div>
+		</div>
+		<div class="right_col">
+			<div class="contacts-title">
+				Cliniques vétérinaires
+        <div class="contacts-text">
         <%# Ajouter la liste des vétérinaires avec cet animal %>
-      </div>
-    </div>
-  </div>
-</div>
+          <ul>
+            <li>Jean Bondiork <i class="fas fa-shoe-prints"></i></li>
+            <li>Enrico Chonaille <i class="fas fa-shoe-prints"></i></li>
+          </ul>
+        </div>
+			</div>
+		</div>
+		</div>
