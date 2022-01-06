@@ -152,3 +152,16 @@ Contact.create!(name: "Dr Health",
                 )
 
 puts "Contacts created"
+
+puts "creating categories"
+
+Category.create!(name: 'Oiseaux')
+Category.create!(name: 'Rongeurs')
+Category.create!(name: 'Faune sauvage')
+Category.create!(name: 'Chats')
+Category.create!(name: 'Chiens')
+Category.create!(name: 'Tortues')
+Category.create!(name: 'Poissons')
+Category.create!(name: 'Insectes')
+
+puts "categories created"
