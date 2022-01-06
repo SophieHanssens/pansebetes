@@ -2,20 +2,20 @@
 <div class="navbar-pb">
   <% if user_signed_in? %>
     <div class="navbar-desktop">
-          <%= link_to "Tous les animaux", animals_path, class: "animals" %>
-          <%= link_to "Mon profil", edit_user_registration_path, class: "user-profile" %>
-      <a href="#">Praticiens</a>
+      <%= link_to "Tous les animaux", animals_path, class: "animals" %>
+      <%= link_to "Mon profil", edit_user_registration_path, class: "user-profile" %>
+      <%= link_to "Praticiens", contacts_path %>
       <%= link_to destroy_user_session_path, method: :delete, class: "picto" do %>
         <%= "logout " %><i class="fas fa-sign-out-alt"></i>
       <% end %>
     </div>
-    <div class="navbar-mobile">
+    <div class="navbar-mobile mobile-logged">
       <i class="fas fa-bars burger"></i>
       <div class="modal-navbar">
         <div class="navbar-mobile-list">
           <%= link_to "Tous les animaux", animals_path, class: "animals" %>
           <%= link_to "Mon profil", edit_user_registration_path, class: "user-profile" %>
-          <a href="#">Praticiens</a>
+          <%= link_to "Praticiens", contacts_path %>
           <%= link_to destroy_user_session_path, method: :delete, class: "picto" do %>
             <i class="fas fa-sign-out-alt"><%= " logout" %></i>
           <% end %>
