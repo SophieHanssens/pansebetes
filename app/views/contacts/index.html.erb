@@ -18,12 +18,12 @@
           <% contact.contact_categories.each do |contact_category| %>
             - <%= contact_category.category.name %> <br>
           <% end %></li>
-        <li>Tel : <%= contact.phone_number %></li>
-        <li><p> Adresse :
+        <li><span class="list-label">Tel</span> : <%= contact.phone_number %></li>
+        <li><span class="list-label">Adresse</span> :
             <%= contact.street %>,
             <%= contact.zipcode %>,
             <%= contact.city %>,
-            <%= contact.country %></p>
+            <%= contact.country %>
         </li>
         <% if current_user.admin == true || current_user.id == contact.user_id %>
           <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
@@ -42,12 +42,12 @@
             <% contact.contact_categories.each do |contact_category| %>
               - <%= contact_category.category.name %> <br>
             <% end %></li>
-          <li>Tel : <%= contact.phone_number %></li>
-          <li><p> Adresse :
+          <li><span class="list-label">Tel</span> : <%= contact.phone_number %></li>
+          <li><span class="list-label">Adresse</span> :
               <%= contact.street %>,
               <%= contact.zipcode %>,
               <%= contact.city %>,
-              <%= contact.country %></p>
+              <%= contact.country %>
           </li>
           <% if current_user.admin == true || current_user.id == contact.user_id %>
             <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',

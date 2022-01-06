@@ -126,6 +126,10 @@ p {
   font-size: 15px;
 }
 
+.favorite {
+ text-align: right;
+}
+
 // Cartes vétérinaire pour la SHOW vétérinaire
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500&display=swap');
@@ -433,9 +437,12 @@ div.portfoliocard div.follow_count{
 
 .card-contacts-list-infos {
   a {
-    color: darkblue;
+    color: #519259;
   }
   a:hover {
     color:darkmagenta
+  }
+  ul {
+    font-family: 'Cormorant Upright', serif;
   }
 }
