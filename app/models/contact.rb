@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
   belongs_to :user
-  has_many :categories, through: :contact_categories
+  has_many :contact_categories
 
 end
