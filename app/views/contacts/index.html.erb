@@ -13,7 +13,7 @@
       <h4>Associations</h4>
       <ul>
         <li><%= link_to contact.name, contact_path(contact) %></li>
-        <li>Je peux m'occuper de : <%= contact.speciality %></li>
+        <li>Je peux m'occuper de : <%= contact.categories.pluck(:name) %></li>
         <li>Tel : <%= contact.phone_number %></li>
         <li><p> Adresse :
             <%= contact.street %>,
@@ -27,7 +27,7 @@
       <div class="card-infos">
         <ul>
           <li><%= link_to contact.name, contact_path(contact) %></li>
-          <li>Je peux m'occuper de : <%= contact.speciality %></li>
+          <li>Je peux m'occuper de : <%= contact.categories.pluck(:name) %></li>
           <li>Tel : <%= contact.phone_number %></li>
           <li><p> Adresse :
               <%= contact.street %>,

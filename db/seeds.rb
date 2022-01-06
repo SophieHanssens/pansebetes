@@ -153,9 +153,8 @@ puts "animal created"
 
 puts "creating contacts"
 
-Contact.create!(name: "Dr Fly",
+contact1 = Contact.create!(name: "Dr Fly",
                 user_id: user1.id,
-                speciality: [[cat1.id], [cat3.id]],
                 street: "146 rue de Rome",
                 zipcode: "13006",
                 city: "Marseille",
@@ -163,9 +162,8 @@ Contact.create!(name: "Dr Fly",
                 phone_number: "0491456789"
                 )
 
-Contact.create!(name: "Dr Health",
+contact2 = Contact.create!(name: "Dr Health",
                 user_id: user3.id,
-                speciality: [[cat4.id], [cat6.id], [cat8.id]],
                 street: "97 rue charras",
                 zipcode: "13007",
                 city: "Marseille",
@@ -174,3 +172,5 @@ Contact.create!(name: "Dr Health",
                 )
 
 puts "Contacts created"
+
+ContactCategory.create()
