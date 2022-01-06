@@ -28,6 +28,13 @@ h1 {
 h2 {
   font-size: 20px;
   font-family: 'Poiret One', cursive;
+  text-align: center;
+  a {
+    color: #064635;
+  }
+  a:hover {
+    // color: darkblue;
+  }
 }
 
 .search-logo {
