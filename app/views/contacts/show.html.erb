@@ -1,9 +1,12 @@
 
   <div class="card">
+
     <div class="img">
         <h2><%= @contact.name %></h2>
     </div>
+
     <div class="content">
+
       <ul>
       <%# Caractéristiques vétérinaires/associations %>
         <li><span class="list-label">Spécialités</span> : <%= @contact.speciality %></li>
@@ -15,8 +18,22 @@
           <%= @contact.country %></p>
         </li>
       </ul>
-      </div>
+
+      <p>
+        <% if @user.admin == true || @contact.user == true %>
+          <%= link_to 'Modifier le contact', edit_contact_path(@contact) %>
+        <% end %>
+      </p>
+      <p>
+        <% if @user.admin == true %>
+          <%= link_to 'Supprimer le contact', contact_path(@contact),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </p>
     </div>
+  </div>
+
   <div>
     <h2>Itinéraire</h4>
     <div>
