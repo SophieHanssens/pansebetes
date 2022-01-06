@@ -160,7 +160,8 @@ contact1 = Contact.create!(name: "Dr Fly",
                 zipcode: "13006",
                 city: "Marseille",
                 country: "France",
-                phone_number: "0491456789"
+                phone_number: "0491456789",
+                statut: 'Association'
                 )
 
 contact2 = Contact.create!(name: "Dr Health",
@@ -169,7 +170,8 @@ contact2 = Contact.create!(name: "Dr Health",
                 zipcode: "13007",
                 city: "Marseille",
                 country: "France",
-                phone_number: "0491654321"
+                phone_number: "0491654321",
+                statut: 'Vétérinaire'
                 )
 
 puts "Contacts created"
