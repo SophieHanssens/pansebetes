@@ -6,13 +6,6 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     @user = current_user
-
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
   end
 
   def new

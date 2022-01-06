@@ -24,9 +24,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { playNavbar } from './navbar';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   playNavbar();
+  initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
 });
