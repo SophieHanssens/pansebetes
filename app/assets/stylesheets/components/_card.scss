@@ -28,7 +28,6 @@
   margin: 0;
 }
 
-
 .card-animal .card-animal-infos {
   padding: 16px;
   display: flex;
@@ -135,20 +134,6 @@ p {
     padding: 0;
 }
 
-// body{
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-family: 'Baloo Bhaijaan 2', cursive;
-//     background-color: #ffedde;
-// }
-
-// body *{
-//     box-sizing: border-box;
-// }
-
 .card {
     margin: 20px;
     width: 350px;
@@ -166,6 +151,14 @@ p {
       font-family: 'Cormorant Upright', serif;
       font-size: 18px;
     }
+}
+
+.card-infos {
+  justify-content: center;
+  margin: 30px;
+  ul {
+    list-style-type: none;
+  }
 }
 
 .img{
@@ -395,5 +388,41 @@ div.portfoliocard div.follow_count{
 }
 
 .card-animals-list .card-animals-list-infos {
+  padding: 16px;
+}
+
+// Cartes liste Contacts INDEX
+
+.card-contacts-list {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-contacts-list img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-contacts-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-contacts-list p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-contacts-list .card-contacts-list-infos {
   padding: 16px;
 }
