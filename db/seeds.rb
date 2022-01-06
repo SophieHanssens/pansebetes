@@ -59,84 +59,92 @@
 
 puts "destroy all datas"
 User.destroy_all
-Contact.destroy_all
+Category.destroy_all
 Animal.destroy_all
+Contact.destroy_all
+
 puts "datas destroyed"
 
 puts "Creating Users..."
-User.create!(email: 'emmanuel@emmanuel.com',
+user1 = User.create!(email: 'emmanuel@emmanuel.com',
             name: 'Emmanuel',
             password: 'azerty',
             street: '56 rue Manu',
             zipcode: '56000',
             city: 'Nantes',
-            country: 'France')
+            country: 'France',
+            admin: true)
 
-User.create!(email: 'sophie@sophie.com',
+user2 = User.create!(email: 'sophie@sophie.com',
             name: 'Sophie',
             password: 'azerty',
             street: '79 avenue soso',
             zipcode: '43000',
             city: 'Soso City',
-            country: 'France')
+            country: 'France',
+            admin: true)
 
-User.create!(email: 'loris@loris.com',
+user3 = User.create!(email: 'loris@loris.com',
             name: 'Loris',
             password: 'azerty',
             street: '48 traverse Mars',
             zipcode: '13006',
             city: 'Marseille',
-            country: 'France')
+            country: 'France',
+            admin: true)
 
 puts "Users ok !"
 
+puts "creating categories"
+
+cat1 = Category.create!(name: 'Oiseaux')
+Category.create!(name: 'Rongeurs')
+cat3 = Category.create!(name: 'Faune sauvage')
+cat4 = Category.create!(name: 'Chats')
+Category.create!(name: 'Chiens')
+cat6 = Category.create!(name: 'Tortues')
+Category.create!(name: 'Poissons')
+cat8 = Category.create!(name: 'Insectes')
+
+puts "categories created"
+
 puts "creating animals"
 Animal.create!(name: "Hérisson",
+              category_id: cat3.id,
               color: "Marron",
-              description: "* Conseil 1 (ex. laisser dans le noir dans une petite boîte fermée)
-                            * Conseil 2 (ex. ne pas nourrir)
-                            * Conseil 3 (ex. ne pas abreuver)",
-              species: "Mammifère",
+              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Erinaceus europaeus",
               weight: "De 0,8 à 1,5 kg",
               )
 
 Animal.create!(name: "Mésange noire",
+              category_id: cat1.id,
               color: "Gris, noir, beige",
-              description: "* Conseil 1 (ex. laisser dans le noir dans une petite boîte fermée)
-                            * Conseil 2 (ex. ne pas nourrir)
-                            * Conseil 3 (ex. ne pas abreuver)",
-              species: "Oiseau",
+              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Periparus ater",
               weight: "19-10 g"
               )
 
 Animal.create!(name: "Moineau friquet",
+              category_id: cat1.id,
               color: "Marron, Beige, Blanc",
-              description: "* Conseil 1 (ex. laisser dans le noir dans une petite boîte fermée)
-                            * Conseil 2 (ex. ne pas nourrir)
-                            * Conseil 3 (ex. ne pas abreuver)",
-              species: "Oiseau",
+              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Passer montanus",
               weight: "19 à 25 g"
               )
 
 Animal.create!(name: "Renard roux",
+              category_id: cat3.id,
               color: "Orange, Blanc",
-              description: "* Conseil 1 (ex. laisser dans le noir dans une petite boîte fermée)
-                            * Conseil 2 (ex. ne pas nourrir)
-                            * Conseil 3 (ex. ne pas abreuver)",
-              species: "Mammifère",
+              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Vulpes vulpes",
               weight: "6 à 10 kg"
               )
 
 Animal.create!(name: "Grenouille verte",
+              category_id: cat3.id,
               color: "Vert",
-              description: "* Conseil 1 (ex. laisser dans le noir dans une petite boîte fermée)
-                            * Conseil 2 (ex. ne pas nourrir)
-                            * Conseil 3 (ex. ne pas abreuver)",
-              species: "Batracien",
+              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Pelophylax kl. esculentus",
               weight: "10 à 30 g"
               )
@@ -146,7 +154,8 @@ puts "animal created"
 puts "creating contacts"
 
 Contact.create!(name: "Dr Fly",
-                speciality: "Oiseau",
+                user_id: user1.id,
+                speciality: [[cat1.id], [cat3.id]],
                 street: "146 rue de Rome",
                 zipcode: "13006",
                 city: "Marseille",
@@ -155,7 +164,8 @@ Contact.create!(name: "Dr Fly",
                 )
 
 Contact.create!(name: "Dr Health",
-                speciality: "Batracien",
+                user_id: user3.id,
+                speciality: [[cat4.id], [cat6.id], [cat8.id]],
                 street: "97 rue charras",
                 zipcode: "13007",
                 city: "Marseille",
