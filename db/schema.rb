@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_104626) do
+ActiveRecord::Schema.define(version: 2022_01_06_135037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 2022_01_06_104626) do
   end
 
   create_table "contact_categories", force: :cascade do |t|
-    t.bigint "category_id", null: false
     t.bigint "contact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
     t.index ["category_id"], name: "index_contact_categories_on_category_id"
     t.index ["contact_id"], name: "index_contact_categories_on_contact_id"
   end
@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(version: 2022_01_06_104626) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "contact_categories", "categories"
   add_foreign_key "contact_categories", "contacts"
   add_foreign_key "favorites", "animals"
   add_foreign_key "favorites", "users"

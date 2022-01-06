@@ -10,10 +10,14 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-contacts-list-infos">
     <% if contact.statut == 'Association' %>
+    <div class="card-infos">
       <h4>Associations</h4>
       <ul>
         <li><%= link_to contact.name, contact_path(contact) %></li>
-        <li>Je peux m'occuper de : <%= contact.speciality %></li>
+        <li>Je peux m'occuper de : <br>
+          <% contact.contact_categories.each do |contact_category| %>
+            - <%= contact_category.category.name %> <br>
+          <% end %></li>
         <li>Tel : <%= contact.phone_number %></li>
         <li><p> Adresse :
             <%= contact.street %>,
@@ -21,13 +25,23 @@
             <%= contact.city %>,
             <%= contact.country %></p>
         </li>
+        <% if current_user.admin == true || current_user.id == contact.user_id %>
+          <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
+                          contact_path(contact),
+                          method: :delete,
+                          data: { confirm: "Supprimer ?" } %></p>
+        <% end %>
       </ul>
+    </div>
     <% else %>
-      <h4>Vétérinaires</h4>
       <div class="card-infos">
+        <h4>Vétérinaires</h4>
         <ul>
           <li><%= link_to contact.name, contact_path(contact) %></li>
-          <li>Je peux m'occuper de : <%= contact.speciality %></li>
+          <li>Je peux m'occuper de : <br>
+            <% contact.contact_categories.each do |contact_category| %>
+              - <%= contact_category.category.name %> <br>
+            <% end %></li>
           <li>Tel : <%= contact.phone_number %></li>
           <li><p> Adresse :
               <%= contact.street %>,
@@ -35,6 +49,12 @@
               <%= contact.city %>,
               <%= contact.country %></p>
           </li>
+          <% if current_user.admin == true || current_user.id == contact.user_id %>
+            <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
+                            contact_path(contact),
+                            method: :delete,
+                            data: { confirm: "Supprimer ?" } %></p>
+          <% end %>
         </ul>
       </div>
     <% end %>
