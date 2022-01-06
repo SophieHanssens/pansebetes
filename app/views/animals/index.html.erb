@@ -1,5 +1,5 @@
 <div>
-  <h2>Animals index</h1>
+  <h2>Animals index <i class="far fa-list-alt"></i></h1>
   <% @animals.each do |animal| %>
 
   <div class="card-animals-list">
@@ -9,7 +9,7 @@
             <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
           <% end %>
     <div class="card-animals-list-infos">
-      <h2><%= animal.name %></h2>
+      <h3><%= animal.name %></h3>
       <p>Product description with <strong>relevant info</strong> only.</p>
     </div>
   </div>
