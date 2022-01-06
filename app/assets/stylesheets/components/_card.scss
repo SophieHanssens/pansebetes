@@ -433,9 +433,12 @@ div.portfoliocard div.follow_count{
 
 .card-contacts-list-infos {
   a {
-    color: darkblue;
+    color: #519259;
   }
   a:hover {
     color:darkmagenta
+  }
+  ul {
+    font-family: 'Cormorant Upright', serif;
   }
 }
