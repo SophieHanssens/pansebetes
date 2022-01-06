@@ -1,5 +1,5 @@
 <div>
-  <h1>Tous les contacts spécialisés</h1>
+  <h2>Tous les contacts spécialisés <i class="fas fa-glasses"></i></h2>
 
   <% @contacts.each do |contact| %>
     <% if contact.statut == 'Association' %>
@@ -36,21 +36,41 @@
 
   <%# Fiche technique Vétérinaire SHOW %>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <%# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> %>
 
-<div class="card">
-
-      <div class="img">
-        <h2>Clinique Machin</h2>
-      </div>
-
-      <div class="content">
+<% @contacts.each do |contact| %>
+<div class="card-contacts-list">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-contacts-list-infos">
+    <% if contact.statut == 'Association' %>
+      <h4>Associations</h4>
+      <ul>
+        <li><%= link_to contact.name, contact_path(contact) %></li>
+        <li>Je peux m'occuper de : <%= contact.speciality %></li>
+        <li>Tel : <%= contact.phone_number %></li>
+        <li><p> Adresse :
+            <%= contact.street %>,
+            <%= contact.zipcode %>,
+            <%= contact.city %>,
+            <%= contact.country %></p>
+        </li>
+      </ul>
+    <% else %>
+      <h4>Vétérinaires</h4>
+      <div class="card-infos">
         <ul>
-          <!-- Caractéristiques vétérinaires/associations -->
-          <li><span class="list-label">Référent </span>: Docteur Fly</li>
-          <li><span class="list-label">Adresse </span>: street zipcode city country</li>
-          <li><span class="list-label">Spécialité </span>: Mammifère</li>
-          <li><span class="list-label">Numéro de téléphone </span>: 0491456789</li>
+          <li><%= link_to contact.name, contact_path(contact) %></li>
+          <li>Je peux m'occuper de : <%= contact.speciality %></li>
+          <li>Tel : <%= contact.phone_number %></li>
+          <li><p> Adresse :
+              <%= contact.street %>,
+              <%= contact.zipcode %>,
+              <%= contact.city %>,
+              <%= contact.country %></p>
+          </li>
         </ul>
       </div>
-    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
