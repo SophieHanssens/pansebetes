@@ -10,9 +10,21 @@
   font-family: 'Lilita One', cursive;
 }
 
-.button-hover {
+.button-search-hover {
   border: solid #F4EEA9;
   background-color: #F4EEA9;
   box-shadow: 2px 2px 2px 2px #c0954a;
+  font-family: 'Lilita One', cursive;
+}
+
+.button-little {
+  border: solid #f06b43;
+  margin: 15px;
+  padding: 10px;
+  // height: auto;
+  // width: 100px;
+  border-radius: 20px;
+  background-color: #f06b43;
+  box-shadow: 2px 2px 2px 2px #b64725;
   font-family: 'Lilita One', cursive;
 }
