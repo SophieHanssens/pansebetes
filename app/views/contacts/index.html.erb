@@ -25,7 +25,12 @@
             <%= contact.city %>,
             <%= contact.country %></p>
         </li>
-        <p></p>
+        <% if current_user.admin == true || current_user.id == contact.user_id %>
+          <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
+                          contact_path(contact),
+                          method: :delete,
+                          data: { confirm: "Supprimer ?" } %></p>
+        <% end %>
       </ul>
     </div>
     <% else %>
@@ -44,11 +49,15 @@
               <%= contact.city %>,
               <%= contact.country %></p>
           </li>
+          <% if current_user.admin == true || current_user.id == contact.user_id %>
+            <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
+                            contact_path(contact),
+                            method: :delete,
+                            data: { confirm: "Supprimer ?" } %></p>
+          <% end %>
         </ul>
       </div>
     <% end %>
   </div>
 </div>
 <% end %>
-
-<% console %>
