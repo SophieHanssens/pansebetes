@@ -3,18 +3,8 @@
     <%# En-tête principal %>
     <%# Rang  1 %>
     <div class="row">
-        <%# Barre de recherches %>
-        <div class="searchbar">
-          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-          <form class="searchform group">
-            <label for="search-box">
-              <div class="search-logo">
-                <span class="fa fa-2x fa-search"></span>
-              </div>
-            </label>
-            <input type="search" id="search-box" placeholder="Quel animal ?">
-          </form>
-        </div>
+      <%# Bouton de recherches %>
+      <div class="button-search">Rechercher <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641398870/Hoohoo_ps4u15.gif" alt="hoothoot"></div>
     </div>
 
 
@@ -30,7 +20,7 @@
         <img src="https://images.pexels.com/photos/260143/pexels-photo-260143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div class="card-animal-infos">
           <div>
-            <h2>Hérisson <i class="fas fa-otter"></i></h2>
+            <h3><%= link_to "Hérisson",  animals_path %> <i class="fas fa-otter"></i></h3>
             <p>Description <i class="far fa-edit"></i></p>
           </div>
         </div>
@@ -40,7 +30,7 @@
         <img src="https://images.pexels.com/photos/5633490/pexels-photo-5633490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div class="card-animal-infos">
           <div>
-            <h2>Merle <i class="fas fa-crow"></i></h2>
+            <h3><%= link_to "Merle",  animals_path %> <i class="fas fa-crow"></i></h3>
             <p>Description <i class="far fa-edit"></i></p>
           </div>
         </div>
@@ -54,7 +44,7 @@
         <img src="https://images.pexels.com/photos/3387169/pexels-photo-3387169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div class="card-animal-infos">
           <div>
-            <h2>Tortue <i class="fas fa-frog"></i></h2>
+            <h3><%= link_to "Tortue",  animals_path %> <i class="fas fa-frog"></i></h3>
             <p>Description <i class="far fa-edit"></i></p>
           </div>
         </div>
@@ -64,7 +54,7 @@
         <img src="https://images.pexels.com/photos/2570081/pexels-photo-2570081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div class="card-animal-infos">
           <div>
-            <h2>Moineau <i class="fas fa-crow"></i></h2>
+            <h3><%= link_to "Moineau",  animals_path %> <i class="fas fa-crow"></i></h3>
             <p>Description <i class="far fa-edit"></i></p>
           </div>
         </div>
@@ -80,26 +70,5 @@
     </div>
 
   </div>
-
-  <%# Fiche technique Vétérinaire SHOW %>
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-<div class="card">
-
-      <div class="img">
-        <h2>Clinique Machin</h2>
-      </div>
-
-      <div class="content">
-        <ul>
-          <!-- Caractéristiques vétérinaires/associations -->
-          <li><span class="list-label">Référent </span>: Docteur Fly</li>
-          <li><span class="list-label">Adresse </span>: street zipcode city country</li>
-          <li><span class="list-label">Spécialité </span>: Mammifère</li>
-          <li><span class="list-label">Numéro de téléphone </span>: 0491456789</li>
-        </ul>
-      </div>
-    </div>
 
 </body>
