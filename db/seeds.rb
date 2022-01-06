@@ -70,28 +70,19 @@ puts "Creating Users..."
 user1 = User.create!(email: 'emmanuel@emmanuel.com',
             name: 'Emmanuel',
             password: 'azerty',
-            street: '56 rue Manu',
-            zipcode: '56000',
-            city: 'Nantes',
-            country: 'France',
+            street: '56 rue Manu 56000 Nantes France',
             admin: true)
 
 user2 = User.create!(email: 'sophie@sophie.com',
             name: 'Sophie',
             password: 'azerty',
-            street: '79 avenue soso',
-            zipcode: '43000',
-            city: 'Soso City',
-            country: 'France',
+            street: '79 avenue soso 43000 Soso City France',
             admin: true)
 
 user3 = User.create!(email: 'loris@loris.com',
             name: 'Loris',
             password: 'azerty',
-            street: '48 traverse Mars',
-            zipcode: '13006',
-            city: 'Marseille',
-            country: 'France',
+            street: '48 traverse Mars 13006 Marseille France',
             admin: true)
 
 puts "Users ok !"
@@ -156,20 +147,14 @@ puts "creating contacts"
 
 contact1 = Contact.create!(name: "Dr Fly",
                 user_id: user1.id,
-                street: "146 rue de Rome",
-                zipcode: "13006",
-                city: "Marseille",
-                country: "France",
+                street: '146 rue de Rome 13006 Marseille France',
                 phone_number: "0491456789",
                 statut: 'Association'
                 )
 
 contact2 = Contact.create!(name: "Dr Health",
                 user_id: user3.id,
-                street: "97 rue charras",
-                zipcode: "13007",
-                city: "Marseille",
-                country: "France",
+                street: "97 rue charras 13007 Marseille France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire'
                 )
