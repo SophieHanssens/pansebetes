@@ -1,4 +1,3 @@
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -7,8 +6,8 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [43.2961743, 5.3699525], // starting position
-      zoom: 6
+      center: [5.3699525, 43.2961743], // starting position
+      zoom: 12
       });
   };
 };
