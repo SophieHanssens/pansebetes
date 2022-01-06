@@ -59,6 +59,7 @@
 
 puts "destroy all datas"
 User.destroy_all
+ContactCategory.destroy_all
 Category.destroy_all
 Animal.destroy_all
 Contact.destroy_all
@@ -98,12 +99,12 @@ puts "Users ok !"
 puts "creating categories"
 
 cat1 = Category.create!(name: 'Oiseaux')
-Category.create!(name: 'Rongeurs')
+cat2 = Category.create!(name: 'Rongeurs')
 cat3 = Category.create!(name: 'Faune sauvage')
 cat4 = Category.create!(name: 'Chats')
-Category.create!(name: 'Chiens')
+cat5 = Category.create!(name: 'Chiens')
 cat6 = Category.create!(name: 'Tortues')
-Category.create!(name: 'Poissons')
+cat7 = Category.create!(name: 'Poissons')
 cat8 = Category.create!(name: 'Insectes')
 
 puts "categories created"
@@ -173,4 +174,10 @@ contact2 = Contact.create!(name: "Dr Health",
 
 puts "Contacts created"
 
-ContactCategory.create()
+puts "creating Contact_categories"
+ContactCategory.create!(category_id: cat1.id, contact_id: contact1.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact1.id)
+ContactCategory.create!(category_id: cat4.id, contact_id: contact2.id)
+ContactCategory.create!(category_id: cat6.id, contact_id: contact2.id)
+ContactCategory.create!(category_id: cat8.id, contact_id: contact2.id)
+puts "All finished !"
