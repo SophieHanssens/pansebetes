@@ -17,11 +17,9 @@ const initMapbox = () => {
     const address = document.querySelector('#address');
     map.on('load', function () {
       directions.setDestination(address.textContent); // can be address
-    })
-  }
-}
-
-console.log(address.textContent);
+    });
+  };
+};
 // destination.textContent = address.textContent;
 
 export { initMapbox };
