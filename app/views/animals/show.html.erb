@@ -46,9 +46,20 @@
 			</div>
         <div class="contacts-text">
         <%# Ajouter la liste des associations spécialisés avec cet animal %>
+
          <ul>
-            <li>Les P'tits Kipiks <i class="fas fa-shoe-prints"></i></li>
-            <li>La Féline Meyreuillaise <i class="fas fa-shoe-prints"></i></li>
+            <li>
+              <% @contacts.first(1).each do |contact| %>
+                <%= link_to "Les P'tits Kipiks", contact_path(contact) %>
+                <i class="fas fa-shoe-prints"></i>
+              <% end %>
+            </li>
+             <li>
+              <% @contacts.first(1).each do |contact| %>
+                <%= link_to "La Féline Meyreuillaise", contact_path(contact) %>
+                <i class="fas fa-shoe-prints"></i>
+              <% end %>
+            </li>
           </ul>
         </div>
 		</div>
@@ -58,8 +69,19 @@
         <div class="contacts-text">
         <%# Ajouter la liste des vétérinaires avec cet animal %>
           <ul>
-            <li>Jean Bondiork <i class="fas fa-shoe-prints"></i></li>
-            <li>Enrico Chonaille <i class="fas fa-shoe-prints"></i></li>
+             <li>
+              <% @contacts.first(1).each do |contact| %>
+                <%= link_to "Jean Bondiork", contact_path(contact) %>
+                <i class="fas fa-shoe-prints"></i>
+              <% end %>
+            </li>
+             <li>
+              <% @contacts.first(1).each do |contact| %>
+                <%= link_to "Enrico Chonaille", contact_path(contact) %>
+                <i class="fas fa-shoe-prints"></i>
+              <% end %>
+            </li>
+          </ul>
           </ul>
         </div>
 			</div>
