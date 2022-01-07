@@ -9,13 +9,19 @@ const initMapbox = () => {
       center: [5.3699525, 43.2961743], // starting position
       zoom: 12
     });
-    map.addControl(
-      new MapboxDirections({
-        accessToken: mapboxgl.accessToken
-      }),
-      'top-left'
-    );
+    var directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+    });
+
+    map.addControl(directions, 'top-left');
+    const address = document.querySelector('#address');
+    map.on('load', function () {
+      directions.setDestination(address.textContent); // can be address
+    })
   }
 }
+
+console.log(address.textContent);
+// destination.textContent = address.textContent;
 
 export { initMapbox };
