@@ -1,0 +1,13 @@
+
+<div>
+  <%= simple_form_for(@animal) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category_id, collection: @categories, label: "test", label_html: { class: "class-test", id: "id-test"}, input_html: { class: "class-test", id: "id-test"}, wrapper_html: { class: "test_div"} %>
+    <%= f.input :scientific_name %>
+    <%= f.input :color %>
+    <%= f.input :weight %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
