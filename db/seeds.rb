@@ -57,6 +57,8 @@
 #   getAnimalPage(animal_url)
 # end
 
+require 'uri'
+
 puts "destroy all datas"
 User.destroy_all
 ContactCategory.destroy_all
@@ -100,16 +102,36 @@ cat8 = Category.create!(name: 'Insectes')
 
 puts "categories created"
 
+
+
 puts "creating animals"
-Animal.create!(name: "Hérisson",
+herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "Un hérisson vu de jour, blessé ou trop petit doit être récupéré. Il faut vérifier qu’il n’a pas d’œufs de mouche (semblables à des grains de riz) sur lui ou des tiques. Enlever les parasites avant de le placer dans un carton eau avec une bouillotte chaude, sous un linge ou une polaire. Laisser de l’eau et des croquettes pour chat au poulet à proximité ainsi que des tissus et polaire supplémentaires dans le carton pour qu’il puisse nidifier. Contacter un vétérinaire ou un centre de la faune sauvage rapidement.",
               scientific_name: "Erinaceus europaeus",
               weight: "De 0,8 à 1,5 kg",
               )
 
-Animal.create!(name: "Mésange noire",
+photo_herisson = URI.open('https://www.consoglobe.com/wp-content/uploads/2020/09/mission-herisson_shutterstock_776419591.jpg.webp')
+herisson.photo.attach(io: photo_herisson, filename: "herisson.jpg", content_type: 'image/jpg')
+herisson.save!
+puts "herisson created"
+
+ane = Animal.create!(name: "âne corse",
+              category_id: cat3.id,
+              color: "gris",
+              description: "aime bien les figues",
+              scientific_name: "chevalus",
+              weight: "200 kg"
+              )
+
+photo_ane = URI.open('https://www.tourismebretagne.com/app/uploads/crt-bretagne/2019/06/randonne-avec-un-ne-baie-de-saint-brieuc-randonne-avec-un-ne-korrigne-640x360.jpg')
+ane.photo.attach(io: photo_ane, filename: "ane.jpg", content_type: 'image/jpg')
+ane.save!
+puts "ane created"
+
+mesange = Animal.create!(name: "Mésange noire",
               category_id: cat1.id,
               color: "Gris, noir, beige",
               description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
@@ -117,7 +139,12 @@ Animal.create!(name: "Mésange noire",
               weight: "19-10 g"
               )
 
-Animal.create!(name: "Moineau friquet",
+photo_mesange = URI.open('https://lemagdesanimaux.ouest-france.fr/images/dossiers/2021-03/mesange-bleue-063413.jpg')
+mesange.photo.attach(io: photo_mesange, filename: "mesange.jpg", content_type: 'image/jpg')
+mesange.save!
+puts "mesange created"
+
+moineau = Animal.create!(name: "Moineau friquet",
               category_id: cat1.id,
               color: "Marron, Beige, Blanc",
               description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
@@ -125,21 +152,36 @@ Animal.create!(name: "Moineau friquet",
               weight: "19 à 25 g"
               )
 
-Animal.create!(name: "Renard roux",
+photo_moineau = URI.open('https://images.pexels.com/photos/86591/sparrow-bird-animal-nature-86591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+moineau.photo.attach(io: photo_moineau, filename: "moineau.jpg", content_type: 'image/jpg')
+moineau.save!
+puts "moineau created"
+
+renard = Animal.create!(name: "Renard roux",
               category_id: cat3.id,
               color: "Orange, Blanc",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "",
               scientific_name: "Vulpes vulpes",
               weight: "6 à 10 kg"
               )
 
-Animal.create!(name: "Grenouille verte",
+photo_renard = URI.open('https://images.pexels.com/photos/6244506/pexels-photo-6244506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+renard.photo.attach(io: photo_renard, filename: "renard.jpg", content_type: 'image/jpg')
+renard.save!
+puts "renard created"
+
+grenouille = Animal.create!(name: "Grenouille verte",
               category_id: cat3.id,
               color: "Vert",
               description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
               scientific_name: "Pelophylax kl. esculentus",
               weight: "10 à 30 g"
               )
+
+photo_grenouille = URI.open('http://www.grenouilles.free.fr/especes/images/Grenouille-Verte-1.jpg')
+grenouille.photo.attach(io: photo_grenouille, filename: "grenouille.jpg", content_type: 'image/jpg')
+grenouille.save!
+puts "grenouille created"
 
 puts "animal created"
 
