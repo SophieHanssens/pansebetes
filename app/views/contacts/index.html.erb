@@ -20,10 +20,7 @@
           <% end %></li>
         <li><span class="list-label">Tel</span> : <%= contact.phone_number %></li>
         <li><span class="list-label">Adresse</span> :
-            <%= contact.street %>,
-            <%= contact.zipcode %>,
-            <%= contact.city %>,
-            <%= contact.country %>
+            <%= contact.address %>
         </li>
         <% if current_user.admin == true || current_user.id == contact.user_id %>
           <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
@@ -44,10 +41,7 @@
             <% end %></li>
           <li><span class="list-label">Tel</span> : <%= contact.phone_number %></li>
           <li><span class="list-label">Adresse</span> :
-              <%= contact.street %>,
-              <%= contact.zipcode %>,
-              <%= contact.city %>,
-              <%= contact.country %>
+              <%= contact.address %>
           </li>
           <% if current_user.admin == true || current_user.id == contact.user_id %>
             <p><%= link_to 'Modifier la fiche', edit_contact_path(contact) %> | <%= link_to 'Supprimer la fiche',
