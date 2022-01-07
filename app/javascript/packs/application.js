@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "packs/navbar"
-import "favoris"
 
 Rails.start()
 Turbolinks.start()

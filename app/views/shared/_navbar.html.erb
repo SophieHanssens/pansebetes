@@ -15,9 +15,10 @@
         <div class="navbar-mobile-list">
           <%= link_to "Tous les animaux", animals_path, class: "animals" %>
           <%= link_to "Mon profil", edit_user_registration_path, class: "user-profile" %>
+          <%= link_to "Mes favoris", favorites_path %>
           <%= link_to "Praticiens", contacts_path %>
           <%= link_to destroy_user_session_path, method: :delete, class: "picto" do %>
-            <i class="fas fa-sign-out-alt"><%= " logout" %></i>
+            <i class="fas fa-sign-out-alt"><%= " Logout" %></i>
           <% end %>
         </div>
       </div>
