@@ -8,8 +8,14 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [5.3699525, 43.2961743], // starting position
       zoom: 12
-      });
-  };
-};
+    });
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+      }),
+      'top-left'
+    );
+  }
+}
 
 export { initMapbox };
