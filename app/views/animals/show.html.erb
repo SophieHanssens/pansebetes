@@ -6,9 +6,9 @@
 		<!-- animal's image -->
     <div class="animal-img">
       <% if @animal.photo.attached? %>
-          <%= cl_image_tag @animal.photo.key, width: 400, height: 300, crop: :fill %>
+          <%= cl_image_tag @animal.photo.key, width: 350, crop: :fill %>
         <% else %>
-          <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+          <%= image_tag("silhouette.jpg", width: 350, alt: "silhouette d'animaux") %>
         <% end %>
         <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
     </div>
