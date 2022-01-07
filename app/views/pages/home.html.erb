@@ -1,4 +1,5 @@
 <body>
+
   <div class="container m-auto">
     <%# En-tête principal %>
     <%# Rang  1 %>
@@ -15,56 +16,30 @@
 
     <%# Rang 2 %>
     <div class="row">
-      <%# Carte 1 %>
-      <div class="card-animal">
-        <img src="https://images.pexels.com/photos/260143/pexels-photo-260143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        <div class="card-animal-infos">
-          <div>
-            <h3><%= link_to "Hérisson",  animals_path %> <i class="fas fa-otter"></i></h3>
-            <p>Description <i class="far fa-edit"></i></p>
-          </div>
+      <% @animals.first(4).each do |animal| %>
+        <div class="card-animal">
+              <% if animal.photo.attached? %>
+                <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
+              <% else %>
+                <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+              <% end %>
+
+            <div class="card-animals-list-infos">
+              <h3><%= link_to animal.name, animal_path(animal) %> <i class="fas fa-leaf"></i></h3>
+              <p>Description <i class="far fa-edit"></i></p>
+            </div>
         </div>
-      </div>
-      <%# Carte 2 %>
-      <div class="card-animal">
-        <img src="https://images.pexels.com/photos/5633490/pexels-photo-5633490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        <div class="card-animal-infos">
-          <div>
-            <h3><%= link_to "Merle",  animals_path %> <i class="fas fa-crow"></i></h3>
-            <p>Description <i class="far fa-edit"></i></p>
-          </div>
-        </div>
-      </div>
+
+      <% end %>
     </div>
 
+
+    <%# Rang 3 %>
+      <div class="row">
+        <h2>Autour de vous <i class="fas fa-map-signs"></i></h2>
+      </div>
+
     <%# Rang 4 %>
-    <div class="row">
-      <%# Carte 3 %>
-      <div class="card-animal">
-        <img src="https://images.pexels.com/photos/3387169/pexels-photo-3387169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        <div class="card-animal-infos">
-          <div>
-            <h3><%= link_to "Tortue",  animals_path %> <i class="fas fa-frog"></i></h3>
-            <p>Description <i class="far fa-edit"></i></p>
-          </div>
-        </div>
-      </div>
-      <%# Carte 4 %>
-      <div class="card-animal">
-        <img src="https://images.pexels.com/photos/2570081/pexels-photo-2570081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        <div class="card-animal-infos">
-          <div>
-            <h3><%= link_to "Moineau",  animals_path %> <i class="fas fa-crow"></i></h3>
-            <p>Description <i class="far fa-edit"></i></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%# Rang 5 %>
-    <div class="row">
-      <h2>Autour de vous <i class="fas fa-map-signs"></i></h2>
-    </div>
-    <%# Rang 6 %>
     <div class="row">
       <p>Insérer carte ici</p>
     </div>

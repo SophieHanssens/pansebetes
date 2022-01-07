@@ -9,10 +9,9 @@
             <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
           <% end %>
     <div class="card-animals-list-infos">
-      <h3><%= animal.name %></h3>
+      <h3><%= link_to animal.name, animal_path(animal) %> <i class="fas fa-leaf"></i></h3>
       <p>Product description with <strong>relevant info</strong> only.</p>
     </div>
   </div>
-
   <% end %>
 </div>

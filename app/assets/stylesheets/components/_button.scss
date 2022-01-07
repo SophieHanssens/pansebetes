@@ -8,6 +8,7 @@
   background-color: #F0BB62;
   box-shadow: 2px 2px 2px 2px #c0954a;
   font-family: 'Lilita One', cursive;
+  color: #72582c;
 }
 
 .button-search-hover {
@@ -27,4 +28,15 @@
   background-color: #f06b43;
   box-shadow: 2px 2px 2px 2px #b64725;
   font-family: 'Lilita One', cursive;
+  .btn {
+    color: #833017;
+  }
 }
+
+// Bouton logo Home
+
+.logo-home {
+  align-items: flex-end;
+}
+
+// Bouton favoris
