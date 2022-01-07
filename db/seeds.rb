@@ -104,9 +104,10 @@ puts "creating animals"
 Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "Un hérisson vu de jour, blessé ou trop petit doit être récupéré. Il faut vérifier qu’il n’a pas d’œufs de mouche (semblables à des grains de riz) sur lui ou des tiques. Enlever les parasites avant de le placer dans un carton eau avec une bouillotte chaude, sous un linge ou une polaire. Laisser de l’eau et des croquettes pour chat au poulet à proximité ainsi que des tissus et polaire supplémentaires dans le carton pour qu’il puisse nidifier. Contacter un vétérinaire ou un centre de la faune sauvage rapidement.",
               scientific_name: "Erinaceus europaeus",
               weight: "De 0,8 à 1,5 kg",
+
               )
 
 Animal.create!(name: "Mésange noire",
