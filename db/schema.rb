@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_135037) do
+ActiveRecord::Schema.define(version: 2022_01_06_150022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,15 +73,14 @@ ActiveRecord::Schema.define(version: 2022_01_06_135037) do
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "speciality"
-    t.string "country"
-    t.string "city"
-    t.string "zipcode"
-    t.string "street"
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "statut"
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
@@ -112,11 +111,8 @@ ActiveRecord::Schema.define(version: 2022_01_06_135037) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "street"
-    t.string "zipcode"
-    t.string "city"
-    t.string "country"
     t.boolean "admin", default: false
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
