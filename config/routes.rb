@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :animals, only: %i[show index]
   resources :contacts
+  resources :favorites, only: %i[index]
 end
