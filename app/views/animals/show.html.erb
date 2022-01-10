@@ -42,9 +42,23 @@
 			</ul>
 			<!-- advices -->
         <ul>
-          <span class="list-label">Les bons gestes</span>
-          <%= @animal.description %>
+          <%# <span class="list-label">Les bons gestes</span> %>
+          <%= @description %>
         </ul>
+        <p>
+          <% if current_user.admin == true || @contact.user == true %>
+            <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
+          <% end %>
+          <% if current_user.admin == true %>
+            <%= link_to "Supprimer l'animal", animal_path(@animal),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </p>
+        <%# Favoris %>
+        <div class="favorite">
+          <i class="far fa-heart"></i>
+        </div>
 		</div>
 	</div>
 <%# Carte liste vétos compétents %>

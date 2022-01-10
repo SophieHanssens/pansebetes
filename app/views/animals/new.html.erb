@@ -1,13 +1,15 @@
-
-<div>
-  <%= simple_form_for(@animal) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category_id, collection: @categories, label: "test", label_html: { class: "class-test", id: "id-test"}, input_html: { class: "class-test", id: "id-test"}, wrapper_html: { class: "test_div"} %>
-    <%= f.input :scientific_name %>
-    <%= f.input :color %>
-    <%= f.input :weight %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<div class=container>
+  <h2>Ajouter un animal</h2>
+    <div>
+      <%= simple_form_for(@animal) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Nom" %>
+        <%= f.input :category_id, include_blank: "Espèce", collection: @categories, label: false, input_html: { class: "class-input", id: "id-input"}, wrapper_html: { class: "class-wrapper"} %>
+        <%= f.input :scientific_name, label: false, placeholder: "Nom scientifique" %>
+        <%= f.input :color, label: false, placeholder: "Couleur", placeholder_html: { class: "class-html", id: "id-input"} %>
+        <%= f.input :weight, label: false, placeholder: "Poids" %>
+        <%= f.input :description, label: false, placeholder: "Les bons gestes" %>
+        <%= f.input :photo, label: false, as: :file, input_html: { class: "btn", id: "id-input"} %>
+        <%= f.submit value="Créer l'animal", class: "button-search" %>
+      <% end %>
+    </div>
 </div>

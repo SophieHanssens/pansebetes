@@ -12,6 +12,8 @@ class AnimalsController < ApplicationController
     @favorite = Favorite.new
     @contacts = Contact.all
     @favorite_old = Favorite.find_by(user_id: current_user.id, animal_id: params[:id])
+    @description = markdown_to_html(@animal.description)
+
   end
 
   def new
@@ -29,6 +31,22 @@ class AnimalsController < ApplicationController
       redirect_to animal_path(@animal)
     else
       render "new"
+    end
+  end
+
+  def edit
+    @animal = Animal.find(params[:id])
+  end
+
+  def update
+    @animal = Animal.find(params[:id])
+    # @user = current_user.id
+    # @contact.user_id = @user
+
+    if @animal.update!(animal_params)
+      redirect_to animal_path(@animal)
+    else
+      render 'edit'
     end
   end
 

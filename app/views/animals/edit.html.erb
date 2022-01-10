@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Modifier la fiche de <%= @animal.name %></h2>
+  <div>
+    <%= simple_form_for(@animal) do |f| %>
+      <%= f.input :name, label: false, placeholder: "Nom" %>
+      <%= f.input :category_id, include_blank: "Espèce", collection: @categories, label: false, input_html: { class: "class-input", id: "id-input"}, wrapper_html: { class: "class-wrapper"} %>
+      <%= f.input :scientific_name, label: false, placeholder: "Nom scientifique" %>
+      <%= f.input :color, label: false, placeholder: "Couleur", placeholder_html: { class: "class-html", id: "id-input"} %>
+      <%= f.input :weight, label: false, placeholder: "Poids" %>
+      <%= f.input :description, label: false, placeholder: "Les bons gestes" %>
+      <%= f.input :photo, label: false, as: :file, input_html: { class: "btn", id: "id-input"} %>
+      <%= f.submit value="Modifier l'animal", class: "button-search"%>
+    <% end %>
+  </div>
+</div>
