@@ -1,15 +1,12 @@
-<div>
-  <h1>modifiez la fiche de <%= @contact.name %></h1>
+<div class="container">
+  <h2>Modifier la fiche de <%= @contact.name %></h2>
   <div>
     <%= simple_form_for(@contact) do |f| %>
       <%= f.input :name, label: false, placeholder: 'Nom', required: true %>
       <%= f.input :speciality, label: false, placeholder: 'Vos spécialités', required: true %>
       <%= f.input :phone_number, label: false, placeholder: 'Téléphone', required: true %>
-      <%= f.input :street, label: false, placeholder: 'N° et rue', required: true %>
-      <%= f.input :zipcode, label: false, placeholder: 'Code postal', required: true %>
-      <%= f.input :city, label: false, placeholder: 'Ville', required: true %>
-      <%= f.input :country, label: false, placeholder: 'Pays', required: true %>
-      <%= f.submit %>
+      <%= f.input :address, label: false, placeholder: 'N° et rue, code postal, ville, pays', required: true %>
+      <%= f.submit value="Modifier le contact", class: "button-search"%>
     <% end %>
   </div>
 </div>

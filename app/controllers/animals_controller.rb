@@ -10,6 +10,7 @@ class AnimalsController < ApplicationController
   def show
     @animal = Animal.find(params[:id])
     @contacts = Contact.all
+    @description = markdown_to_html(@animal.description)
   end
 
   def new
@@ -27,6 +28,22 @@ class AnimalsController < ApplicationController
       redirect_to animal_path(@animal)
     else
       render "new"
+    end
+  end
+
+  def edit
+    @animal = Animal.find(params[:id])
+  end
+
+  def update
+    @animal = Animal.find(params[:id])
+    # @user = current_user.id
+    # @contact.user_id = @user
+
+    if @animal.update!(animal_params)
+      redirect_to animal_path(@animal)
+    else
+      render 'edit'
     end
   end
 
