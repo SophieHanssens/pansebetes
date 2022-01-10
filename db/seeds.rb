@@ -99,6 +99,7 @@ cat5 = Category.create!(name: 'Chiens')
 cat6 = Category.create!(name: 'Tortues')
 cat7 = Category.create!(name: 'Poissons')
 cat8 = Category.create!(name: 'Insectes')
+cat9 = Category.create!(name: 'Reptiles')
 
 puts "categories created"
 
@@ -139,7 +140,7 @@ puts "herisson created"
 
 ane = Animal.create!(name: "Ane corse",
               category_id: cat3.id,
-              color: "gris",
+              color: "Gris",
               description: "<h2>Quand **déplacer** ou **récupérer** un *âne* ?</h2><br>
 
 **1.** Si l'âne veut vous suivre et être déplacé, il en prendra seul la décision.<br>
@@ -212,7 +213,16 @@ puts "moineau created"
 renard = Animal.create!(name: "Renard roux",
               category_id: cat3.id,
               color: "Orange, Blanc",
-              description: "",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *renard* ?</h2><br>
+
+**1.** Un renard blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Un renard en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdu. S'il s'agit d'un juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br>
+
+<h2>Comment prendre soin d'un *renard* ?</h2><br>
+
+**1.** Contactez en priorité un vétérinaire proche pour obtenir de l'aide. Le renard est un animal sauvage doté de dents puissantes. Même blessé, par peur ou par douleur, il peut vous attaquer.<br>
+**2.** Restez en observation le temps qu'un professionnel habilité vienne sur les lieux.<br>
+**3.** Si c'est impossible et que l'animal est inconscient, munissez-vous d'une caisse de transport pour canidé et, en l'enroulant dans une couverture, récupérez-le pour l'y glisser.<br>",
               scientific_name: "Vulpes vulpes",
               weight: "6 à 10 kg"
               )
@@ -225,7 +235,17 @@ puts "renard created"
 grenouille = Animal.create!(name: "Grenouille verte",
               category_id: cat3.id,
               color: "Vert",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *grenouille verte* ?</h2><br>
+
+**1.** Une grenouille verte blessée de manière visible est en difficulté. Récupérez-la.<br>
+**2.** Une grenouille verte au bord d'une route passante est en danger. Déplacez-la.<br>
+
+<h2>Comment prendre soin d'un *renard* ?</h2><br>
+
+**1.** Les batraciens peuvent être urticants. Ne déplacez pas une grenouille verte à mains nues.<br>
+**2.** Poussez-la délicatement avec un objet non susceptible de la blesser pour la diriger vers un carton ou une boîte.<br>
+**3.** Si elle est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-la chez un professionnel.<br>
+**4.** Si elle n'est pas blessée, faites-la uniquement traverser la voie et approchez-la d'un point d'eau.<br>",
               scientific_name: "Pelophylax kl. esculentus",
               weight: "10 à 30 g"
               )
