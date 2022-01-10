@@ -8,7 +8,14 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :animal_id, value: @animal.id %>
         <%= button_tag type: :submit, class: "button-icon" do %>
-          <i class="far fa-heart"></i>
+          <i class="
+            <% if @favorite_old.present? %>
+              fas fa-heart
+            <% else %>
+              far fa-heart
+            <% end %>
+            ">
+          </i>
         <% end %>
       <% end %>
 

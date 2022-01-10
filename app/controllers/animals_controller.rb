@@ -11,6 +11,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
     @favorite = Favorite.new
     @contacts = Contact.all
+    @favorite_old = Favorite.find_by(user_id: current_user.id, animal_id: params[:id])
   end
 
   def new
