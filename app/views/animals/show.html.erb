@@ -2,9 +2,16 @@
 
 <div class="animal-card border">
 		<!-- animal's name -->
-    <div class="title-animal" data-controller="favorite" data-action="click->favorite#add">
+    <div class="title-animal" data-controller="favorite">
 		  <%= @animal.name %>
-      <%= link_to favorites_path(id: @animal.id), method: :post do %> <i class="far fa-heart"></i><% end %>
+      <%= simple_form_for(@favorite, remote: true) do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :animal_id, value: @animal.id %>
+        <%= button_tag type: :submit do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+
     </div>
 		<!-- animal's image -->
     <div class="animal-img">
