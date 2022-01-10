@@ -2,9 +2,9 @@
 
 <div class="animal-card border">
 		<!-- animal's name -->
-    <div>
-		  <h3 class="title"><%= @animal.name %> <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641399391/Hoothoot_2_ejgepm.gif" alt="hoothoot"></h3>
-      <p><img src="../../assets/icons/heart.svg" alt=""></p>
+    <div class="title-animal">
+		  <%= @animal.name %>
+      <i class="far fa-heart"></i>
     </div>
 		<!-- animal's image -->
     <div class="animal-img">
@@ -31,10 +31,6 @@
           <span class="list-label">Les bons gestes</span>
           <%= @animal.description %>
         </ul>
-        <%# Favoris %>
-        <div class="favorite">
-          <i class="far fa-heart"></i>
-        </div>
 		</div>
 	</div>
 <%# Carte liste vétos compétents %>
