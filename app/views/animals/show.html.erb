@@ -2,7 +2,7 @@
 
 <div class="animal-card border">
 		<!-- animal's name -->
-    <div class="title-animal">
+    <div class="title-animal" data-controller="favorite" data-action="click->favorite#add">
 		  <%= @animal.name %>
       <%= link_to favorites_path(id: @animal.id), method: :post do %> <i class="far fa-heart"></i><% end %>
     </div>
@@ -13,7 +13,7 @@
         <% else %>
           <%= image_tag("silhouette.jpg", width: 350, alt: "silhouette d'animaux") %>
         <% end %>
-        <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
+        <p><%= link_to 'Contacts utiles', animal_path(@animal, anchor: 'contacts')  %></p>
     </div>
 		<div class="factsheet border">
 			<!-- important information -->
