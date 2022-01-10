@@ -9,9 +9,13 @@
         <%= f.hidden_field :animal_id, value: @animal.id %>
         <%= button_tag type: :submit, class: "button-icon" do %>
 
-
-          <i class="fa-heart"></i>
-
+          <i class="
+            <% if @favorite_old.present? %>
+              fas
+            <% else %>
+              far
+            <% end %>
+          fa-heart"></i>
         <% end %>
       <% end %>
 

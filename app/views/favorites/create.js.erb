@@ -1,8 +1,10 @@
-const heartClass = document.querySelector('.fa-heart');
+var heartClass = document.querySelector('.fa-heart');
 console.log(heartClass);
 
-<% if @favorite.present? %>
-console.log('ok')
+<% if @favorite.id != nil %>
+  heartClass.classList.remove('far');
+  heartClass.classList.add('fas');
 <% else %>
-console.log('pas ok')
+  heartClass.classList.remove('fas');
+  heartClass.classList.add('far');
 <% end %>

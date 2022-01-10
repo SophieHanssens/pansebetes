@@ -10,9 +10,9 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(favorite_params)
 
-    favorite_old = Favorite.find_by(favorite_params)
-    if favorite_old.present?
-      favorite_old.destroy!
+    @favorite_old = Favorite.find_by(favorite_params)
+    if @favorite_old.present?
+      @favorite_old.destroy!
     else
       @favorite.save!
     end
