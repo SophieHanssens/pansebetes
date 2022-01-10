@@ -8,15 +8,20 @@
       <li>email : <%= current_user.email %></li>
       <li>Adresse : <%= current_user.address %></li>
     </ul>
+    <%= link_to 'Modifier mon profil', edit_user_registration_path %>
   </div>
 
   <div>
     <h2>Mes favoris</h2>
-
+    <% @favorites.each do |favorite| %>
+      <ul>
+        <% if favorite.user_id == current_user.id %>
+          <li><%= link_to favorite.animal[:name], animal_path(favorite.animal[:id]) %></li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 </div>
 
-
-  <%# favoris %>
   <%# dernières recherches %>
   <%# derniers itineraires %>

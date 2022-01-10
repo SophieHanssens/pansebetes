@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
+    @favorites = Favorite.all
   end
 
 end
