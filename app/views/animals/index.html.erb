@@ -1,18 +1,19 @@
 <div>
   <%= render 'shared/form' %>
 
-  <h2>Animals index <i class="far fa-list-alt"></i></h1>
+  <h2>Les animaux <i class="far fa-list-alt"></i></h1>
+
   <% @animals.each do |animal| %>
 
   <div class="card-animals-list">
     <% if animal.photo.attached? %>
-            <%= cl_image_tag animal.photo.key, width: 400, height: 300, crop: :fill %>
+            <%= cl_image_tag animal.photo.key, height: 120, crop: :fill %>
           <% else %>
-            <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+            <%= image_tag("silhouette.jpg", alt: "silhouette d'animaux") %>
           <% end %>
     <div class="card-animals-list-infos">
       <h3><%= link_to animal.name, animal_path(animal) %> <i class="fas fa-leaf"></i></h3>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+      <p><%= animal.short_description %></p>
     </div>
   </div>
   <% end %>
