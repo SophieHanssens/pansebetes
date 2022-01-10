@@ -240,7 +240,7 @@ grenouille = Animal.create!(name: "Grenouille verte",
 **1.** Une grenouille verte blessée de manière visible est en difficulté. Récupérez-la.<br>
 **2.** Une grenouille verte au bord d'une route passante est en danger. Déplacez-la.<br>
 
-<h2>Comment prendre soin d'un *renard* ?</h2><br>
+<h2>Comment prendre soin d'un *grenouille verte* ?</h2><br>
 
 **1.** Les batraciens peuvent être urticants. Ne déplacez pas une grenouille verte à mains nues.<br>
 **2.** Poussez-la délicatement avec un objet non susceptible de la blesser pour la diriger vers un carton ou une boîte.<br>
@@ -254,6 +254,67 @@ photo_grenouille = URI.open('http://www.grenouilles.free.fr/especes/images/Greno
 grenouille.photo.attach(io: photo_grenouille, filename: "grenouille.jpg", content_type: 'image/jpg')
 grenouille.save!
 puts "grenouille created"
+
+couleuvre = Animal.create!(name: "Couleuvre helvétique",
+              category_id: cat9.id,
+              color: "Vert, gris, brun",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
+
+Les couleuvres sont inoffensives.Ne les déplacez pas.",
+              scientific_name: "Natrix helvetica",
+              weight: "80 à 100 g"
+              )
+
+photo_couleuvre = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/4/7/7/117749-1-fre-FR/couleuvre.jpg')
+couleuvre.photo.attach(io: photo_couleuvre, filename: "couleuvre.jpg", content_type: 'image/jpg')
+couleuvre.save!
+puts "couleuvre created"
+
+lezard = Animal.create!(name: "Lézard à deux raies",
+              category_id: cat9.id,
+              color: "Vert, jaune",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *lézard à deux raies* ?</h2><br>
+
+**1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+
+<h2>Comment prendre soin d'un *lézard à deux raies* ?</h2><br>
+
+**1.** Ne l'attrapez pas par la queue. Elle pourrait se détacher.<br>
+**2.** Poussez-le délicatement avec un objet non susceptible de le blesser pour le diriger vers un carton ou une boîte.<br>
+**3.** S'il est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-le chez un professionnel.<br>
+**4.** S'il n'est pas blessé, faites-le uniquement traverser la voie et approchez-le d'un point rocheux.<br>",
+              scientific_name: "Lacerta bilineata bilineata",
+              weight: "80 à 100 g"
+              )
+
+photo_lezard = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/3/9/7/7/117793-1-fre-FR/lezard_deux_bandes.jpg')
+lezard.photo.attach(io: photo_lezard, filename: "lezard.jpg", content_type: 'image/jpg')
+lezard.save!
+puts "lézard created"
+
+lezard2 = Animal.create!(name: "Lézard des murailles",
+              category_id: cat9.id,
+              color: "Brun, beige",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
+
+**1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+
+<h2>Comment prendre soin d'un *lézard des murailles* ?</h2><br>
+
+**1.** Ne l'attrapez pas par la queue. Elle pourrait se détacher.<br>
+**2.** Poussez-le délicatement avec un objet non susceptible de le blesser pour le diriger vers un carton ou une boîte.<br>
+**3.** S'il est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-le chez un professionnel.<br>
+**4.** S'il n'est pas blessé, faites-le uniquement traverser la voie et approchez-le d'un point rocheux.<br>",
+              scientific_name: "Lacerta bilineata bilineata",
+              weight: "80 à 100 g"
+              )
+
+photo_lezard2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/1/4/3/53419-15-fre-FR/lezard_muraille.jpg')
+lezard2.photo.attach(io: photo_lezard2, filename: "lezard.jpg", content_type: 'image/jpg')
+lezard2.save!
+puts "lézard created"
 
 puts "animal created"
 
