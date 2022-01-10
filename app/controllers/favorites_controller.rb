@@ -17,7 +17,9 @@ class FavoritesController < ApplicationController
       @favorite.save!
     end
 
-
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
