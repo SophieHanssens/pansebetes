@@ -140,8 +140,16 @@ puts "herisson created"
 ane = Animal.create!(name: "Ane corse",
               category_id: cat3.id,
               color: "gris",
-              description: "aime bien les figues",
-              scientific_name: "chevalus",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *âne* ?</h2><br>
+
+**1.** Si l'âne veut vous suivre et être déplacé, il en prendra seul la décision.<br>
+**2.** S'il a l'air perdu, indiquez-lui son chemin.<br><br>
+
+<h2>Comment prendre soin d'un *âne* ?</h2><br>
+
+**1.** Caressez-le gentiment.<br>
+**2.** Donnez-lui des figues.<br>",
+              scientific_name: "Equus asinus",
               weight: "200 kg"
               )
 
@@ -153,12 +161,24 @@ puts "ane created"
 mesange = Animal.create!(name: "Mésange noire",
               category_id: cat1.id,
               color: "Gris, noir, beige",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *mésange noire* ?</h2><br>
+
+**1.** Une mésange blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
+**2.** Une mésange qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br>
+
+<h2>Comment prendre soin d'une *mésange noire* ?</h2><br>
+
+**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-la ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
               scientific_name: "Periparus ater",
               weight: "19-10 g"
               )
 
-photo_mesange = URI.open('https://lemagdesanimaux.ouest-france.fr/images/dossiers/2021-03/mesange-bleue-063413.jpg')
+photo_mesange = URI.open('https://www.wildlifetrusts.org/sites/default/files/styles/node_hero_desk_wide/public/2017-12/Great%20Tit%20%20153%20%28c%29%20Bob%20Coyle.jpg?h=4f3f1b2a&itok=QzEMyOQ8')
 mesange.photo.attach(io: photo_mesange, filename: "mesange.jpg", content_type: 'image/jpg')
 mesange.save!
 puts "mesange created"
@@ -166,7 +186,20 @@ puts "mesange created"
 moineau = Animal.create!(name: "Moineau friquet",
               category_id: cat1.id,
               color: "Marron, Beige, Blanc",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *moineau friquet* ?</h2><br>
+
+**1.** Un moineau friquet blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un moineau friquet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br>
+
+<h2>Comment prendre soin d'un *moineau friquet* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.
+",
               scientific_name: "Passer montanus",
               weight: "19 à 25 g"
               )
