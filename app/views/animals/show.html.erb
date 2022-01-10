@@ -7,7 +7,7 @@
       <%= simple_form_for(@favorite, remote: true) do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :animal_id, value: @animal.id %>
-        <%= button_tag type: :submit do %>
+        <%= button_tag type: :submit, class: "button-icon" do %>
           <i class="far fa-heart"></i>
         <% end %>
       <% end %>
