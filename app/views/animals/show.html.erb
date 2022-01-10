@@ -2,7 +2,7 @@
 
 <div class="animal-card border">
 		<!-- animal's name -->
-    <div class="title-animal" data-controller="favorite">
+    <div class="title-animal">
 		  <%= @animal.name %>
       <%= simple_form_for(@favorite, remote: true) do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
@@ -14,7 +14,7 @@
             <% else %>
               far fa-heart
             <% end %>
-            ">
+            " data-controller="favorite" data-action="click->favorite#toggle">
           </i>
         <% end %>
       <% end %>
