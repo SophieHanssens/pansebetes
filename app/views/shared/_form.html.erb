@@ -1,23 +1,23 @@
+  <h2>Find a animal</h2>
   <%= form_tag animals_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :name,
+      params[:name],
       class: "form-control",
-      placeholder: "Find a animals"
+      placeholder: "name?"
+    %>
+    <%= text_field_tag :color,
+      params[:color],
+      class: "form-control",
+      placeholder: "color?"
+    %>
+    <%= select_tag :category,
+      # params[:category],
+      options_from_collection_for_select(@category, :id, :name),
+      # collection: @category,
+      class: "form-control",
+      placeholder: "catégorie"
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-
-<!-- <div>
-  <%= simple_form_for(@animal) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category_id, collection: @categories, label: "test", label_html: { class: "class-test", id: "id-test"}, input_html: { class: "class-test", id: "id-test"}, wrapper_html: { class: "test_div"} %>
-    <%= f.input :scientific_name %>
-    <%= f.input :color %>
-    <%= f.input :weight %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-</div>
- -->
+<%# f.input :category_id, collection: @categories %>
