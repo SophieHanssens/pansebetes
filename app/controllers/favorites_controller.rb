@@ -8,4 +8,9 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
   end
 
+  def create
+    favorite = Favorite.new(user_id: current_user.id, animal_id: params[:id])
+    favorite.save!
+  end
+
 end

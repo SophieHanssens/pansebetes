@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :animals, only: %i[show index new create]
   resources :contacts
-  resources :favorites, only: %i[index]
+  resources :favorites, only: %i[index create]
   get '/dashboard', to: 'pages#dashboard'
 end

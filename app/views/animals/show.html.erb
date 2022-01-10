@@ -4,7 +4,7 @@
 		<!-- animal's name -->
     <div class="title-animal">
 		  <%= @animal.name %>
-      <i class="far fa-heart"></i>
+      <%= link_to favorites_path(id: @animal.id), method: :post do %> <i class="far fa-heart"></i><% end %>
     </div>
 		<!-- animal's image -->
     <div class="animal-img">
