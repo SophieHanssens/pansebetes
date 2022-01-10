@@ -14,14 +14,12 @@
         <li><p> <span class="list-label">Adresse</span> :
           <span id="address"><%= @contact.address %></span></p>
         </li>
+        <div class="button-search"><%= link_to "J'y vais !", contact_path(anchor: 'itinéraire')  %></div>
       </ul>
-
       <p>
         <% if @user.admin == true || @contact.user == true %>
-          <%= link_to 'Modifier le contact', edit_contact_path(@contact) %>
+          <%= link_to 'Modifier le contact ||', edit_contact_path(@contact) %>
         <% end %>
-      </p>
-      <p>
         <% if @user.admin == true %>
           <%= link_to 'Supprimer le contact', contact_path(@contact),
                             method: :delete,
@@ -31,7 +29,7 @@
     </div>
   </div>
 
-  <div>
+  <div id="itinéraire">
     <h2>Itinéraire</h4>
     <div id="map"
       style="width: 100%; height: 600px;"

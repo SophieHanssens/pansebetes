@@ -13,7 +13,7 @@
     <div class="card-infos">
       <h4>Associations</h4>
       <ul>
-        <li><%= link_to contact.name, contact_path(contact) %></li>
+        <li id="contact-name"><%= link_to contact.name, contact_path(contact) %></li>
         <li>Je peux m'occuper de : <br>
           <% contact.contact_categories.each do |contact_category| %>
             - <%= contact_category.category.name %> <br>
@@ -34,7 +34,7 @@
       <div class="card-infos">
         <h4>Vétérinaires</h4>
         <ul>
-          <li><%= link_to contact.name, contact_path(contact) %></li>
+          <li id="contact-name"><%= link_to contact.name, contact_path(contact) %></li>
           <li>Je peux m'occuper de : <br>
             <% contact.contact_categories.each do |contact_category| %>
               - <%= contact_category.category.name %> <br>
