@@ -10,6 +10,7 @@ class AnimalsController < ApplicationController
   def show
     @animal = Animal.find(params[:id])
     @contacts = Contact.all
+    @description = markdown_to_html(@animal.description)
   end
 
   def new

@@ -108,7 +108,26 @@ puts "creating animals"
 herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron",
-              description: "Un hérisson vu de jour, blessé ou trop petit doit être récupéré. Il faut vérifier qu’il n’a pas d’œufs de mouche (semblables à des grains de riz) sur lui ou des tiques. Enlever les parasites avant de le placer dans un carton eau avec une bouillotte chaude, sous un linge ou une polaire. Laisser de l’eau et des croquettes pour chat au poulet à proximité ainsi que des tissus et polaire supplémentaires dans le carton pour qu’il puisse nidifier. Contacter un vétérinaire ou un centre de la faune sauvage rapidement.",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
+
+**1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
+**2.** Un hérisson, *de jour* ou *de nuit*, qui n’est pas plus grand qu’une main (environ 600 grammes) doit être mis au chaud car il ne peut pas passer l’hiver. Récupérez-le. <br>
+**3.** Un hérisson en danger (en bord de route, sur la route, dans le jardin au moment de passer la tondeuse) qui n’est pas actif de jour ni trop petit en hiver doit uniquement être <em>déplacé</em> en lieu sûr et pas trop loin du lieu où il se trouvait. <br>
+**4.** Un hérisson bébé (choupisson) ne doit pas être touché dans un nid. Si un nid a été dérangé, empêcher la mère de partir et ne pas toucher les petits sans gants. <br><br>
+
+<h2>Comment prendre soin du hérisson ?</h2><br>
+
+**1.** Vérifier qu’il n’est pas couvert d’œufs de mouche (semblables à des grains de riz).<br>
+**2.** Les enlever avec une brosse à dents, le cas échéant.<br>
+**3.** Vérifier s’il a des tiques et les enlever le cas échéant.<br>
+**4.** Le rentrer dans un carton ou une boîte haute.<br>
+**5.** Le placer contre une bouillotte (bouteille d’eau chaude dans une polaire, quelle que soit la saison), jamais en contact direct avec sa peau et une fois nettoyé (la chaleur fait éclore les œufs).<br>
+**6.** Lui mettre des tissus et polaires à disposition pour qu’il puisse se nicher.<br>
+**7.** Mettre de l’eau et des croquettes pour chat au poulet à disposition.<br>
+**8.** Ne jamais donner de lait de vache ou de pain (indigestes)<br>
+**9.** Contacter un vétérinaire ou un centre de faune sauvage proche.<br>
+
+",
               scientific_name: "Erinaceus europaeus",
               weight: "De 0,8 à 1,5 kg",
               )
@@ -118,7 +137,7 @@ herisson.photo.attach(io: photo_herisson, filename: "herisson.jpg", content_type
 herisson.save!
 puts "herisson created"
 
-ane = Animal.create!(name: "âne corse",
+ane = Animal.create!(name: "Ane corse",
               category_id: cat3.id,
               color: "gris",
               description: "aime bien les figues",
