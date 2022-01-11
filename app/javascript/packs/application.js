@@ -22,10 +22,12 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 import { playNavbar } from './navbar';
 import { initMapbox } from '../plugins/init_mapbox';
 import { homeMapbox } from '../plugins/home_mapbox';
+// import "controllers";
 
 document.addEventListener('turbolinks:load', () => {
   playNavbar();
