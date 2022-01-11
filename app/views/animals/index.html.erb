@@ -3,7 +3,7 @@
 
   <h2>Les animaux <i class="far fa-list-alt"></i></h1>
 
-  <% @animals.each do |animal| %>
+  <% @animals.order(:name).each do |animal| %>
 
   <div class="card-animals-list">
     <% if animal.photo.attached? %>
