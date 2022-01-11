@@ -89,6 +89,7 @@ p {
   p {
     font-family: 'Prompt', sans-serif;
     font-weight: bold;
+    margin-top: 10px;
   }
   a {
     color: #F4EEA9;
@@ -113,6 +114,8 @@ p {
 	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  text-align: justify;
+  font-size: 18px;
 }
 
 .factsheet ul {
@@ -123,7 +126,7 @@ p {
 .list-label {
 	font-weight: bold;
   font-family: 'Cormorant Upright', serif;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .favorite {

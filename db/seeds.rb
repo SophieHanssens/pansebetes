@@ -60,6 +60,7 @@
 require 'uri'
 
 puts "destroy all datas"
+Favorite.destroy_all
 User.destroy_all
 ContactCategory.destroy_all
 Category.destroy_all
@@ -91,15 +92,15 @@ puts "Users ok !"
 
 puts "creating categories"
 
-cat1 = Category.create!(name: 'Oiseaux')
-cat2 = Category.create!(name: 'Rongeurs')
+cat1 = Category.create!(name: 'Oiseau')
+cat2 = Category.create!(name: 'Rongeur')
 cat3 = Category.create!(name: 'Faune sauvage')
-cat4 = Category.create!(name: 'Chats')
-cat5 = Category.create!(name: 'Chiens')
-cat6 = Category.create!(name: 'Tortues')
-cat7 = Category.create!(name: 'Poissons')
-cat8 = Category.create!(name: 'Insectes')
-cat9 = Category.create!(name: 'Reptiles')
+cat4 = Category.create!(name: 'Chat')
+cat5 = Category.create!(name: 'Chien')
+cat6 = Category.create!(name: 'Tortue')
+cat7 = Category.create!(name: 'Poisson')
+cat8 = Category.create!(name: 'Insecte')
+cat9 = Category.create!(name: 'Reptile')
 
 puts "categories created"
 
@@ -165,7 +166,7 @@ mesange = Animal.create!(name: "Mésange noire",
               description: "<h2>Quand **déplacer** ou **récupérer** une *mésange noire* ?</h2><br>
 
 **1.** Une mésange blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
-**2.** Une mésange qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br>
+**2.** Une mésange qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br><br>
 
 <h2>Comment prendre soin d'une *mésange noire* ?</h2><br>
 
@@ -190,7 +191,7 @@ moineau = Animal.create!(name: "Moineau friquet",
               description: "<h2>Quand **déplacer** ou **récupérer** un *moineau friquet* ?</h2><br>
 
 **1.** Un moineau friquet blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
-**2.** Un moineau friquet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br>
+**2.** Un moineau friquet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
 
 <h2>Comment prendre soin d'un *moineau friquet* ?</h2><br>
 
@@ -212,11 +213,11 @@ puts "moineau created"
 
 renard = Animal.create!(name: "Renard roux",
               category_id: cat3.id,
-              color: "Orange, Blanc",
+              color: "Roux, blanc",
               description: "<h2>Quand **déplacer** ou **récupérer** un *renard* ?</h2><br>
 
 **1.** Un renard blessé de manière visible est en difficulté. Aidez-le.<br>
-**2.** Un renard en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdu. S'il s'agit d'un juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br>
+**2.** Un renard en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdu. S'il s'agit d'un juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br><br>
 
 <h2>Comment prendre soin d'un *renard* ?</h2><br>
 
@@ -238,7 +239,7 @@ grenouille = Animal.create!(name: "Grenouille verte",
               description: "<h2>Quand **déplacer** ou **récupérer** une *grenouille verte* ?</h2><br>
 
 **1.** Une grenouille verte blessée de manière visible est en difficulté. Récupérez-la.<br>
-**2.** Une grenouille verte au bord d'une route passante est en danger. Déplacez-la.<br>
+**2.** Une grenouille verte au bord d'une route passante est en danger. Déplacez-la.<br><br>
 
 <h2>Comment prendre soin d'un *grenouille verte* ?</h2><br>
 
@@ -276,7 +277,7 @@ lezard = Animal.create!(name: "Lézard à deux raies",
               description: "<h2>Quand **déplacer** ou **récupérer** un *lézard à deux raies* ?</h2><br>
 
 **1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
-**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br><br>
 
 <h2>Comment prendre soin d'un *lézard à deux raies* ?</h2><br>
 
@@ -299,7 +300,7 @@ lezard2 = Animal.create!(name: "Lézard des murailles",
               description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
 
 **1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
-**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br><br>
 
 <h2>Comment prendre soin d'un *lézard des murailles* ?</h2><br>
 
@@ -312,9 +313,127 @@ lezard2 = Animal.create!(name: "Lézard des murailles",
               )
 
 photo_lezard2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/1/4/3/53419-15-fre-FR/lezard_muraille.jpg')
-lezard2.photo.attach(io: photo_lezard2, filename: "lezard.jpg", content_type: 'image/jpg')
+lezard2.photo.attach(io: photo_lezard2, filename: "lezard2.jpg", content_type: 'image/jpg')
 lezard2.save!
 puts "lézard created"
+
+couleuvre2 = Animal.create!(name: "Couleuvre verte et jaune",
+              category_id: cat9.id,
+              color: "Verte, jaune",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleuvre verte et jaune* ?</h2><br>
+
+Les couleuvres sont inoffensives. Ne les déplacez pas.",
+              scientific_name: "Hierophis viridiflavus",
+              weight: "80 à 100 g"
+              )
+
+photo_couleuvre2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/0/6/7/7/117760-1-fre-FR/couleuvre_verte.jpg')
+couleuvre2.photo.attach(io: photo_couleuvre2, filename: "couleuvre2.jpg", content_type: 'image/jpg')
+couleuvre2.save!
+puts "couleuvre created"
+
+couleuvre3 = Animal.create!(name: "Couleuvre vipérine",
+              category_id: cat9.id,
+              color: "Brun, rouge",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleuvre verte et jaune* ?</h2><br>
+
+Les couleuvres sont inoffensives. Ne les déplacez pas.",
+              scientific_name: "Natrix maura",
+              weight: "80 à 100 g"
+              )
+
+photo_couleuvre3 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/1/7/7/7/117771-1-fre-FR/couleuvre-viperine.jpg')
+couleuvre3.photo.attach(io: photo_couleuvre3, filename: "couleuvre3.jpg", content_type: 'image/jpg')
+couleuvre3.save!
+puts "couleuvre created"
+
+fouine = Animal.create!(name: "Fouine",
+              category_id: cat3.id,
+              color: "Brun, blanc, noir",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *fouine* ?</h2><br>
+
+**1.** Un fouine blessée de manière visible est en difficulté. Aidez-la.<br>
+**2.** Une fouine en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdue. S'il s'agit d'une juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br><br>
+
+<h2>Comment prendre soin d'une *fouine* ?</h2><br>
+
+**1.** Contactez en priorité un vétérinaire proche pour obtenir de l'aide. La fouine est un animal sauvage doté de dents puissantes. Même blessée, par peur ou par douleur, elle peut vous attaquer.<br>
+**2.** Restez en observation le temps qu'un professionnel habilité vienne sur les lieux.<br>
+**3.** Si c'est impossible et que l'animal est inconscient, munissez-vous d'une caisse de transport pour canidé et, en l'enroulant dans une couverture, récupérez-le pour l'y glisser.<br>",
+              scientific_name: "Martes foina",
+              weight: "1,3 - 2,3 kg"
+              )
+
+photo_fouine = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/2/5/1/8/118152-1-fre-FR/fouine.jpg')
+fouine.photo.attach(io: photo_fouine, filename: "fouine.jpg", content_type: 'image/jpg')
+fouine.save!
+puts "fouine created"
+
+chat = Animal.create!(name: "Chat",
+              category_id: cat4.id,
+              color: "Tigré",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *chat* ?</h2><br>
+
+**1.** Un chat blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Une chat qui semble perdu, hagard, peut-être aidé.<br><br>
+
+<h2>Comment prendre soin d'un *chat* ?</h2><br>
+
+**1.** Tentez d'attraper le chat, soit à l'aide d'une cage trappe fournie par un vétérinaire soit en l'attirant avec de la nourriture.<br>
+**2.** Gratuitement, les vétérinaires peuvent scanner la puce de l'animal, s'il est pucé, ou vérifier la présence d'un tatouage.<br>
+**3.** Partager ses photos sur les réseaux sociaux.<br>",
+              scientific_name: "Felis catus",
+              weight: "1 - 7 kg"
+              )
+
+photo_chat = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641898979/Bastet_ktri7c.jpg')
+chat.photo.attach(io: photo_chat, filename: "chat.jpg", content_type: 'image/jpg')
+chat.save!
+puts "chat created"
+
+chat2 = Animal.create!(name: "Chat",
+              category_id: cat4.id,
+              color: "Blanc, noir",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *chat* ?</h2><br>
+
+**1.** Un chat blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Un chat qui semble perdu, hagard, peut-être aidé.<br><br>
+
+<h2>Comment prendre soin d'un *chat* ?</h2><br>
+
+**1.** Tentez d'attraper le chat, soit à l'aide d'une cage trappe fournie par un vétérinaire soit en l'attirant avec de la nourriture.<br>
+**2.** Gratuitement, les vétérinaires peuvent scanner la puce de l'animal, s'il est pucé, ou vérifier la présence d'un tatouage.<br>
+**3.** Partager ses photos sur les réseaux sociaux.<br>",
+              scientific_name: "Felis catus",
+              weight: "1 - 7 kg"
+              )
+
+photo_chat2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641898979/Lumeau_x0bii6.jpg')
+chat2.photo.attach(io: photo_chat2, filename: "chat2.jpg", content_type: 'image/jpg')
+chat2.save!
+puts "chat created"
+
+chien = Animal.create!(name: "Chien",
+              category_id: cat4.id,
+              color: "Blanc, noir, feu, brun, gris",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *chien* ?</h2><br>
+
+**1.** Un chien blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Un chien qui semble perdu, hagard, peut-être aidé.<br><br>
+
+<h2>Comment prendre soin d'un *chien* ?</h2><br>
+
+**1.** Tentez d'attraper le chien, soit à l'aide d'une cage trappe fournie par un vétérinaire soit en l'attirant avec de la nourriture.<br>
+**2.** Gratuitement, les vétérinaires peuvent scanner la puce de l'animal, s'il est pucé, ou vérifier la présence d'un tatouage.<br>
+**3.** Partager ses photos sur les réseaux sociaux.<br>",
+              scientific_name: "Canis lupus familiaris",
+              weight: "15 - 30 kg"
+              )
+
+photo_chien = URI.open('https://images.pexels.com/photos/4588052/pexels-photo-4588052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+chien.photo.attach(io: photo_chien, filename: "chien.jpg", content_type: 'image/jpg')
+chien.save!
+puts "chien created"
 
 puts "animal created"
 
