@@ -1,5 +1,29 @@
-<h2>Mes favoris
-  <p>
-    <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641543329/Hoothoot_001_hls1qh.gif" alt="hoothoot">
-  </p>
-</h2>
+<div>
+  <h2>Mes favoris
+    <p>
+      <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641543329/Hoothoot_001_hls1qh.gif" alt="hoothoot">
+    </p>
+  </h2>
+</div>
+
+<div class="container m-auto">
+  <div class="row">
+  <% @favorites.each do |favorite| %>
+      <div class="card-animal">
+
+        <% if favorite.animal.photo.attached? %>
+          <%= cl_image_tag favorite.animal.photo.key, width: 400, height: 300, crop: :fill %>
+        <% else %>
+          <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
+        <% end %>
+
+        <div class="card-animals-list-infos">
+          <% if favorite.user_id == current_user.id %>
+          <h3><%= link_to favorite.animal[:name], animal_path(favorite.animal[:id]) %></h3>
+          <p>Description <i class="far fa-edit"></i></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
