@@ -134,7 +134,7 @@ herisson = Animal.create!(name: "Hérisson",
               weight: "De 0,8 à 1,5 kg",
               )
 
-photo_herisson = URI.open('https://www.consoglobe.com/wp-content/uploads/2020/09/mission-herisson_shutterstock_776419591.jpg.webp')
+photo_herisson = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641918597/h%C3%A9risson_afixqa.webp')
 herisson.photo.attach(io: photo_herisson, filename: "herisson.jpg", content_type: 'image/jpg')
 herisson.save!
 puts "herisson created"
@@ -155,7 +155,7 @@ ane = Animal.create!(name: "Ane corse",
               weight: "200 kg"
               )
 
-photo_ane = URI.open('https://www.tourismebretagne.com/app/uploads/crt-bretagne/2019/06/randonne-avec-un-ne-baie-de-saint-brieuc-randonne-avec-un-ne-korrigne-640x360.jpg')
+photo_ane = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641918675/Ane_njdxty.jpg')
 ane.photo.attach(io: photo_ane, filename: "ane.jpg", content_type: 'image/jpg')
 ane.save!
 puts "ane created"
@@ -194,19 +194,19 @@ moineau = Animal.create!(name: "Moineau friquet",
 **2.** Un moineau friquet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
 
 <h2>Comment prendre soin d'un *moineau friquet* ?</h2><br>
-
+euvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'am
 **1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
 **2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
 **3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
-**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
-**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**4.** Ne nourrissez pas et n'abrener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
 **6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.
 ",
               scientific_name: "Passer montanus",
               weight: "19 à 25 g"
               )
 
-photo_moineau = URI.open('https://images.pexels.com/photos/86591/sparrow-bird-animal-nature-86591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo_moineau = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641918791/Moineau_ncaesu.jpg')
 moineau.photo.attach(io: photo_moineau, filename: "moineau.jpg", content_type: 'image/jpg')
 moineau.save!
 puts "moineau created"
@@ -228,7 +228,7 @@ renard = Animal.create!(name: "Renard roux",
               weight: "6 à 10 kg"
               )
 
-photo_renard = URI.open('https://images.pexels.com/photos/6244506/pexels-photo-6244506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo_renard = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641918844/Renard_udfcvc.jpg')
 renard.photo.attach(io: photo_renard, filename: "renard.jpg", content_type: 'image/jpg')
 renard.save!
 puts "renard created"
@@ -251,7 +251,7 @@ grenouille = Animal.create!(name: "Grenouille verte",
               weight: "10 à 30 g"
               )
 
-photo_grenouille = URI.open('http://www.grenouilles.free.fr/especes/images/Grenouille-Verte-1.jpg')
+photo_grenouille = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919025/Grenouille_ix6rqe.jpg')
 grenouille.photo.attach(io: photo_grenouille, filename: "grenouille.jpg", content_type: 'image/jpg')
 grenouille.save!
 puts "grenouille created"
@@ -266,7 +266,7 @@ Les couleuvres sont inoffensives.Ne les déplacez pas.",
               weight: "80 à 100 g"
               )
 
-photo_couleuvre = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/4/7/7/117749-1-fre-FR/couleuvre.jpg')
+photo_couleuvre = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919101/Couleuvre001_iollq8.jpg')
 couleuvre.photo.attach(io: photo_couleuvre, filename: "couleuvre.jpg", content_type: 'image/jpg')
 couleuvre.save!
 puts "couleuvre created"
@@ -289,7 +289,7 @@ lezard = Animal.create!(name: "Lézard à deux raies",
               weight: "80 à 100 g"
               )
 
-photo_lezard = URI.open('https://inpn.mnhn.fr/photos/uploads/webtofs/inpn/ant/90995.jpg')
+photo_lezard = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919137/L%C3%A9zard001_ygyfmf.jpg')
 lezard.photo.attach(io: photo_lezard, filename: "lezard.jpg", content_type: 'image/jpg')
 lezard.save!
 puts "lézard created"
@@ -312,7 +312,7 @@ lezard2 = Animal.create!(name: "Lézard des murailles",
               weight: "80 à 100 g"
               )
 
-photo_lezard2 = URI.open('http://ekladata.com/6G5GAnkqKeE9OqZs5c3CoQlG2II.jpg')
+photo_lezard2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919170/L%C3%A9zard002_olausa.jpg')
 lezard2.photo.attach(io: photo_lezard2, filename: "lezard2.jpg", content_type: 'image/jpg')
 lezard2.save!
 puts "lézard created"
@@ -327,7 +327,7 @@ Les couleuvres sont inoffensives. Ne les déplacez pas.",
               weight: "80 à 100 g"
               )
 
-photo_couleuvre2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/0/6/7/7/117760-1-fre-FR/couleuvre_verte.jpg')
+photo_couleuvre2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919198/Couleuvre002_ejffqh.jpg')
 couleuvre2.photo.attach(io: photo_couleuvre2, filename: "couleuvre2.jpg", content_type: 'image/jpg')
 couleuvre2.save!
 puts "couleuvre created"
@@ -342,7 +342,7 @@ Les couleuvres sont inoffensives. Ne les déplacez pas.",
               weight: "80 à 100 g"
               )
 
-photo_couleuvre3 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/1/7/7/7/117771-1-fre-FR/couleuvre-viperine.jpg')
+photo_couleuvre3 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919238/Couleuvre003_dmbrum.jpg')
 couleuvre3.photo.attach(io: photo_couleuvre3, filename: "couleuvre3.jpg", content_type: 'image/jpg')
 couleuvre3.save!
 puts "couleuvre created"
@@ -364,7 +364,7 @@ fouine = Animal.create!(name: "Fouine",
               weight: "1,3 - 2,3 kg"
               )
 
-photo_fouine = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/2/5/1/8/118152-1-fre-FR/fouine.jpg')
+photo_fouine = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919269/Fouine_lxbjj3.jpg')
 fouine.photo.attach(io: photo_fouine, filename: "fouine.jpg", content_type: 'image/jpg')
 fouine.save!
 puts "fouine created"
@@ -430,7 +430,7 @@ chien = Animal.create!(name: "Chien",
               weight: "15 - 30 kg"
               )
 
-photo_chien = URI.open('https://images.pexels.com/photos/97082/weimaraner-puppy-dog-snout-97082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo_chien = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919310/Chien_wnphqp.webp')
 chien.photo.attach(io: photo_chien, filename: "chien.jpg", content_type: 'image/jpg')
 chien.save!
 puts "chien created"
@@ -474,7 +474,7 @@ chauvesouris = Animal.create!(name: "Chauve-souris",
               weight: "4 - 45g"
               )
 
-photo_chauvesouris = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/2/8/1/3/93182-2-fre-FR/cohabiter_avec_les_chauves-souris_-_credit_philippe_jourde_650%20(1).jpeg')
+photo_chauvesouris = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919551/Chauve-souris_j4itdb.jpg')
 chauvesouris.photo.attach(io: photo_chauvesouris, filename: "chauvesouris.jpg", content_type: 'image/jpg')
 chauvesouris.save!
 puts "chauve-souris created"
@@ -499,7 +499,7 @@ piegrieche = Animal.create!(name: "Pie-grièche écorcheur",
               weight: "23 - 40g"
               )
 
-photo_piegrieche = URI.open('https://www.lacduder.com/sites/lacduder/files/styles/ratio_16_9_xl/public/content/images/pie-grieche-patrick-sabonnadiere.jpg?itok=VpRNpWXR')
+photo_piegrieche = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919621/Pie_gri%C3%A8che_bknrke.jpg')
 piegrieche.photo.attach(io: photo_piegrieche, filename: "piegrieche.jpg", content_type: 'image/jpg')
 piegrieche.save!
 puts "pie-grièche écorcheur created"
@@ -524,7 +524,7 @@ guepier = Animal.create!(name: "Guêpier d'Europe",
               weight: "50 - 65g"
               )
 
-photo_guepier = URI.open('https://master.salamandre.net/media/22107/european-bee-eater-2115564_1920-e1627372780586-1800x965.jpeg')
+photo_guepier = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919657/Gu%C3%AApier_zma0yg.jpg')
 guepier.photo.attach(io: photo_guepier, filename: "guepier.jpg", content_type: 'image/jpg')
 guepier.save!
 puts "guêpier d'Europe created"
@@ -549,7 +549,7 @@ pie = Animal.create!(name: "Pie",
               weight: "145 - 210g"
               )
 
-photo_pie = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/3/9/4/8/48493-45-fre-FR/magpie-4213075.jpg')
+photo_pie = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919706/Pie_upfzyy.jpg')
 pie.photo.attach(io: photo_pie, filename: "pie.jpg", content_type: 'image/jpg')
 pie.save!
 puts "pie"
