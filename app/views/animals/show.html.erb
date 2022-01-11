@@ -106,16 +106,17 @@
       <div class="contact-text">
       <%# Ajouter la liste des vétérinaires avec cet animal %>
         <ul>
-          <li>
-            <% @contacts.first(1).each do |contact| %>
-              <%= link_to "Jean Bondiork", contact_path(contact) %>
+          <ul>
+          <% @contacts.each do |contact| %>
+            <% if contact.statut == "Vétérinaire" %>
+              <% @contact_cats.each do |contact_cat| %>
+                <% if contact_cat.contact_id == contact.id && contact_cat.category_id == @animal.category_id %>
+                  <li><%= contact.name %>
+                  </li>
+                <% end %>
+              <% end %>
             <% end %>
-          </li>
-          <li>
-            <% @contacts.first(1).each do |contact| %>
-              <%= link_to "Enrico Chonaille", contact_path(contact) %>
-            <% end %>
-          </li>
+          <% end %>
         </ul>
       </div>
     </div>
