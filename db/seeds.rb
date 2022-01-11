@@ -289,7 +289,7 @@ lezard = Animal.create!(name: "Lézard à deux raies",
               weight: "80 à 100 g"
               )
 
-photo_lezard = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/3/9/7/7/117793-1-fre-FR/lezard_deux_bandes.jpg')
+photo_lezard = URI.open('https://inpn.mnhn.fr/photos/uploads/webtofs/inpn/ant/90995.jpg')
 lezard.photo.attach(io: photo_lezard, filename: "lezard.jpg", content_type: 'image/jpg')
 lezard.save!
 puts "lézard created"
@@ -312,7 +312,7 @@ lezard2 = Animal.create!(name: "Lézard des murailles",
               weight: "80 à 100 g"
               )
 
-photo_lezard2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/1/4/3/53419-15-fre-FR/lezard_muraille.jpg')
+photo_lezard2 = URI.open('http://ekladata.com/6G5GAnkqKeE9OqZs5c3CoQlG2II.jpg')
 lezard2.photo.attach(io: photo_lezard2, filename: "lezard2.jpg", content_type: 'image/jpg')
 lezard2.save!
 puts "lézard created"
@@ -389,7 +389,7 @@ chat = Animal.create!(name: "Chat",
 photo_chat = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641898979/Bastet_ktri7c.jpg')
 chat.photo.attach(io: photo_chat, filename: "chat.jpg", content_type: 'image/jpg')
 chat.save!
-puts "chat created"
+puts "Bastet created"
 
 chat2 = Animal.create!(name: "Chat",
               category_id: cat4.id,
@@ -408,10 +408,10 @@ chat2 = Animal.create!(name: "Chat",
               weight: "1 - 7 kg"
               )
 
-photo_chat2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641898979/Lumeau_x0bii6.jpg')
+photo_chat2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641900345/20201115_190317_k36q6a.jpg')
 chat2.photo.attach(io: photo_chat2, filename: "chat2.jpg", content_type: 'image/jpg')
 chat2.save!
-puts "chat created"
+puts "Lumeau created"
 
 chien = Animal.create!(name: "Chien",
               category_id: cat4.id,
@@ -430,10 +430,54 @@ chien = Animal.create!(name: "Chien",
               weight: "15 - 30 kg"
               )
 
-photo_chien = URI.open('https://images.pexels.com/photos/4588052/pexels-photo-4588052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo_chien = URI.open('https://images.pexels.com/photos/97082/weimaraner-puppy-dog-snout-97082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 chien.photo.attach(io: photo_chien, filename: "chien.jpg", content_type: 'image/jpg')
 chien.save!
 puts "chien created"
+
+loir = Animal.create!(name: "Loir",
+              category_id: cat3.id,
+              color: "Brun, beige, gris",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *loir* ?</h2><br>
+
+**1.** Un loir blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Un loir en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdu. S'il s'agit d'une juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br>
+
+<h2>Comment prendre soin d'un *loir* ?</h2><br>
+
+**1.** Contactez en priorité un vétérinaire proche pour obtenir de l'aide. Le loir est un animal sauvage  et craintif.
+**2.** Poussez-le délicatement avec un objet non susceptible de le blesser pour le diriger vers un carton ou une boîte.<br>
+**3.** S'il est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-le chez un professionnel.<br>",
+              scientific_name: "Glis glis",
+              weight: "80 - 250g"
+              )
+
+photo_loir = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641901248/loir_u4qecw.png')
+loir.photo.attach(io: photo_loir, filename: "loir.jpg", content_type: 'image/jpg')
+loir.save!
+puts "loir created"
+
+chauvesouris = Animal.create!(name: "Chauve-souris",
+              category_id: cat3.id,
+              color: "Noir, brun",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *chauve-souris* ?</h2><br>
+
+**1.** Une chauve-souris blessée de manière visible est en difficulté. Aidez-la.<br>
+**2.** Une chauve-souris rentrée dans votre maison et volant frénétiquement est en danger. Aidez-la.<br>
+
+<h2>Comment prendre soin d'une *chauve-souris * ?</h2><br>
+
+**1.** Pour faire sortir une chauve-souris de chez soi, il faut ouvrir toutes les fenêtres de la pièce donnant vers l'extérieur, éteindre les lumières et attendre dix minutes.
+**2.** Si elle est blessée, contactez immédiatemment un professionnel. On ne peut ni détenir ni déplacer une chauve-souris.<br>
+**3.** Attention, ne la touchez pas, elle peut être porteuse de la rage.<br>",
+              scientific_name: "Chiroptera",
+              weight: "4 - 45g"
+              )
+
+photo_chauvesouris = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/2/8/1/3/93182-2-fre-FR/cohabiter_avec_les_chauves-souris_-_credit_philippe_jourde_650%20(1).jpeg')
+chauvesouris.photo.attach(io: photo_chauvesouris, filename: "chauvesouris.jpg", content_type: 'image/jpg')
+chauvesouris.save!
+puts "chauve-souris created"
 
 puts "animal created"
 
