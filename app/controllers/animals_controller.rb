@@ -1,10 +1,36 @@
 class AnimalsController < ApplicationController
   def index
-    if params[:search].present?
-      @animals = Animal.where('name ILIKE ?', "%#{params[:search][:animal]}%")
+    @category = Category.all
+    if params[:name].present?
+      sql_query = "name ILIKE :name"
+      @animals = Animal.where(sql_query, name: "%#{params[:name]}%")
     else
       @animals = Animal.all
     end
+    if params[:color].present?
+      sql_query = "color ILIKE :color"
+      @animals = @animals.where(sql_query, color: "%#{params[:color]}%")
+    else
+      @animals = Animal.all
+    end
+    # if params[:category].present?
+    #   sql_query = "category ILIKE :category"
+    #   @animals = @animals.where(sql_query, category: "%#{params[:category]}%")
+    # else
+    #   @animals = Animal.all
+    # end
+
+    # if params[:name].present?
+    #   sql_query = "name ILIKE :name"
+    #   if params[:color].present?
+    #     sql_query = "name ILIKE :name AND color ILIKE :color"
+    #     @animals = Animal.where(sql_query, color: "%#{params[:color]}%")
+    #   else
+    #     @animals = Animal.where(sql_query, name: "%#{params[:name]}%")
+    #   end
+    # else
+    #   @animals = Animal.all
+    # end
   end
 
   def show
