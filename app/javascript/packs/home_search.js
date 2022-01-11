@@ -1,10 +1,12 @@
 export function homeSearch() {
-  console.log("connecté");
-  const rechercher = document.querySelector('.button-search');
+  const rechercher = document.querySelector('#search-animal');
   const modal = document.querySelector('.modal-search');
-  rechercher.addEventListener('click', function () {
-    console.log("bouton cliqué");
-    modal.style.display = "block";
-    rechercher.style.display = "none";
-  });
+
+  if (rechercher) {
+    rechercher.addEventListener('click', function () {
+      modal.style.display = "block";
+      rechercher.style.display = "none";
+    });
+  }
+
 };
