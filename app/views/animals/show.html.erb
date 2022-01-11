@@ -1,115 +1,122 @@
 <%# Fiche technique Animal SHOW %>
 
-<div class="animal-card border">
-		<!-- animal's name -->
-    <div class="title-animal">
-		  <%= @animal.name %>
-      <%= simple_form_for(@favorite, remote: true) do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.hidden_field :animal_id, value: @animal.id %>
-        <%= button_tag type: :submit, class: "button-icon" do %>
+<div class="container">
 
-          <i class="
-            <% if @favorite_old.present? %>
-              fas
-            <% else %>
-              far
-            <% end %>
-          fa-heart"></i>
-        <% end %>
-      <% end %>
+  <div class="retour">
+    <%= link_to "Retour à l'index", animals_path %> <i class='fas fa-reply'></i>
+  </div>
 
-    </div>
-		<!-- animal's image -->
-    <div class="animal-img">
-      <% if @animal.photo.attached? %>
-          <%= cl_image_tag @animal.photo.key, width: 350, crop: :fill %>
-        <% else %>
-          <%= image_tag("silhouette.jpg", width: 350, alt: "silhouette d'animaux") %>
+  <div class="animal-card border">
+      <!-- animal's name -->
+      <div class="title-animal">
+        <div class="décalage-titre"><%= @animal.name %></div>
+        <%= simple_form_for(@favorite, remote: true) do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :animal_id, value: @animal.id %>
+          <%= button_tag type: :submit, class: "button-icon" do %>
+
+            <i class="
+              <% if @favorite_old.present? %>
+                fas
+              <% else %>
+                far
+              <% end %>
+            fa-heart"></i>
+          <% end %>
         <% end %>
-        <p><%= link_to 'Contacts utiles', animal_path(@animal, anchor: 'contacts')  %></p>
-    </div>
-		<div class="factsheet border">
-			<!-- important information -->
-			<p class="interesting-fact">Un hérisson vu de jour est <em>forcément</em> en danger.</p>
-      <br>
-			<ul>
-				<!-- animal's list items -->
-				<li><span class="list-label">Nom</span>: <%= @animal.name %></li>
-				<li><span class="list-label">Couleur</span>: <%= @animal.color %></li>
-				<li><span class="list-label">Espèce</span>: <%= @animal.category.name %></li>
-				<li><span class="list-label">Poids</span>: <%= @animal.weight %></li>
-			</ul>
-			<!-- advices -->
+
+      </div>
+      <!-- animal's image -->
+      <div class="animal-img">
+        <% if @animal.photo.attached? %>
+            <%= cl_image_tag @animal.photo.key, width: 350, crop: :fill %>
+          <% else %>
+            <%= image_tag("silhouette.jpg", width: 350, alt: "silhouette d'animaux") %>
+          <% end %>
+          <p><%= link_to 'Contacts utiles', animal_path(@animal, anchor: 'contacts')  %></p>
+      </div>
+      <div class="factsheet border">
+        <!-- important information -->
+        <p class="interesting-fact">Un hérisson vu de jour est <em>forcément</em> en danger.</p>
+        <br>
         <ul>
-          <%# <span class="list-label">Les bons gestes</span> %>
-          <%= @description %>
+          <!-- animal's list items -->
+          <li><span class="list-label">Nom</span>: <%= @animal.name %></li>
+          <li><span class="list-label">Couleur</span>: <%= @animal.color %></li>
+          <li><span class="list-label">Espèce</span>: <%= @animal.category.name %></li>
+          <li><span class="list-label">Poids</span>: <%= @animal.weight %></li>
         </ul>
-        <p>
-          <% if current_user.admin == true || @contact.user == true %>
-            <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
-          <% end %>
-          <% if current_user.admin == true %>
-            <%= link_to "Supprimer l'animal", animal_path(@animal),
-                              method: :delete,
-                              data: { confirm: "Are you sure?" } %>
-          <% end %>
-        </p>
-        <%# Favoris %>
-        <div class="favorite">
-          <i class="far fa-heart"></i>
-        </div>
-		</div>
-	</div>
-<%# Carte liste vétos compétents %>
-
-<div class="portfoliocard">
-		<div class="coverphoto"></div>
-		<div id="contacts" class="contacts-title"><h2>Contacts utiles</h2></div>
-		<div class="left_col">
-			<div class="contacts-title">
-				Associations
-			</div>
-        <div class="contacts-text">
-        <%# Ajouter la liste des associations spécialisés avec cet animal %>
-
-         <ul>
-            <li>
-              <% @contacts.first(1).each do |contact| %>
-                <%= link_to "Les P'tits Kipiks", contact_path(contact) %>
-                <i class="fas fa-shoe-prints"></i>
-              <% end %>
-            </li>
-             <li>
-              <% @contacts.first(1).each do |contact| %>
-                <%= link_to "La Féline Meyreuillaise", contact_path(contact) %>
-                <i class="fas fa-shoe-prints"></i>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-		</div>
-		<div class="right_col">
-			<div class="contacts-title">
-				Cliniques vétérinaires
-        <div class="contacts-text">
-        <%# Ajouter la liste des vétérinaires avec cet animal %>
+        <!-- advices -->
           <ul>
-             <li>
-              <% @contacts.first(1).each do |contact| %>
-                <%= link_to "Jean Bondiork", contact_path(contact) %>
-                <i class="fas fa-shoe-prints"></i>
-              <% end %>
-            </li>
-             <li>
-              <% @contacts.first(1).each do |contact| %>
-                <%= link_to "Enrico Chonaille", contact_path(contact) %>
-                <i class="fas fa-shoe-prints"></i>
-              <% end %>
-            </li>
+            <%# <span class="list-label">Les bons gestes</span> %>
+            <%= @description %>
           </ul>
-          </ul>
+          <p>
+            <% if current_user.admin == true || @contact.user == true %>
+              <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
+            <% end %>
+            <% if current_user.admin == true %>
+              <%= link_to "Supprimer l'animal", animal_path(@animal),
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+            <% end %>
+          </p>
+          <%# Favoris %>
+          <%# <div class="favorite">
+            <i class="far fa-heart"></i>
+          </div> %>
+      </div>
+    </div>
+  <%# Carte liste vétos compétents %>
+
+  <div class="portfoliocard">
+      <div class="coverphoto"></div>
+      <div id="contacts" class="contacts-title"><h2>Contacts utiles</h2></div>
+      <div class="left_col">
+        <div class="contacts-title">
+          Associations
         </div>
-			</div>
-		</div>
-		</div>
+          <div class="contacts-text">
+          <%# Ajouter la liste des associations spécialisés avec cet animal %>
+
+          <ul>
+              <li>
+                <% @contacts.first(1).each do |contact| %>
+                  <%= link_to "Les P'tits Kipiks", contact_path(contact) %>
+                  <i class="fas fa-shoe-prints"></i>
+                <% end %>
+              </li>
+              <li>
+                <% @contacts.first(1).each do |contact| %>
+                  <%= link_to "La Féline Meyreuillaise", contact_path(contact) %>
+                  <i class="fas fa-shoe-prints"></i>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="right_col">
+        <div class="contacts-title">
+          Cliniques vétérinaires
+          <div class="contacts-text">
+          <%# Ajouter la liste des vétérinaires avec cet animal %>
+            <ul>
+              <li>
+                <% @contacts.first(1).each do |contact| %>
+                  <%= link_to "Jean Bondiork", contact_path(contact) %>
+                  <i class="fas fa-shoe-prints"></i>
+                <% end %>
+              </li>
+              <li>
+                <% @contacts.first(1).each do |contact| %>
+                  <%= link_to "Enrico Chonaille", contact_path(contact) %>
+                  <i class="fas fa-shoe-prints"></i>
+                <% end %>
+              </li>
+            </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>
