@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     @user = current_user
+    @categories = @contact.categories.pluck(:name)
   end
 
   def new
