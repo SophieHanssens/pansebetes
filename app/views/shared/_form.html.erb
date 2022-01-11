@@ -10,9 +10,10 @@
       class: "form-control",
       placeholder: "color?"
     %>
-    <%# <%= select_tag :category,
+    <%= select_tag :category,
       # params[:category],
       options_from_collection_for_select(@category, :id, :name),
+      include_blank: "Espèce",
       # collection: @category,
       class: "form-control",
       placeholder: "catégorie"
