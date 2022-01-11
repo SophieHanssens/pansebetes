@@ -13,12 +13,12 @@ class AnimalsController < ApplicationController
     else
       @animals = Animal.all
     end
-    if params[:category].present?
-      sql_query = "category ILIKE :category"
-      @animals = @animals.where(sql_query, category: "%#{params[:category]}%")
-    else
-      @animals = Animal.all
-    end
+    # if params[:category].present?
+    #   sql_query = "category ILIKE :category"
+    #   @animals = @animals.where(sql_query, category: "%#{params[:category]}%")
+    # else
+    #   @animals = Animal.all
+    # end
 
     # if params[:name].present?
     #   sql_query = "name ILIKE :name"
