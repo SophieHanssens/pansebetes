@@ -13,6 +13,19 @@ class PagesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { contact: contact })
       }
     end
+    @categories = Category.all
+    @category = Category.find_by(name: params[:category])
+    if @category.present?
+      @animals = @animals.joins(:category).where(categories: { name: @category.name })
+    end
+    if params[:name].present?
+      sql_query = "name ILIKE :name"
+      @animals = Animal.where(sql_query, name: "%#{params[:name]}%")
+    end
+    if params[:color].present?
+      sql_query = "color ILIKE :color"
+      @animals = @animals.where(sql_query, color: "%#{params[:color]}%")
+    end
   end
 
   def dashboard
