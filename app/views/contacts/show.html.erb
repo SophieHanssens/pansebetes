@@ -15,7 +15,6 @@
         <li><p> <span class="list-label">Adresse</span> :
           <span id="address"><%= @contact.address %></span></p>
         </li>
-        <div class="button-search"><%= link_to "J'y vais !", contact_path(anchor: 'itinéraire')  %></div>
       </ul>
       <p>
         <% if @user.admin == true || @contact.user == true %>
