@@ -40,7 +40,7 @@ class AnimalsController < ApplicationController
     @contacts = Contact.all
     @favorite_old = Favorite.find_by(user_id: current_user.id, animal_id: params[:id])
     @description = markdown_to_html(@animal.description)
-
+    @contact_cats = ContactCategory.all
   end
 
   def new
