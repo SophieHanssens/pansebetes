@@ -109,7 +109,7 @@ puts "categories created"
 puts "creating animals"
 herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
-              color: "Marron",
+              color: "Marron, brun, beige",
               description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
 
 **1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
