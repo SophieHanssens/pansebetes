@@ -483,7 +483,7 @@ puts "animal created"
 
 puts "creating contacts"
 
-contact1 = Contact.create!(name: "Dr Fly",
+contact1 = Contact.create!(name: "Les P'tits Kipiks",
                 user_id: user1.id,
                 address: '146 rue de Rome 13006 Marseille France',
                 phone_number: "0491456789",
@@ -492,8 +492,95 @@ contact1 = Contact.create!(name: "Dr Fly",
                 longitude: 5.382781028747559
                 )
 
-contact2 = Contact.create!(name: "Dr Health",
+contact2 = Contact.create!(name: "Dr. Enrico Chonaille",
                 user_id: user3.id,
+                address: "97 rue charras 13007 Marseille France",
+                phone_number: "0491654321",
+                statut: 'Vétérinaire',
+                latitude: 43.2866521,
+                longitude: 5.3584289
+                )
+
+contact3 = Contact.create!(name: "Dr Fly",
+                user_id: user2.id,
+                address: '31 Bd Aristide Briand 13100 Aix-en-Provence',
+                phone_number: "0491456789",
+                statut: 'Association',
+                latitude: 43.28769302368164,
+                longitude: 5.382781028747559
+                )
+
+contact4 = Contact.create!(name: "Dr. Jean Bondyork",
+                user_id: user1.id,
+                address: "97 rue charras 13007 Marseille France",
+                phone_number: "0491654321",
+                statut: 'Vétérinaire',
+                latitude: 43.2866521,
+                longitude: 5.3584289
+                )
+contact5 = Contact.create!(name: "Dr Fly",
+                user_id: user2.id,
+                address: '146 rue de Rome 13006 Marseille France',
+                phone_number: "0491456789",
+                statut: 'Association',
+                latitude: 43.28769302368164,
+                longitude: 5.382781028747559
+                )
+
+contact6 = Contact.create!(name: "Dr. Mélusine Enfaillite",
+                user_id: user1.id,
+                address: "97 rue charras 13007 Marseille France",
+                phone_number: "0491654321",
+                statut: 'Vétérinaire',
+                latitude: 43.2866521,
+                longitude: 5.3584289
+                )
+contact7 = Contact.create!(name: "Les P'tits Kipiks",
+                user_id: user1.id,
+                address: '146 rue de Rome 13006 Marseille France',
+                phone_number: "0491456789",
+                statut: 'Association',
+                latitude: 43.28769302368164,
+                longitude: 5.382781028747559
+                )
+
+contact8 = Contact.create!(name: "Dr. Sandra Pathie",
+                user_id: user3.id,
+                address: "97 rue charras 13007 Marseille France",
+                phone_number: "0491654321",
+                statut: 'Vétérinaire',
+                latitude: 43.2866521,
+                longitude: 5.3584289
+                )
+
+contact9 = Contact.create!(name: "Dr Fly",
+                user_id: user2.id,
+                address: '146 rue de Rome 13006 Marseille France',
+                phone_number: "0491456789",
+                statut: 'Association',
+                latitude: 43.28769302368164,
+                longitude: 5.382781028747559
+                )
+
+contact10 = Contact.create!(name: "Dr. Sacha Rivari",
+                user_id: user1.id,
+                address: "97 rue charras 13007 Marseille France",
+                phone_number: "0491654321",
+                statut: 'Vétérinaire',
+                latitude: 43.2866521,
+                longitude: 5.3584289
+                )
+contact11 = Contact.create!(name: "Dr Fly",
+                user_id: user2.id,
+                address: '146 rue de Rome 13006 Marseille France',
+                phone_number: "0491456789",
+                statut: 'Association',
+                latitude: 43.28769302368164,
+                longitude: 5.382781028747559
+                )
+
+contact12 = Contact.create!(name: "Dr. Natacha Pau",
+                user_id: user1.id,
                 address: "97 rue charras 13007 Marseille France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
@@ -504,9 +591,29 @@ contact2 = Contact.create!(name: "Dr Health",
 puts "Contacts created"
 
 puts "creating Contact_categories"
-ContactCategory.create!(category_id: cat1.id, contact_id: contact1.id)
 ContactCategory.create!(category_id: cat3.id, contact_id: contact1.id)
-ContactCategory.create!(category_id: cat4.id, contact_id: contact2.id)
+ContactCategory.create!(category_id: cat2.id, contact_id: contact2.id)
+ContactCategory.create!(category_id: cat9.id, contact_id: contact2.id)
 ContactCategory.create!(category_id: cat6.id, contact_id: contact2.id)
-ContactCategory.create!(category_id: cat8.id, contact_id: contact2.id)
+ContactCategory.create!(category_id: cat8.id, contact_id: contact3.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact3.id)
+ContactCategory.create!(category_id: cat4.id, contact_id: contact4.id)
+ContactCategory.create!(category_id: cat5.id, contact_id: contact4.id)
+ContactCategory.create!(category_id: cat1.id, contact_id: contact5.id)
+ContactCategory.create!(category_id: cat2.id, contact_id: contact5.id)
+ContactCategory.create!(category_id: cat1.id, contact_id: contact6.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact6.id)
+ContactCategory.create!(category_id: cat4.id, contact_id: contact7.id)
+ContactCategory.create!(category_id: cat5.id, contact_id: contact7.id)
+ContactCategory.create!(category_id: cat8.id, contact_id: contact8.id)
+ContactCategory.create!(category_id: cat1.id, contact_id: contact8.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact9.id)
+ContactCategory.create!(category_id: cat4.id, contact_id: contact9.id)
+ContactCategory.create!(category_id: cat6.id, contact_id: contact10.id)
+ContactCategory.create!(category_id: cat8.id, contact_id: contact10.id)
+ContactCategory.create!(category_id: cat1.id, contact_id: contact11.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact11.id)
+ContactCategory.create!(category_id: cat4.id, contact_id: contact12.id)
+ContactCategory.create!(category_id: cat6.id, contact_id: contact12.id)
+ContactCategory.create!(category_id: cat8.id, contact_id: contact12.id)
 puts "All finished !"
