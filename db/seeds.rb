@@ -414,7 +414,7 @@ chat2.save!
 puts "Lumeau created"
 
 chien = Animal.create!(name: "Chien",
-              category_id: cat4.id,
+              category_id: cat5.id,
               color: "Blanc, noir, feu, brun, gris",
               description: "<h2>Quand **déplacer** ou **récupérer** un *chien* ?</h2><br>
 
@@ -479,13 +479,88 @@ chauvesouris.photo.attach(io: photo_chauvesouris, filename: "chauvesouris.jpg", 
 chauvesouris.save!
 puts "chauve-souris created"
 
+piegrieche = Animal.create!(name: "Pie-grièche écorcheur",
+              category_id: cat1.id,
+              color: "Beige, rouge, blanc, noir, gris",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *pie-grièche écorcheur* ?</h2><br>
+
+**1.** Une pie-grièche écorcheur blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
+**2.** Une pie-grièche écorcheur qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br><br>
+
+<h2>Comment prendre soin d'une *pie-grièche écorcheur* ?</h2><br>
+
+**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-la ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
+              scientific_name: "Lanius collurio",
+              weight: "23 - 40g"
+              )
+
+photo_piegrieche = URI.open('https://www.lacduder.com/sites/lacduder/files/styles/ratio_16_9_xl/public/content/images/pie-grieche-patrick-sabonnadiere.jpg?itok=VpRNpWXR')
+piegrieche.photo.attach(io: photo_piegrieche, filename: "piegrieche.jpg", content_type: 'image/jpg')
+piegrieche.save!
+puts "pie-grièche écorcheur created"
+
+guepier = Animal.create!(name: "Guêpier d'Europe",
+              category_id: cat1.id,
+              color: "Bleu, jaune, brun, roux, vert",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *guêpier d'Europe* ?</h2><br>
+
+**1.** Un guêpier d'Europe blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un guêpier d'Europe qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *guêpier d'Europe* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
+              scientific_name: "Merops apiaster",
+              weight: "50 - 65g"
+              )
+
+photo_guepier = URI.open('https://master.salamandre.net/media/22107/european-bee-eater-2115564_1920-e1627372780586-1800x965.jpeg')
+guepier.photo.attach(io: photo_guepier, filename: "guepier.jpg", content_type: 'image/jpg')
+guepier.save!
+puts "guêpier d'Europe created"
+
+pie = Animal.create!(name: "Pie",
+              category_id: cat1.id,
+              color: "Noir, blanc, bleu",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *pie* ?</h2><br>
+
+**1.** Une pie blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
+**2.** Une pie qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br><br>
+
+<h2>Comment prendre soin d'une *pie* ?</h2><br>
+
+**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-la ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
+              scientific_name: "Pica pica",
+              weight: "145 - 210g"
+              )
+
+photo_pie = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/3/9/4/8/48493-45-fre-FR/magpie-4213075.jpg')
+pie.photo.attach(io: photo_pie, filename: "pie.jpg", content_type: 'image/jpg')
+pie.save!
+puts "pie"
+
 puts "animal created"
 
 puts "creating contacts"
 
 contact1 = Contact.create!(name: "Les P'tits Kipiks",
                 user_id: user1.id,
-                address: '146 rue de Rome 13006 Marseille France',
+                address: '146 Rue de Rome 13006 Marseille France',
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -494,16 +569,16 @@ contact1 = Contact.create!(name: "Les P'tits Kipiks",
 
 contact2 = Contact.create!(name: "Dr. Enrico Chonaille",
                 user_id: user3.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "97 Rue Charras 13007 Marseille France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
                 longitude: 5.3584289
                 )
 
-contact3 = Contact.create!(name: "Dr Fly",
+contact3 = Contact.create!(name: "La petite Libellule",
                 user_id: user2.id,
-                address: '31 Bd Aristide Briand 13100 Aix-en-Provence',
+                address: '31 Bd Aristide Briand 13100 Aix-en-Provence France',
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -512,15 +587,15 @@ contact3 = Contact.create!(name: "Dr Fly",
 
 contact4 = Contact.create!(name: "Dr. Jean Bondyork",
                 user_id: user1.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "24 Rue Paradis 13001 Marseille France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
                 longitude: 5.3584289
                 )
-contact5 = Contact.create!(name: "Dr Fly",
+contact5 = Contact.create!(name: "Plumes et Quenottes",
                 user_id: user2.id,
-                address: '146 rue de Rome 13006 Marseille France',
+                address: "531 Av. de la Croix d'Or 13320 Bouc-Bel-Air France",
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -529,15 +604,15 @@ contact5 = Contact.create!(name: "Dr Fly",
 
 contact6 = Contact.create!(name: "Dr. Mélusine Enfaillite",
                 user_id: user1.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "116 Av. Jean Monnet 13127 Vitrolles France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
                 longitude: 5.3584289
                 )
-contact7 = Contact.create!(name: "Les P'tits Kipiks",
+contact7 = Contact.create!(name: "La Féline Meyreuillaise",
                 user_id: user1.id,
-                address: '146 rue de Rome 13006 Marseille France',
+                address: '23 Av. Jean Petit 13590 Meyreuil France',
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -546,16 +621,16 @@ contact7 = Contact.create!(name: "Les P'tits Kipiks",
 
 contact8 = Contact.create!(name: "Dr. Sandra Pathie",
                 user_id: user3.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "1 Cr Lieutaud, 13006 Marseille France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
                 longitude: 5.3584289
                 )
 
-contact9 = Contact.create!(name: "Dr Fly",
+contact9 = Contact.create!(name: "Carapatience et Hamsterville",
                 user_id: user2.id,
-                address: '146 rue de Rome 13006 Marseille France',
+                address: 'Chemin Sabliere 13720 Belcodène France',
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -564,15 +639,15 @@ contact9 = Contact.create!(name: "Dr Fly",
 
 contact10 = Contact.create!(name: "Dr. Sacha Rivari",
                 user_id: user1.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "7 Boulevard Etienne Boyer 13530 Trets France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
                 longitude: 5.3584289
                 )
-contact11 = Contact.create!(name: "Dr Fly",
+contact11 = Contact.create!(name: "Coeur d'écailles",
                 user_id: user2.id,
-                address: '146 rue de Rome 13006 Marseille France',
+                address: '7 Avenue du Maréchal Ney 13011 Marseille France',
                 phone_number: "0491456789",
                 statut: 'Association',
                 latitude: 43.28769302368164,
@@ -581,7 +656,7 @@ contact11 = Contact.create!(name: "Dr Fly",
 
 contact12 = Contact.create!(name: "Dr. Natacha Pau",
                 user_id: user1.id,
-                address: "97 rue charras 13007 Marseille France",
+                address: "35 Chemin des Bouscauds 13480 Cabriès France",
                 phone_number: "0491654321",
                 statut: 'Vétérinaire',
                 latitude: 43.2866521,
@@ -607,13 +682,13 @@ ContactCategory.create!(category_id: cat4.id, contact_id: contact7.id)
 ContactCategory.create!(category_id: cat5.id, contact_id: contact7.id)
 ContactCategory.create!(category_id: cat8.id, contact_id: contact8.id)
 ContactCategory.create!(category_id: cat1.id, contact_id: contact8.id)
-ContactCategory.create!(category_id: cat3.id, contact_id: contact9.id)
-ContactCategory.create!(category_id: cat4.id, contact_id: contact9.id)
+ContactCategory.create!(category_id: cat2.id, contact_id: contact9.id)
+ContactCategory.create!(category_id: cat6.id, contact_id: contact9.id)
 ContactCategory.create!(category_id: cat6.id, contact_id: contact10.id)
-ContactCategory.create!(category_id: cat8.id, contact_id: contact10.id)
-ContactCategory.create!(category_id: cat1.id, contact_id: contact11.id)
+ContactCategory.create!(category_id: cat7.id, contact_id: contact10.id)
+ContactCategory.create!(category_id: cat9.id, contact_id: contact11.id)
 ContactCategory.create!(category_id: cat3.id, contact_id: contact11.id)
-ContactCategory.create!(category_id: cat4.id, contact_id: contact12.id)
-ContactCategory.create!(category_id: cat6.id, contact_id: contact12.id)
-ContactCategory.create!(category_id: cat8.id, contact_id: contact12.id)
+ContactCategory.create!(category_id: cat1.id, contact_id: contact12.id)
+ContactCategory.create!(category_id: cat2.id, contact_id: contact12.id)
+ContactCategory.create!(category_id: cat3.id, contact_id: contact12.id)
 puts "All finished !"
