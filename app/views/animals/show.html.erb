@@ -2,7 +2,24 @@
 
 <div class="animal-card border">
 		<!-- animal's name -->
-		<h3 class="title"><%= @animal.name %> <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1641399391/Hoothoot_2_ejgepm.gif" alt="hoothoot"></h3>
+    <div class="title-animal">
+		  <%= @animal.name %>
+      <%= simple_form_for(@favorite, remote: true) do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :animal_id, value: @animal.id %>
+        <%= button_tag type: :submit, class: "button-icon" do %>
+
+          <i class="
+            <% if @favorite_old.present? %>
+              fas
+            <% else %>
+              far
+            <% end %>
+          fa-heart"></i>
+        <% end %>
+      <% end %>
+
+    </div>
 		<!-- animal's image -->
     <div class="animal-img">
       <% if @animal.photo.attached? %>
@@ -10,7 +27,7 @@
         <% else %>
           <%= image_tag("silhouette.jpg", width: 350, alt: "silhouette d'animaux") %>
         <% end %>
-        <p><%= link_to 'Contacts utiles', animal_path(anchor: 'contacts')  %></p>
+        <p><%= link_to 'Contacts utiles', animal_path(@animal, anchor: 'contacts')  %></p>
     </div>
 		<div class="factsheet border">
 			<!-- important information -->
@@ -25,9 +42,19 @@
 			</ul>
 			<!-- advices -->
         <ul>
-          <span class="list-label">Les bons gestes</span>
-          <%= @animal.description %>
+          <%# <span class="list-label">Les bons gestes</span> %>
+          <%= @description %>
         </ul>
+        <p>
+          <% if current_user.admin == true || @contact.user == true %>
+            <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
+          <% end %>
+          <% if current_user.admin == true %>
+            <%= link_to "Supprimer l'animal", animal_path(@animal),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </p>
         <%# Favoris %>
         <div class="favorite">
           <i class="far fa-heart"></i>

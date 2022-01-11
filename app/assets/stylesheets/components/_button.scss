@@ -9,6 +9,11 @@
   box-shadow: 2px 2px 2px 2px #c0954a;
   font-family: 'Lilita One', cursive;
   color: #72582c;
+  align-items: center;
+  text-align: center;
+  a {
+    color: #72582c;
+  }
 }
 
 .button-search-hover {
@@ -40,3 +45,22 @@
 }
 
 // Bouton favoris
+
+// Bouton formulaire
+
+.button-form {
+  border: solid #65b66e;
+  margin: 15px;
+  padding: 5px;
+  width: auto;
+  border-radius: 20px;
+  background-color: #65b66e;
+  box-shadow: 2px 2px 2px 2px #519259;
+  font-family: 'Lilita One', cursive;
+  color: #064635;
+  align-items: center;
+  text-align: center;
+  a {
+    color: #064635;
+  }
+}

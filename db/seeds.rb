@@ -99,6 +99,7 @@ cat5 = Category.create!(name: 'Chiens')
 cat6 = Category.create!(name: 'Tortues')
 cat7 = Category.create!(name: 'Poissons')
 cat8 = Category.create!(name: 'Insectes')
+cat9 = Category.create!(name: 'Reptiles')
 
 puts "categories created"
 
@@ -108,7 +109,26 @@ puts "creating animals"
 herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron",
-              description: "Un hérisson vu de jour, blessé ou trop petit doit être récupéré. Il faut vérifier qu’il n’a pas d’œufs de mouche (semblables à des grains de riz) sur lui ou des tiques. Enlever les parasites avant de le placer dans un carton eau avec une bouillotte chaude, sous un linge ou une polaire. Laisser de l’eau et des croquettes pour chat au poulet à proximité ainsi que des tissus et polaire supplémentaires dans le carton pour qu’il puisse nidifier. Contacter un vétérinaire ou un centre de la faune sauvage rapidement.",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
+
+**1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
+**2.** Un hérisson, *de jour* ou *de nuit*, qui n’est pas plus grand qu’une main (environ 600 grammes) doit être mis au chaud car il ne peut pas passer l’hiver. Récupérez-le. <br>
+**3.** Un hérisson en danger (en bord de route, sur la route, dans le jardin au moment de passer la tondeuse) qui n’est pas actif de jour ni trop petit en hiver doit uniquement être <em>déplacé</em> en lieu sûr et pas trop loin du lieu où il se trouvait. <br>
+**4.** Un hérisson bébé (choupisson) ne doit pas être touché dans un nid. Si un nid a été dérangé, empêcher la mère de partir et ne pas toucher les petits sans gants. <br><br>
+
+<h2>Comment prendre soin du hérisson ?</h2><br>
+
+**1.** Vérifier qu’il n’est pas couvert d’œufs de mouche (semblables à des grains de riz).<br>
+**2.** Les enlever avec une brosse à dents, le cas échéant.<br>
+**3.** Vérifier s’il a des tiques et les enlever le cas échéant.<br>
+**4.** Le rentrer dans un carton ou une boîte haute.<br>
+**5.** Le placer contre une bouillotte (bouteille d’eau chaude dans une polaire, quelle que soit la saison), jamais en contact direct avec sa peau et une fois nettoyé (la chaleur fait éclore les œufs).<br>
+**6.** Lui mettre des tissus et polaires à disposition pour qu’il puisse se nicher.<br>
+**7.** Mettre de l’eau et des croquettes pour chat au poulet à disposition.<br>
+**8.** Ne jamais donner de lait de vache ou de pain (indigestes)<br>
+**9.** Contacter un vétérinaire ou un centre de faune sauvage proche.<br>
+
+",
               scientific_name: "Erinaceus europaeus",
               weight: "De 0,8 à 1,5 kg",
               )
@@ -118,11 +138,19 @@ herisson.photo.attach(io: photo_herisson, filename: "herisson.jpg", content_type
 herisson.save!
 puts "herisson created"
 
-ane = Animal.create!(name: "âne corse",
+ane = Animal.create!(name: "Ane corse",
               category_id: cat3.id,
-              color: "gris",
-              description: "aime bien les figues",
-              scientific_name: "chevalus",
+              color: "Gris",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *âne* ?</h2><br>
+
+**1.** Si l'âne veut vous suivre et être déplacé, il en prendra seul la décision.<br>
+**2.** S'il a l'air perdu, indiquez-lui son chemin.<br><br>
+
+<h2>Comment prendre soin d'un *âne* ?</h2><br>
+
+**1.** Caressez-le gentiment.<br>
+**2.** Donnez-lui des figues.<br>",
+              scientific_name: "Equus asinus",
               weight: "200 kg"
               )
 
@@ -134,12 +162,24 @@ puts "ane created"
 mesange = Animal.create!(name: "Mésange noire",
               category_id: cat1.id,
               color: "Gris, noir, beige",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *mésange noire* ?</h2><br>
+
+**1.** Une mésange blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
+**2.** Une mésange qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br>
+
+<h2>Comment prendre soin d'une *mésange noire* ?</h2><br>
+
+**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-la ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
               scientific_name: "Periparus ater",
               weight: "19-10 g"
               )
 
-photo_mesange = URI.open('https://lemagdesanimaux.ouest-france.fr/images/dossiers/2021-03/mesange-bleue-063413.jpg')
+photo_mesange = URI.open('https://www.wildlifetrusts.org/sites/default/files/styles/node_hero_desk_wide/public/2017-12/Great%20Tit%20%20153%20%28c%29%20Bob%20Coyle.jpg?h=4f3f1b2a&itok=QzEMyOQ8')
 mesange.photo.attach(io: photo_mesange, filename: "mesange.jpg", content_type: 'image/jpg')
 mesange.save!
 puts "mesange created"
@@ -147,7 +187,20 @@ puts "mesange created"
 moineau = Animal.create!(name: "Moineau friquet",
               category_id: cat1.id,
               color: "Marron, Beige, Blanc",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *moineau friquet* ?</h2><br>
+
+**1.** Un moineau friquet blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un moineau friquet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br>
+
+<h2>Comment prendre soin d'un *moineau friquet* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.
+",
               scientific_name: "Passer montanus",
               weight: "19 à 25 g"
               )
@@ -160,7 +213,16 @@ puts "moineau created"
 renard = Animal.create!(name: "Renard roux",
               category_id: cat3.id,
               color: "Orange, Blanc",
-              description: "",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *renard* ?</h2><br>
+
+**1.** Un renard blessé de manière visible est en difficulté. Aidez-le.<br>
+**2.** Un renard en errance qui ne s'enfuit pas à votre approche peut avoir subi un choc *ou* être perdu. S'il s'agit d'un juvénile, n'agissez pas et observez. Sa mère n'est peut-être pas loin.<br>
+
+<h2>Comment prendre soin d'un *renard* ?</h2><br>
+
+**1.** Contactez en priorité un vétérinaire proche pour obtenir de l'aide. Le renard est un animal sauvage doté de dents puissantes. Même blessé, par peur ou par douleur, il peut vous attaquer.<br>
+**2.** Restez en observation le temps qu'un professionnel habilité vienne sur les lieux.<br>
+**3.** Si c'est impossible et que l'animal est inconscient, munissez-vous d'une caisse de transport pour canidé et, en l'enroulant dans une couverture, récupérez-le pour l'y glisser.<br>",
               scientific_name: "Vulpes vulpes",
               weight: "6 à 10 kg"
               )
@@ -173,7 +235,17 @@ puts "renard created"
 grenouille = Animal.create!(name: "Grenouille verte",
               category_id: cat3.id,
               color: "Vert",
-              description: "Laisser dans le noir dans une petite boîte fermée, ne pas nourrir, ne pas abreuver",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *grenouille verte* ?</h2><br>
+
+**1.** Une grenouille verte blessée de manière visible est en difficulté. Récupérez-la.<br>
+**2.** Une grenouille verte au bord d'une route passante est en danger. Déplacez-la.<br>
+
+<h2>Comment prendre soin d'un *grenouille verte* ?</h2><br>
+
+**1.** Les batraciens peuvent être urticants. Ne déplacez pas une grenouille verte à mains nues.<br>
+**2.** Poussez-la délicatement avec un objet non susceptible de la blesser pour la diriger vers un carton ou une boîte.<br>
+**3.** Si elle est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-la chez un professionnel.<br>
+**4.** Si elle n'est pas blessée, faites-la uniquement traverser la voie et approchez-la d'un point d'eau.<br>",
               scientific_name: "Pelophylax kl. esculentus",
               weight: "10 à 30 g"
               )
@@ -182,6 +254,67 @@ photo_grenouille = URI.open('http://www.grenouilles.free.fr/especes/images/Greno
 grenouille.photo.attach(io: photo_grenouille, filename: "grenouille.jpg", content_type: 'image/jpg')
 grenouille.save!
 puts "grenouille created"
+
+couleuvre = Animal.create!(name: "Couleuvre helvétique",
+              category_id: cat9.id,
+              color: "Vert, gris, brun",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
+
+Les couleuvres sont inoffensives.Ne les déplacez pas.",
+              scientific_name: "Natrix helvetica",
+              weight: "80 à 100 g"
+              )
+
+photo_couleuvre = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/4/7/7/117749-1-fre-FR/couleuvre.jpg')
+couleuvre.photo.attach(io: photo_couleuvre, filename: "couleuvre.jpg", content_type: 'image/jpg')
+couleuvre.save!
+puts "couleuvre created"
+
+lezard = Animal.create!(name: "Lézard à deux raies",
+              category_id: cat9.id,
+              color: "Vert, jaune",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *lézard à deux raies* ?</h2><br>
+
+**1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+
+<h2>Comment prendre soin d'un *lézard à deux raies* ?</h2><br>
+
+**1.** Ne l'attrapez pas par la queue. Elle pourrait se détacher.<br>
+**2.** Poussez-le délicatement avec un objet non susceptible de le blesser pour le diriger vers un carton ou une boîte.<br>
+**3.** S'il est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-le chez un professionnel.<br>
+**4.** S'il n'est pas blessé, faites-le uniquement traverser la voie et approchez-le d'un point rocheux.<br>",
+              scientific_name: "Lacerta bilineata bilineata",
+              weight: "80 à 100 g"
+              )
+
+photo_lezard = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/3/9/7/7/117793-1-fre-FR/lezard_deux_bandes.jpg')
+lezard.photo.attach(io: photo_lezard, filename: "lezard.jpg", content_type: 'image/jpg')
+lezard.save!
+puts "lézard created"
+
+lezard2 = Animal.create!(name: "Lézard des murailles",
+              category_id: cat9.id,
+              color: "Brun, beige",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
+
+**1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
+**2.** Un lézard vert au bord d'une route passante est en danger. Déplacez-le.<br>
+
+<h2>Comment prendre soin d'un *lézard des murailles* ?</h2><br>
+
+**1.** Ne l'attrapez pas par la queue. Elle pourrait se détacher.<br>
+**2.** Poussez-le délicatement avec un objet non susceptible de le blesser pour le diriger vers un carton ou une boîte.<br>
+**3.** S'il est blessée, fermez le carton, faites des petits trous pour la respiration et emmenez-le chez un professionnel.<br>
+**4.** S'il n'est pas blessé, faites-le uniquement traverser la voie et approchez-le d'un point rocheux.<br>",
+              scientific_name: "Lacerta bilineata bilineata",
+              weight: "80 à 100 g"
+              )
+
+photo_lezard2 = URI.open('https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/9/1/4/3/53419-15-fre-FR/lezard_muraille.jpg')
+lezard2.photo.attach(io: photo_lezard2, filename: "lezard.jpg", content_type: 'image/jpg')
+lezard2.save!
+puts "lézard created"
 
 puts "animal created"
 
