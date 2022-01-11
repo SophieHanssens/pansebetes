@@ -1,6 +1,4 @@
 #contacts-list {
-  display: flex;
-  justify-content: center;
   margin: 0 10px;
 
   ul {
@@ -21,4 +19,8 @@
 .contact-text {
   color: #000000;
   padding: 0 5px;
+}
+
+.contact-address {
+  font-size: 0.7em;
 }

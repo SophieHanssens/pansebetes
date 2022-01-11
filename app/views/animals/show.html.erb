@@ -90,8 +90,8 @@
             <% if contact.statut == "Association" %>
               <% @contact_cats.each do |contact_cat| %>
                 <% if contact_cat.contact_id == contact.id && contact_cat.category_id == @animal.category_id %>
-                  <li><%= contact.name %>
-                  </li>
+                  <li>- <%= link_to contact.name, contact_path(contact) %></li>
+                  <li class="contact-address"><%= contact.address %></li>
                 <% end %>
               <% end %>
             <% end %>
@@ -113,8 +113,8 @@
             <% if contact.statut == "Vétérinaire" %>
               <% @contact_cats.each do |contact_cat| %>
                 <% if contact_cat.contact_id == contact.id && contact_cat.category_id == @animal.category_id %>
-                  <li><%= contact.name %>
-                  </li>
+                  <li>- <%= link_to contact.name, contact_path(contact) %></li>
+                  <li class="contact-address"><%= contact.address %></li>
                 <% end %>
               <% end %>
             <% end %>
