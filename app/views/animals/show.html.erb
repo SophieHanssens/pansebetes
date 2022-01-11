@@ -70,53 +70,54 @@
   <%# Carte liste vétos compétents %>
 
   <div class="portfoliocard">
-      <div class="coverphoto"></div>
-      <div id="contacts" class="contacts-title"><h2>Contacts utiles</h2></div>
-      <div class="left_col">
-        <div class="contacts-title">
-          Associations
-        </div>
-          <div class="contacts-text">
-          <%# Ajouter la liste des associations spécialisés avec cet animal %>
+  <div class="coverphoto"></div>
+  <div id="contacts" class="contacts-title">
+    <h2>Contacts utiles</h2>
+  </div>
 
-          <ul>
-              <li>
-                <% @contacts.first(1).each do |contact| %>
-                  <%= link_to "Les P'tits Kipiks", contact_path(contact) %>
-                  <i class="fas fa-shoe-prints"></i>
-                <% end %>
-              </li>
-              <li>
-                <% @contacts.first(1).each do |contact| %>
-                  <%= link_to "La Féline Meyreuillaise", contact_path(contact) %>
-                  <i class="fas fa-shoe-prints"></i>
-                <% end %>
-              </li>
-            </ul>
-          </div>
+  <div id="contacts-list">
+    <div class="contact">
+      <div class="contacts-title">
+        Associations
       </div>
-      <div class="right_col">
-        <div class="contacts-title">
-          Cliniques vétérinaires
-          <div class="contacts-text">
-          <%# Ajouter la liste des vétérinaires avec cet animal %>
-            <ul>
-              <li>
-                <% @contacts.first(1).each do |contact| %>
-                  <%= link_to "Jean Bondiork", contact_path(contact) %>
-                  <i class="fas fa-shoe-prints"></i>
-                <% end %>
-              </li>
-              <li>
-                <% @contacts.first(1).each do |contact| %>
-                  <%= link_to "Enrico Chonaille", contact_path(contact) %>
-                  <i class="fas fa-shoe-prints"></i>
-                <% end %>
-              </li>
-            </ul>
-            </ul>
-          </div>
-        </div>
+
+      <div class="contact-text">
+      <%# Ajouter la liste des associations spécialisés avec cet animal %>
+        <ul>
+          <li>
+            <% @contacts.first(1).each do |contact| %>
+              <%= link_to "Les P'tits Kipiks", contact_path(contact) %>
+            <% end %>
+          </li>
+          <li>
+            <% @contacts.first(1).each do |contact| %>
+              <%= link_to "La Féline Meyreuillaise", contact_path(contact) %>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
+
+    <div class="contact">
+      <div class="contacts-title">
+        Cliniques vétérinaires
       </div>
+
+      <div class="contact-text">
+      <%# Ajouter la liste des vétérinaires avec cet animal %>
+        <ul>
+          <li>
+            <% @contacts.first(1).each do |contact| %>
+              <%= link_to "Jean Bondiork", contact_path(contact) %>
+            <% end %>
+          </li>
+          <li>
+            <% @contacts.first(1).each do |contact| %>
+              <%= link_to "Enrico Chonaille", contact_path(contact) %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
