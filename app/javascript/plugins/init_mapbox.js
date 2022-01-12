@@ -1,3 +1,7 @@
+const letsGo = () => {
+
+}
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -24,7 +28,6 @@ const initMapbox = () => {
     map.on('load', function () {
       directions.setDestination(address.textContent);
     });
-
     var geolocate = new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true
@@ -34,12 +37,15 @@ const initMapbox = () => {
       showAccuracyCircle: false,
     });
 
-    map.on('load', function () {
-      const button = document.querySelector('.mapboxgl-ctrl-geolocate');
-      button.click();
-    });
+
 
     map.addControl(geolocate);
+
+    const goButton = document.querySelector('#go');
+    goButton.addEventListener('click', () => {
+
+    const button = document.querySelector('.mapboxgl-ctrl-geolocate');
+    button.click();
 
     geolocate.on('geolocate', function (e) {
       var lon = e.coords.longitude;
@@ -47,6 +53,8 @@ const initMapbox = () => {
       var position = [lon, lat];
       directions.setOrigin(position); // can be address in form setOrigin("12, Elm Street, NY")
     });
+  });
+
   };
 };
 

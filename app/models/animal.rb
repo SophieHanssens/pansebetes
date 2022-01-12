@@ -2,6 +2,7 @@ class Animal < ApplicationRecord
   has_one_attached :photo
   belongs_to :category
   has_many :favorites
+  has_many :itineraries
 
   validates :name, presence: true
 
