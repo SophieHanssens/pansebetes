@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Panse Bêtes"
+meta_title: "Panse Bêtes - Premiers soins aux animaux blessés"
+meta_description: "Un animal blessé ? Une créature perdue ? Un petit être en détresse ? Panse Bête est fait pour vous aider et vous aiguiller."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
