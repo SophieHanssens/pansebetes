@@ -4,3 +4,5 @@
 <% contact.contact_categories.each do |contact_category| %>
 <p><%= contact_category.category.name %></p>
 <% end %>
+
+<%= link_to 'Voir la fiche', contact_path(contact) %>
