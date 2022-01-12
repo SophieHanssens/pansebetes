@@ -548,6 +548,7 @@ herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron, brun, beige",
               particularity: "Petit, piquants, pique, nocturne",
+              note: "Attention, un hérisson peut avoir des puces",
               description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
 
 **1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
@@ -754,6 +755,54 @@ photo_choucas = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v164
 choucas.photo.attach(io: photo_choucas, filename: "choucas.jpg", content_type: 'image/jpg')
 choucas.save!
 puts "choucas"
+
+martinet = Animal.create!(name: "Martinet",
+              category_id: cat1.id,
+              color: "Noir, gris",
+              particularity: "Moyenne, moyen",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *martinet* ?</h2><br>
+
+**1.** Un martinet blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un martinet qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *martinet* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Apus apus",
+              weight: "35 - 100g"
+              )
+
+photo_martinet = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996021/Martinet_kcgtc1.jpg')
+martinet.photo.attach(io: photo_martinet, filename: "martinet.jpg", content_type: 'image/jpg')
+martinet.save!
+puts "martinet"
+
+tortue = Animal.create!(name: "Tortue d'Hermann",
+              category_id: cat6.id,
+              color: "Verte",
+              particularity: "Moyenne, moyen, carapace",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *martinet* ?</h2><br>
+
+**1.** Une tortue à l'état naturel a de fortes chances de s'être échappée de chez ses propriétaires. Récupérez-la.<br>
+**2.** Les vétérinaires peuvent vérifier si une tortue est pucée et appartient à quelqu'un.<br><br>
+
+<h2>Comment prendre soin d'une *tortue* ?</h2><br>
+
+**1.** Contactez un professionnel compétent pour déterminer s'il s'agit d'une tortue terrestre ou aquatique.<br>
+**2.** Mettez-la dans un carton le temps de la transporter.",
+              scientific_name: "Testudo hermanni",
+              weight: "700g - 1kg"
+              )
+
+photo_martinet = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Tortue_d_Hermann_nmncyz.jpg')
+martinet.photo.attach(io: photo_martinet, filename: "martinet.jpg", content_type: 'image/jpg')
+martinet.save!
+puts "martinet"
 
 puts "animal created"
 
