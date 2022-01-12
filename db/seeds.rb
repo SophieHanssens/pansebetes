@@ -549,7 +549,15 @@ herisson = Animal.create!(name: "Hérisson",
               color: "Marron, brun, beige",
               particularity: "Petit, piquants, pique, nocturne",
               note: "Attention, un hérisson peut avoir des puces",
-              description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
+              description: "<h2>Quand un **hérisson** est-il en danger ?</h2><br>
+
+**1.** S'il est vu de jour.<br>
+**2.** S'il est apathique.<br>
+**3.** S'il est vu en plein hiver est qu'il est de petite taille.<br>
+
+Pour déterminer comment vous en occuper, lisez ce qui suit ou, si vous manquez de temps, rendez-vous aux contacts utiles pour vous en remettre à un professionnel.<br>
+
+<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
 
 **1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
 **2.** Un hérisson, *de jour* ou *de nuit*, qui n’est pas plus grand qu’une main (environ 600 grammes) doit être mis au chaud car il ne peut pas passer l’hiver. Récupérez-le. <br>
@@ -799,10 +807,10 @@ tortue = Animal.create!(name: "Tortue d'Hermann",
               weight: "700g - 1kg"
               )
 
-photo_martinet = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Tortue_d_Hermann_nmncyz.jpg')
-martinet.photo.attach(io: photo_martinet, filename: "martinet.jpg", content_type: 'image/jpg')
-martinet.save!
-puts "martinet"
+photo_tortue = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Tortue_d_Hermann_nmncyz.jpg')
+tortue.photo.attach(io: photo_tortue, filename: "tortue.jpg", content_type: 'image/jpg')
+tortue.save!
+puts "tortue"
 
 puts "animal created"
 
