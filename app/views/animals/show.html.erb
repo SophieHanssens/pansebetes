@@ -53,7 +53,7 @@
             <%# <span class="list-label">Les bons gestes</span> %>
             <%= @description %>
           </ul>
-          <p>
+          <p id="modif">
             <% if current_user.admin == true || @contact.user == true %>
               <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
             <% end %>
@@ -69,6 +69,7 @@
           </div> %>
       </div>
     </div>
+  </div>
   <%# Carte liste vétos compétents %>
 
   <div class="portfoliocard">

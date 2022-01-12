@@ -41,7 +41,7 @@
 p {
 	margin:0;
 	// text-align: justify;
-  font-family: 'Cormorant Upright', serif;
+  font-family: 'Courier Prime', monospace;
 }
 
 .title {
@@ -109,13 +109,13 @@ p {
 	padding: 5%;
 	margin-top: 5%;
 	background-color:rgb(243, 238, 238);
-	font-family: 'Cormorant Upright', serif;;
+	font-family: 'Courier Prime', monospace;
 	font-size: .9em;
 	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   text-align: justify;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .factsheet ul {
@@ -125,8 +125,8 @@ p {
 
 .list-label {
 	font-weight: bold;
-  font-family: 'Cormorant Upright', serif;
-  font-size: 18px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 15px;
 }
 
 .favorite {
@@ -151,12 +151,12 @@ p {
     background-color: rgb(243, 238, 238);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     overflow: hidden;
-    font-family: 'Cormorant Upright', serif;
-    font-size: 18px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 15px;
     .list-label {
       font-weight: bold;
-      font-family: 'Cormorant Upright', serif;
-      font-size: 18px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 15px;
     }
      ul {
     list-style-type: none;
@@ -174,7 +174,7 @@ p {
     list-style-type: none;
   }
   #contact-name {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
   }
 }
@@ -414,12 +414,13 @@ div.portfoliocard div.follow_count{
 
 .card-contacts-list {
   overflow: hidden;
-  height: 300px;
+  height: 350px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 20px;
+  font-size: 15px;
 }
 
 .card-contacts-list img {
@@ -455,6 +456,64 @@ div.portfoliocard div.follow_count{
     color:darkmagenta
   }
   ul {
-    font-family: 'Cormorant Upright', serif;
+    font-family: 'Courier Prime', monospace;
   }
+}
+
+// Card Profil
+
+.card-profil-list {
+  overflow: hidden;
+  height: 250px;
+  background: #ffffed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 'Poiret One', cursive;
+  ul {
+    list-style-type: none;
+    font-family: 'Poiret One', cursive;
+    }
+  text-align: justify;
+  // padding: 30px;
+  p {
+    font-family: 'Poiret One', cursive;
+  }
+  a {
+    color: #467e4c;
+  }
+}
+
+.card-profil-list img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-profil-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profil-list p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-profil-list .card-profil-list-infos {
+  padding: 16px;
+}
+
+.card-profil-list-infos {
+  margin: 15px;
+}
+
+#modif {
+  text-align: center;
+  font-size: 10px;
 }
