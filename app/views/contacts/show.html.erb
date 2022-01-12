@@ -31,7 +31,15 @@
 
   <div id="itinéraire">
     <h2>Itinéraire</h4>
-    <button id="go">j'y vais</button>
+
+     <%= simple_form_for(@itinerary) do |f| %>
+      <%= f.input :animal_name, placeholder: 'avec quel animal ?', label: false, size: 30 %>
+      <%= f.hidden_field :contact_id, value: @contact.id %>
+      <%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %>
+
+    <% end %>
+    <% console %>
+
     <div id="map"
       style="width: 100%; height: 600px;"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">

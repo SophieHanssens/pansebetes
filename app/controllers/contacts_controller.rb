@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @user = current_user
     @categories = @contact.categories.pluck(:name)
+    @itinerary = Itinerary.new
   end
 
   def new
