@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :contacts
   resources :favorites, only: %i[index create destroy]
   get '/dashboard', to: 'pages#dashboard'
+  resources :itineraries, only: %i[create]
 end
