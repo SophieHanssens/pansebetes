@@ -88,6 +88,12 @@ user3 = User.create!(email: 'loris@loris.com',
             address: '48 traverse Mars 13006 Marseille France',
             admin: true)
 
+user3 = User.create!(email: 'manu@manu.com',
+            name: 'Manu',
+            password: 'azerty',
+            address: '42 Wallaby Way 13006 Marseille France',
+            admin: false)
+
 puts "Users ok !"
 
 puts "creating categories"
@@ -111,6 +117,7 @@ puts "creating animals"
 mesange = Animal.create!(name: "Mésange noire",
               category_id: cat1.id,
               color: "Gris, noir, beige",
+              particularity: "Petite",
               description: "<h2>Quand **déplacer** ou **récupérer** une *mésange noire* ?</h2><br>
 
 **1.** Une mésange blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
@@ -136,6 +143,7 @@ puts "mesange created"
 moineau = Animal.create!(name: "Moineau friquet",
               category_id: cat1.id,
               color: "Marron, Beige, Blanc",
+              particularity: "Petit",
               description: "<h2>Quand **déplacer** ou **récupérer** un *moineau friquet* ?</h2><br>
 
 **1.** Un moineau friquet blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
@@ -148,7 +156,7 @@ euvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vé
 **2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
 **3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
 **4.** Ne nourrissez pas et n'abrener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
-**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.
 ",
               scientific_name: "Passer montanus",
               weight: "19 à 25 g"
@@ -162,6 +170,7 @@ puts "moineau created"
 renard = Animal.create!(name: "Renard roux",
               category_id: cat3.id,
               color: "Roux, blanc",
+              particularity: "Carnivore, dentu",
               description: "<h2>Quand **déplacer** ou **récupérer** un *renard* ?</h2><br>
 
 **1.** Un renard blessé de manière visible est en difficulté. Aidez-le.<br>
@@ -184,6 +193,7 @@ puts "renard created"
 grenouille = Animal.create!(name: "Grenouille verte",
               category_id: cat3.id,
               color: "Vert",
+              particularity: "Bruyante",
               description: "<h2>Quand **déplacer** ou **récupérer** une *grenouille verte* ?</h2><br>
 
 **1.** Une grenouille verte blessée de manière visible est en difficulté. Récupérez-la.<br>
@@ -207,6 +217,7 @@ puts "grenouille created"
 couleuvre = Animal.create!(name: "Couleuvre helvétique",
               category_id: cat9.id,
               color: "Vert, gris, brun",
+              particularity: "Longue",
               description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
 
 Les couleuvres sont inoffensives.Ne les déplacez pas.",
@@ -222,6 +233,7 @@ puts "couleuvre created"
 lezard = Animal.create!(name: "Lézard à deux raies",
               category_id: cat9.id,
               color: "Vert, jaune",
+              particularity: "Timide",
               description: "<h2>Quand **déplacer** ou **récupérer** un *lézard à deux raies* ?</h2><br>
 
 **1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
@@ -245,6 +257,7 @@ puts "lézard created"
 lezard2 = Animal.create!(name: "Lézard des murailles",
               category_id: cat9.id,
               color: "Brun, beige",
+              particularity: "Discret",
               description: "<h2>Quand **déplacer** ou **récupérer** une *couleur helvétique* ?</h2><br>
 
 **1.** Un lézard vert blessé de manière visible est en difficulté. Récupérez-le.<br>
@@ -268,6 +281,7 @@ puts "lézard created"
 couleuvre2 = Animal.create!(name: "Couleuvre verte et jaune",
               category_id: cat9.id,
               color: "Verte, jaune",
+              particularity: "Longue",
               description: "<h2>Quand **déplacer** ou **récupérer** une *couleuvre verte et jaune* ?</h2><br>
 
 Les couleuvres sont inoffensives. Ne les déplacez pas.",
@@ -283,6 +297,7 @@ puts "couleuvre created"
 couleuvre3 = Animal.create!(name: "Couleuvre vipérine",
               category_id: cat9.id,
               color: "Brun, rouge",
+              particularity: "Longue",
               description: "<h2>Quand **déplacer** ou **récupérer** une *couleuvre verte et jaune* ?</h2><br>
 
 Les couleuvres sont inoffensives. Ne les déplacez pas.",
@@ -298,6 +313,7 @@ puts "couleuvre created"
 fouine = Animal.create!(name: "Fouine",
               category_id: cat3.id,
               color: "Brun, blanc, noir",
+              particularity: "Poilue, poilu",
               description: "<h2>Quand **déplacer** ou **récupérer** une *fouine* ?</h2><br>
 
 **1.** Un fouine blessée de manière visible est en difficulté. Aidez-la.<br>
@@ -320,6 +336,7 @@ puts "fouine created"
 chat = Animal.create!(name: "Chat",
               category_id: cat4.id,
               color: "Tigré",
+              particularity: "Majestueuse, déesse, impératrice, rusée, charmante, intelligente, déterminée, gourmande",
               description: "<h2>Quand **déplacer** ou **récupérer** un *chat* ?</h2><br>
 
 **1.** Un chat blessé de manière visible est en difficulté. Aidez-le.<br>
@@ -342,6 +359,7 @@ puts "Bastet created"
 chat2 = Animal.create!(name: "Chat",
               category_id: cat4.id,
               color: "Blanc, noir",
+              particularity: "Mignon, lunaire, têtu, affectueux, sympathique, doux, poilu, gentil",
               description: "<h2>Quand **déplacer** ou **récupérer** un *chat* ?</h2><br>
 
 **1.** Un chat blessé de manière visible est en difficulté. Aidez-le.<br>
@@ -364,6 +382,7 @@ puts "Lumeau created"
 chien = Animal.create!(name: "Chien",
               category_id: cat5.id,
               color: "Blanc, noir, feu, brun, gris",
+              particularity: "Grand, petit, baveux, poilu",
               description: "<h2>Quand **déplacer** ou **récupérer** un *chien* ?</h2><br>
 
 **1.** Un chien blessé de manière visible est en difficulté. Aidez-le.<br>
@@ -386,6 +405,7 @@ puts "chien created"
 loir = Animal.create!(name: "Loir",
               category_id: cat3.id,
               color: "Brun, beige, gris",
+              particularity: "Poilu, discret, vorace",
               description: "<h2>Quand **déplacer** ou **récupérer** un *loir* ?</h2><br>
 
 **1.** Un loir blessé de manière visible est en difficulté. Aidez-le.<br>
@@ -408,6 +428,7 @@ puts "loir created"
 chauvesouris = Animal.create!(name: "Chauve-souris",
               category_id: cat3.id,
               color: "Noir, brun",
+              particularity: "Nocturne, petite",
               description: "<h2>Quand **déplacer** ou **récupérer** une *chauve-souris* ?</h2><br>
 
 **1.** Une chauve-souris blessée de manière visible est en difficulté. Aidez-la.<br>
@@ -430,6 +451,7 @@ puts "chauve-souris created"
 piegrieche = Animal.create!(name: "Pie-grièche écorcheur",
               category_id: cat1.id,
               color: "Beige, rouge, blanc, noir, gris",
+              particularity: "Petite, petit, insectivore",
               description: "<h2>Quand **déplacer** ou **récupérer** une *pie-grièche écorcheur* ?</h2><br>
 
 **1.** Une pie-grièche écorcheur blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
@@ -455,6 +477,7 @@ puts "pie-grièche écorcheur created"
 guepier = Animal.create!(name: "Guêpier d'Europe",
               category_id: cat1.id,
               color: "Bleu, jaune, brun, roux, vert",
+              particularity: "Petit, insectivore",
               description: "<h2>Quand **déplacer** ou **récupérer** un *guêpier d'Europe* ?</h2><br>
 
 **1.** Un guêpier d'Europe blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
@@ -467,7 +490,7 @@ guepier = Animal.create!(name: "Guêpier d'Europe",
 **3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
 **4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
 **5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-la avec du haché de bœuf ou des croquettes humides.<br>
-**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de la noyer.",
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
               scientific_name: "Merops apiaster",
               weight: "50 - 65g"
               )
@@ -480,6 +503,7 @@ puts "guêpier d'Europe created"
 pie = Animal.create!(name: "Pie",
               category_id: cat1.id,
               color: "Noir, blanc, bleu",
+              particularity: "Moyenne, moyen, bavarde",
               description: "<h2>Quand **déplacer** ou **récupérer** une *pie* ?</h2><br>
 
 **1.** Une pie blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
@@ -505,6 +529,7 @@ puts "pie"
 herisson = Animal.create!(name: "Hérisson",
               category_id: cat3.id,
               color: "Marron, brun, beige",
+              particularity: "Petit, piquants, pique, nocturne",
               description: "<h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
 
 **1.** Un hérisson *de jour* est en grande difficulté ou mourant. Récupérez-le. <br>
@@ -537,6 +562,7 @@ puts "herisson created"
 ane = Animal.create!(name: "Ane corse",
               category_id: cat3.id,
               color: "Gris",
+              particularity: "Oreilles, gourmand",
               description: "<h2>Quand **déplacer** ou **récupérer** un *âne* ?</h2><br>
 
 **1.** Si l'âne veut vous suivre et être déplacé, il en prendra seul la décision.<br>
@@ -554,6 +580,32 @@ photo_ane = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641918
 ane.photo.attach(io: photo_ane, filename: "ane.jpg", content_type: 'image/jpg')
 ane.save!
 puts "ane created"
+
+pigeon = Animal.create!(name: "Pigeon biset",
+              category_id: cat1.id,
+              color: "Gris, bleu, vert",
+              particularity: "Urbain",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *pigeon* ?</h2><br>
+
+**1.** Un pigeon blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un pigeon qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *pigeon* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Columba livia",
+              weight: "240 - 300g"
+              )
+
+photo_pigeon = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919706/Pie_upfzyy.jpg')
+pigeon.photo.attach(io: photo_pigeon, filename: "pigeon.jpg", content_type: 'image/jpg')
+pigeon.save!
+puts "pigeon"
 
 puts "animal created"
 

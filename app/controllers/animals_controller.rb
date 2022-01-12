@@ -14,6 +14,10 @@ class AnimalsController < ApplicationController
       sql_query = "color ILIKE :color"
       @animals = @animals.where(sql_query, color: "%#{params[:color]}%")
     end
+     if params[:particularity].present?
+      sql_query = "particularity ILIKE :particularity"
+      @animals = @animals.where(sql_query, particularity: "%#{params[:particularity]}%")
+    end
   end
 
   def show
