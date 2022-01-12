@@ -1,10 +1,13 @@
 class ItinerariesController < ApplicationController
   def create
-
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.save!
-    @contact = @itinerary.contact
-    redirect_to contact_path(@contact)
+    # @contact = @itinerary.contact
+    # redirect_to contact_path(@contact)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

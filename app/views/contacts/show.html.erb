@@ -30,15 +30,16 @@
   </div>
 
   <div id="itinéraire">
-    <h2>Itinéraire</h4>
-
-     <%= simple_form_for(@itinerary) do |f| %>
-      <%= f.input :animal_name, placeholder: 'avec quel animal ?', label: false, size: 30 %>
-      <%= f.hidden_field :contact_id, value: @contact.id %>
-      <%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %>
-
-    <% end %>
-    <% console %>
+    <h2 id="itineraire">Itinéraire</h4>
+     <div>
+      <%= simple_form_for(@itinerary, remote: true) do |f| %>
+        <%= f.input :animal_name, placeholder: 'avec quel animal ?', label: false, size: 30 %>
+        <%= f.hidden_field :contact_id, value: @contact.id %>
+        <%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %>
+      <% end %>
+     </div>
+     <div id="saved-message-itinerary">
+     </div>
 
     <div id="map"
       style="width: 100%; height: 600px;"
