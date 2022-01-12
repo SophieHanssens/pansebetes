@@ -10,21 +10,27 @@
   <div class="row">
     <% @favorites.each do |favorite| %>
         <div class="card-animal">
-          <%= link_to animal_path(favorite.animal[:id]) do %>
-            <% if favorite.animal.photo.attached? %>
-              <%= cl_image_tag favorite.animal.photo.key, height: 100, crop: :fill %>
-            <% else %>
-              <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
-            <% end %>
-
-            <div class="card-animals-list-infos">
-              <% if favorite.user_id == current_user.id %>
-              <h3><%= favorite.animal[:name] %></h3>
-              <p>Description <i class="far fa-edit"></i></p>
+          <div class="image-animal">
+            <%= link_to animal_path(favorite.animal[:id]) do %>
+              <% if favorite.animal.photo.attached? %>
+                <%= cl_image_tag favorite.animal.photo.key, width: 150, crop: :fill %>
+              <% else %>
+                <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
               <% end %>
-            </div>
-          <% end %>
-        </div>
+             <%= link_to favorite_path(favorite), method: 'delete' do %>
+              <i class="fas fa-heart coeur"></i>
+            <% end %>
+          </div>
+
+
+          <div class="card-animals-list-infos">
+            <% if favorite.user_id == current_user.id %>
+            <h3><%= favorite.animal[:name] %></h3>
+            <p>Description <i class="far fa-edit"></i></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
