@@ -47,13 +47,6 @@ const homeMapbox = () => {
 
     map.addControl(geolocate);
 
-    geolocate.on('geolocate', function (e) {
-      var lon = e.coords.longitude;
-      var lat = e.coords.latitude;
-      var position = [lon, lat];
-      directions.setOrigin(position); // can be address in form setOrigin("12, Elm Street, NY")
-    });
-
     fitMapToMarkers(map, markers);
   }
 };
