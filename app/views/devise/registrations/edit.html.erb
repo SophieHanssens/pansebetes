@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Modifier <%= resource_name.to_s.humanize %></h2>
 
 <div class="container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -12,29 +12,29 @@
       <% end %>
 
       <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "Laisser vide si vous ne voulez pas modifier",
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "Nouveau mot de passe" } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "Nouveau mot de passe" } %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  # hint: "Vous avez besoin d'entrer votre précédent mot de passe pour valider les changements",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
     <div class="form-actions">
       <div class="button-search">
-        <%= f.button :submit, "Update" %>
+        <%= f.button :submit, "Mettre à jour" %>
       </div>
     </div>
   <% end %>
 
-  <p>Unhappy?
+  <p>Mécontent ?
     <div class="button-little">
-      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete %>
     </div>
   </p>
-  <%= link_to "Back", :back %>
+  <%= link_to "Retour", :back %>
 </div>
