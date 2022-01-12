@@ -88,10 +88,28 @@ user3 = User.create!(email: 'loris@loris.com',
             address: '48 traverse Mars 13006 Marseille France',
             admin: true)
 
-user3 = User.create!(email: 'manu@manu.com',
+user4 = User.create!(email: 'manu@manu.com',
             name: 'Manu',
             password: 'azerty',
             address: '42 Wallaby Way 13006 Marseille France',
+            admin: false)
+
+user5 = User.create!(email: 'suli@suli.com',
+            name: 'Suli',
+            password: 'azerty',
+            address: '7bis Boulevard Etienne Boyer 13530 Trets France',
+            admin: false)
+
+user6 = User.create!(email: 'jeff@jeff.com',
+            name: 'Jeff',
+            password: 'azerty',
+            address: '3 Bd Michelet 13008 Marseille France',
+            admin: false)
+
+ user7 = User.create!(email: 'bastien@bastien.com',
+            name: 'Bastien',
+            password: 'azerty',
+            address: '7 avenue du Maréchal Ney 13011 Marseille France',
             admin: false)
 
 puts "Users ok !"
@@ -485,7 +503,7 @@ guepier = Animal.create!(name: "Guêpier d'Europe",
 
 <h2>Comment prendre soin d'un *guêpier d'Europe* ?</h2><br>
 
-**1.** Recouvrez-le d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
 **2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
 **3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
 **4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
@@ -511,7 +529,7 @@ pie = Animal.create!(name: "Pie",
 
 <h2>Comment prendre soin d'une *pie* ?</h2><br>
 
-**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**1.** Recouvrez-la d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
 **2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
 **3.** Placez-la ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
 **4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
@@ -592,7 +610,7 @@ pigeon = Animal.create!(name: "Pigeon biset",
 
 <h2>Comment prendre soin d'un *pigeon* ?</h2><br>
 
-**1.** Recouvrez-le d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
 **2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
 **3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
 **4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
@@ -602,10 +620,140 @@ pigeon = Animal.create!(name: "Pigeon biset",
               weight: "240 - 300g"
               )
 
-photo_pigeon = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641919706/Pie_upfzyy.jpg')
+photo_pigeon = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641995997/Pigeon_biset_kbdx1w.jpg')
 pigeon.photo.attach(io: photo_pigeon, filename: "pigeon.jpg", content_type: 'image/jpg')
 pigeon.save!
 puts "pigeon"
+
+pigeon2 = Animal.create!(name: "Pigeon ramier",
+              category_id: cat1.id,
+              color: "Gris, bleu, vert, mauve",
+              particularity: "Urbain",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *pigeon* ?</h2><br>
+
+**1.** Un pigeon blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un pigeon qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *pigeon* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Columba palumbus",
+              weight: "480 - 550g"
+              )
+
+photo_pigeon2 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641995998/Pigeon_ramier_ypu8m5.jpg')
+pigeon2.photo.attach(io: photo_pigeon2, filename: "pigeon2.jpg", content_type: 'image/jpg')
+pigeon2.save!
+puts "pigeon"
+
+pigeon3 = Animal.create!(name: "Pigeon colombin",
+              category_id: cat1.id,
+              color: "Gris, bleu, vert",
+              particularity: "Urbain",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *pigeon* ?</h2><br>
+
+**1.** Un pigeon blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un pigeon qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *pigeon* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Columba oenas",
+              weight: "230 - 250g"
+              )
+
+photo_pigeon3 = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641995997/Pigeon_colombin_psgkyw.jpg')
+pigeon3.photo.attach(io: photo_pigeon3, filename: "pigeon3.jpg", content_type: 'image/jpg')
+pigeon3.save!
+puts "pigeon"
+
+corbeau = Animal.create!(name: "Corbeau freux",
+              category_id: cat1.id,
+              color: "Noir",
+              particularity: "Petit",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *corbeau* ?</h2><br>
+
+**1.** Un corbeau blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un corbeau qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *corbeau* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Corvus frugilegus",
+              weight: "380 - 520g"
+              )
+
+photo_corbeau = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641997371/Corbeau_freux_zbskg2.jpg')
+corbeau.photo.attach(io: photo_corbeau, filename: "corbeau.jpg", content_type: 'image/jpg')
+corbeau.save!
+puts "corbeau"
+
+corneille = Animal.create!(name: "Corneille",
+              category_id: cat1.id,
+              color: "Noir",
+              particularity: "Moyenne, moyen",
+              description: "<h2>Quand **déplacer** ou **récupérer** une *corneille* ?</h2><br>
+
+**1.** Une corneille blessée de manière visible est à la merci des prédateurs. Récupérez-la.<br>
+**2.** Une corneille qui semble sonnée et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-la.<br><br>
+
+<h2>Comment prendre soin d'une *corneille* ?</h2><br>
+
+**1.** Recouvrez-la d'un linge pour la mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Corvus corone",
+              weight: "380 - 520g"
+              )
+
+photo_corneille = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Corneille_highft.jpg')
+corneille.photo.attach(io: photo_corneille, filename: "corneille.jpg", content_type: 'image/jpg')
+corneille.save!
+puts "corneille"
+
+choucas = Animal.create!(name: "Choucas des tours",
+              category_id: cat1.id,
+              color: "Noir",
+              particularity: "Moyenne, moyen",
+              description: "<h2>Quand **déplacer** ou **récupérer** un *choucas* ?</h2><br>
+
+**1.** Un choucas blessé de manière visible est à la merci des prédateurs. Récupérez-le.<br>
+**2.** Un choucas qui semble sonné et ne s'envole pas à votre approche a probablement subi un choc. Récupérez-le.<br><br>
+
+<h2>Comment prendre soin d'un *choucas* ?</h2><br>
+
+**1.** Recouvrez-le d'un linge pour le mettre dans le noir et l'apaiser. N'obstruez pas son bec.<br>
+**2.** Sauf en cas de blessure à cet endroit, maintenez ses ailes le long de son corps.<br>
+**3.** Placez-le ensuite dans un carton percé de trous pour la respiration. Otez le linge et fermez le dessus de la boîte pour maintenir l'obscurité.<br>
+**4.** Ne nourrissez pas et n'abreuvez pas l'oiseau, sauf si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire.<br>
+**5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
+**6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
+              scientific_name: "Corvus monedula",
+              weight: "380 - 520g"
+              )
+
+photo_corneille = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Corneille_highft.jpg')
+corneille.photo.attach(io: photo_corneille, filename: "corbeau.jpg", content_type: 'image/jpg')
+corneille.save!
+puts "corneille"
 
 puts "animal created"
 
