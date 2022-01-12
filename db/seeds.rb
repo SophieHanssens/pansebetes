@@ -747,13 +747,13 @@ choucas = Animal.create!(name: "Choucas des tours",
 **5.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, nourrissez-le avec du haché de bœuf ou des croquettes humides.<br>
 **6.** Si vous ne pouvez pas l'amener dans les 12h chez un vétérinaire, proposez de l'eau avec une toute petite seringue, goutte-à-goutte, sur le bout du bec sur le côté. Evitez d'en donner trop et de faire couler dans les narines, au risque de le noyer.",
               scientific_name: "Corvus monedula",
-              weight: "380 - 520g"
+              weight: "220 - 270g"
               )
 
-photo_corneille = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Corneille_highft.jpg')
-corneille.photo.attach(io: photo_corneille, filename: "corbeau.jpg", content_type: 'image/jpg')
-corneille.save!
-puts "corneille"
+photo_choucas = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1641996179/Choucas_zw0kfg.jpg')
+choucas.photo.attach(io: photo_choucas, filename: "choucas.jpg", content_type: 'image/jpg')
+choucas.save!
+puts "choucas"
 
 puts "animal created"
 
