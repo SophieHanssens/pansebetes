@@ -13,13 +13,14 @@
           <div class="image-animal">
             <%= link_to animal_path(favorite.animal[:id]) do %>
               <% if favorite.animal.photo.attached? %>
-                <%= cl_image_tag favorite.animal.photo.key, height: 100, crop: :fill %>
+                <%= cl_image_tag favorite.animal.photo.key, width: 150, crop: :fill %>
               <% else %>
                 <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
               <% end %>
-             <i class="fas fa-trash-alt"></i>
+             <%= link_to favorite_path(favorite), method: 'delete' do %>
+              <i class="fas fa-heart coeur"></i>
+            <% end %>
           </div>
-
 
 
           <div class="card-animals-list-infos">
