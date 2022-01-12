@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_134816) do
+ActiveRecord::Schema.define(version: 2022_01_12_155026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2022_01_11_134816) do
     t.string "weight"
     t.bigint "category_id"
     t.string "short_description"
+    t.string "particularity"
+    t.text "note"
     t.index ["category_id"], name: "index_animals_on_category_id"
   end
 

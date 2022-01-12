@@ -13,6 +13,11 @@
           class: "form-control",
           placeholder: "Couleur"
         %>
+        <%= text_field_tag :particularity,
+          params[:particularity],
+          class: "form-control",
+          placeholder: "Particularité"
+        %>
         <%= select_tag :category,
           # params[:category],
           options_from_collection_for_select(@categories, :name, :name, @category&.name),
