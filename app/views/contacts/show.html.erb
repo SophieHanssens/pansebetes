@@ -10,7 +10,7 @@
       <ul>
       <%# Caractéristiques vétérinaires/associations %>
 
-          <li><span class="list-label">Spécialités</span> : <%= @categories.to_sentence %></li>
+          <li><span class="list-label">Spécialités</span> : <%= @categories.to_sentence(options = {last_word_connector: ', et '}) %></li>
         <li><span class="list-label">Tel</span> : <%= @contact.phone_number %></li>
         <li><p> <span class="list-label">Adresse</span> :
           <span id="address"><%= @contact.address %></span></p>
