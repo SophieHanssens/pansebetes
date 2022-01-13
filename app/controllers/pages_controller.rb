@@ -30,6 +30,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @favorites = Favorite.all
+    @itineraries = Itinerary.all
   end
 
 end

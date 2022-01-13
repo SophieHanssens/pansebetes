@@ -35,6 +35,7 @@
       <%= simple_form_for(@itinerary, remote: true) do |f| %>
         <%= f.input :animal_name, placeholder: 'avec quel animal ?', label: false, size: 30 %>
         <%= f.hidden_field :contact_id, value: @contact.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %>
       <% end %>
      </div>
