@@ -15,11 +15,11 @@
     </div>
   </div>
 
-  <div class="card-profil-list">
+    <div class="card-profil-list">
     <div class="card-profil-list-infos">
       <h2>Mes itinéraires</h2><br>
-      <ul>
-        <% @itineraries.each do |itinerary| %>
+        <ul>
+          <% @itineraries.each do |itinerary| %>
           <% if itinerary.user_id == current_user.id %>
             <% date = itinerary.created_at %>
             <li>- Le <%= date.strftime('%d - %m - %Y') %>, je suis allé chez <%= link_to itinerary.contact[:name], contact_path(itinerary.contact[:id]) %>
@@ -27,9 +27,10 @@
                 </li>
           <% end %>
         <% end %>
-      </ul>
+        </ul>
     </div>
   </div>
+
 </div>
 
   <%# dernières recherches %>

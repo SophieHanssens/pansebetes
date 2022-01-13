@@ -116,7 +116,7 @@ user6 = User.create!(email: 'jeff@jeff.com',
   user8 = User.create!(email: 'solennn@solenn.com',
             name: 'Solenn',
             password: 'azerty',
-            address: '1 Cour Esquiros 13530 Trets France',
+            address: '60 chemin de la Bagasse 13530 Trets France',
             admin: false)
 
 puts "Users ok !"
