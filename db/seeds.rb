@@ -553,9 +553,9 @@ herisson = Animal.create!(name: "Hérisson",
 
 **1.** S'il est vu de jour.<br>
 **2.** S'il est apathique.<br>
-**3.** S'il est vu en plein hiver est qu'il est de petite taille.<br>
+**3.** S'il est vu en plein hiver et qu'il est de petite taille.<br><br>
 
-Pour déterminer comment vous en occuper, lisez ce qui suit ou, si vous manquez de temps, rendez-vous aux contacts utiles pour vous en remettre à un professionnel.<br>
+Pour déterminer comment vous en occuper, lisez ce qui suit ou, si vous **manquez de temps**, rendez-vous aux **contacts utiles** pour vous en remettre à un professionnel.<br><br>
 
 <h2>Quand **déplacer** ou **récupérer** un *hérisson* ?</h2><br>
 

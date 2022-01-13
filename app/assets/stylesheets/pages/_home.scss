@@ -48,3 +48,14 @@ p {
 .modal-search {
   display: none;
 }
+
+// Phrase itinéraire SHOW Véto
+
+#saved-message-itinerary {
+  font-family: 'Courier Prime', monospace;
+  text-align: justify;
+  margin: 25px;
+  a {
+    color: #519259;
+  }
+}
