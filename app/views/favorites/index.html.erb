@@ -13,7 +13,7 @@
           <div class="image-animal">
             <%= link_to animal_path(favorite.animal[:id]) do %>
               <% if favorite.animal.photo.attached? %>
-                <%= cl_image_tag favorite.animal.photo.key, width: 150, crop: :fill %>
+                <%= cl_image_tag favorite.animal.photo.key, height: 100, crop: :fill %>
               <% else %>
                 <%= image_tag("silhouette.jpg", size: "200x150", alt: "silhouette d'animaux") %>
               <% end %>
