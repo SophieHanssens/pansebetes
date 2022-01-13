@@ -160,7 +160,7 @@ mesange = Animal.create!(name: "Mésange noire",
               weight: "19-10 g"
               )
 
-photo_mesange = URI.open('https://www.wildlifetrusts.org/sites/default/files/styles/node_hero_desk_wide/public/2017-12/Great%20Tit%20%20153%20%28c%29%20Bob%20Coyle.jpg?h=4f3f1b2a&itok=QzEMyOQ8')
+photo_mesange = URI.open('https://res.cloudinary.com/dzmyhcemr/image/upload/v1642074835/M%C3%A9sange_noire_bwshdo.jpg')
 mesange.photo.attach(io: photo_mesange, filename: "mesange.jpg", content_type: 'image/jpg')
 mesange.save!
 puts "mesange created"
