@@ -31,13 +31,14 @@
 
   <div id="itinéraire">
      <div class="container">
+     <div class="center">
       <%= simple_form_for(@itinerary, remote: true, wrapper: :inline_form, html: { class: 'form-inline' }) do |f| %>
         <%= f.input :animal_name, placeholder: 'Avec quel animal ?', label: false %>
         <%= f.hidden_field :contact_id, value: @contact.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
          <div class="go"><%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %></div>
       <% end %>
-     </div>
+     </div></div>
      <div id="saved-message-itinerary">
      </div>
 
