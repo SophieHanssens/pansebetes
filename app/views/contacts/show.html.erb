@@ -23,7 +23,7 @@
         <% if @user.admin == true %>
           <%= link_to 'Supprimer le contact', contact_path(@contact),
                             method: :delete,
-                            data: { confirm: "Are you sure?" } %>
+                            data: { confirm: "Etes-vous sûr ?" } %>
         <% end %>
       </p>
     </div>
@@ -31,11 +31,11 @@
 
   <div id="itinéraire">
     <h2 id="itineraire">Itinéraire</h4>
-     <div>
+     <div class="container">
       <%= simple_form_for(@itinerary, remote: true) do |f| %>
-        <%= f.input :animal_name, placeholder: 'avec quel animal ?', label: false, size: 30 %>
+        <%= f.input :animal_name, placeholder: 'Avec quel animal ?', label: false, size: 30 %>
         <%= f.hidden_field :contact_id, value: @contact.id %>
-        <%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %>
+        <div class="go"><%= f.button :submit, "J'y vais !", class: "button-search", id: "go" %></div>
       <% end %>
      </div>
      <div id="saved-message-itinerary">
