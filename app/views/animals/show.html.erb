@@ -55,7 +55,7 @@
             <%= @description %>
           </ul>
           <p id="modif">
-            <% if current_user.admin == true || @contact.user == true %>
+            <% if current_user.admin == true %>
               <%= link_to "Modifier l'animal ||", edit_animal_path(@animal) %>
             <% end %>
             <% if current_user.admin == true %>
