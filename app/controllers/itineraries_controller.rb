@@ -13,6 +13,6 @@ class ItinerariesController < ApplicationController
   private
 
   def itinerary_params
-    params.require(:itinerary).permit(:animal_name, :contact_id)
+    params.require(:itinerary).permit(:animal_name, :contact_id, :user_id)
   end
 end

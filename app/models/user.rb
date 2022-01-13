@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :contacts
   has_many :favorites
   has_many :animals, through: :favorites
+  has_many :intineraries
 end
