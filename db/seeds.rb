@@ -61,6 +61,7 @@ require 'uri'
 
 puts "destroy all datas"
 Favorite.destroy_all
+Itinerary.destroy_all
 User.destroy_all
 ContactCategory.destroy_all
 Category.destroy_all
@@ -110,6 +111,12 @@ user6 = User.create!(email: 'jeff@jeff.com',
             name: 'Bastien',
             password: 'azerty',
             address: '7 avenue du Maréchal Ney 13011 Marseille France',
+            admin: false)
+
+  user8 = User.create!(email: 'solennn@solenn.com',
+            name: 'Solenn',
+            password: 'azerty',
+            address: '1 Cour Esquiros 13530 Trets France',
             admin: false)
 
 puts "Users ok !"
