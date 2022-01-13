@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'itineraries/create'
   get 'dashboards/index'
   devise_for :users
   root to: 'pages#home'
