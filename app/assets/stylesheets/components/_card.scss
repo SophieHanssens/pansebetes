@@ -529,3 +529,62 @@ div.portfoliocard div.follow_count{
   text-align: center;
   font-size: 10px;
 }
+
+// Card Itinéraire Profil
+
+.card-itinerary-list {
+  overflow: hidden;
+  height: 350px;
+  background: #ffffed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 'Poiret One', cursive;
+  ul {
+    list-style-type: none;
+    font-family: 'Poiret One', cursive;
+    }
+  text-align: justify;
+  // padding: 30px;
+  p {
+    font-family: 'Poiret One', cursive;
+  }
+  a {
+    color: #467e4c;
+  }
+}
+
+.card-itinerary-list img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-itinerary-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-itinerary-list p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-itinerary-list .card-itinerary-list-infos {
+  padding: 16px;
+}
+
+.card-itinerary-list-infos {
+  margin: 15px;
+  // height: auto;
+}
+
+#modif {
+  text-align: center;
+  font-size: 10px;
+}
