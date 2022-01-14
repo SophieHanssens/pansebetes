@@ -1,9 +1,0 @@
-var heartClass = document.querySelector('.fa-heart');
-
-<% if @favorite.id != nil %>
-  heartClass.classList.remove('far');
-  heartClass.classList.add('fas');
-<% else %>
-  heartClass.classList.remove('fas');
-  heartClass.classList.add('far');
-<% end %>

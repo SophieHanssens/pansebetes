@@ -28,7 +28,7 @@ import { playNavbar } from './navbar';
 import { initMapbox } from '../plugins/init_mapbox';
 import { homeMapbox } from '../plugins/home_mapbox';
 import { homeSearch } from './home_search';
-// import "controllers";
+import "controllers";
 
 document.addEventListener('turbolinks:load', () => {
   playNavbar();

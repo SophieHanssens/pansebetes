@@ -14,12 +14,14 @@ class FavoritesController < ApplicationController
     if @favorite_old.present?
       @favorite_old.destroy!
     else
-      @favorite.save!
+      respond_to do |format|
+        if @favorite.save
+          format.js
+        end
+      end
     end
 
-    respond_to do |format|
-      format.js
-    end
+
   end
 
   def destroy

@@ -1,13 +1,24 @@
-// import { Controller } from "stimulus"
+import { csrfToken } from "@rails/ujs";
+import { Controller } from "stimulus";
 
-// export default class extends Controller {
-//   toggle(){
-//     const classes = this.element.classList;
+export default class extends Controller {
+  static targets = ['animal'];
 
-//     if (classes[0] === 'fas') {
-//       this.element.classList = 'far fa-heart';
-//     } else {
-//       this.element.classList = 'fas fa-heart';
-//     };
-//   };
-// }
+  add(event) {
+    event.preventDefault();
+
+    fetch('/favorites', {
+      method: 'POST',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      body: JSON.stringify({
+        "favorite": {
+        "user_id": 140,
+        "animal_id": 331
+      }})
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      });
+  }
+}
