@@ -15,8 +15,8 @@ class FavoritesController < ApplicationController
     if @favorite_old.present?
       @favorite_old.destroy!
     else
+      @favorite.save!
       respond_to do |format|
-          format.html
           format.js
         end
       end
