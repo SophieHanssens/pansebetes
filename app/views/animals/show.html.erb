@@ -8,23 +8,10 @@
 
   <div class="animal-card border">
       <!-- animal's name -->
-      <div class="title-animal">
-        <div class="décalage-titre"><%= @animal.name %></div>
-        <%= simple_form_for(@favorite, remote: true) do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :animal_id, value: @animal.id %>
-          <%= button_tag type: :submit, class: "button-icon" do %>
-
-            <i class="
-              <% if @favorite_old.present? %>
-                fas
-              <% else %>
-                far
-              <% end %>
-            fa-heart"></i>
-          <% end %>
-        <% end %>
-
+      <div class="title-animal" data-controller="favorite">
+        <div class="décalage-titre" data-favorite-target="animal"><%= @animal.name %></div>
+        <div id="favdata" class="d-none" data-user=<%= current_user.id %> data-animal=<%= @animal.id %>></div>
+          <i class="far fa-heart" data-action="click->favorite#add"></i>
       </div>
       <!-- animal's image -->
       <div class="animal-img">
