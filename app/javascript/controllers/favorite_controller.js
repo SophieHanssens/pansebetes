@@ -11,10 +11,9 @@ export default class extends Controller {
       method: 'POST',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
       body: JSON.stringify({
-        "favorite": {
-        "user_id": 140,
-        "animal_id": 331
-      }})
+        user_id: 140,
+        animal_id: 331
+      })
     })
       .then(response => response.json())
       .then((data) => {

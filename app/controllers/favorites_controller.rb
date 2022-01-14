@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   def index
+    console
     @favorites = Favorite.all
   end
 
@@ -15,7 +16,7 @@ class FavoritesController < ApplicationController
       @favorite_old.destroy!
     else
       respond_to do |format|
-        if @favorite.save
+          format.html
           format.js
         end
       end
