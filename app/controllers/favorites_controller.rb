@@ -18,7 +18,6 @@ class FavoritesController < ApplicationController
     end
     respond_to do |format|
       format.json { render json: @favorite }
-      format.js
     end
 
   end
