@@ -107,7 +107,7 @@ user6 = User.create!(email: 'jeff@jeff.com',
             address: '3 Bd Michelet 13008 Marseille France',
             admin: false)
 
- user7 = User.create!(email: 'bastien@bastien.com',
+user7 = User.create!(email: 'bastien@bastien.com',
             name: 'Bastien',
             password: 'azerty',
             address: '7 avenue du Maréchal Ney 13011 Marseille France',
@@ -123,6 +123,12 @@ user9 = User.create!(email: 'broco@broco.com',
             name: 'Léonard',
             password: 'azerty',
             address: '6 Boulevard des Rêves Absalom Loin',
+            admin: false)
+
+user10 = User.create!(email: 'so@so.com',
+            name: 'Sophie',
+            password: 'azerty',
+            address: '7 bis Boulevard Etienne Boyer 13530 Trets',
             admin: false)
 
 puts "Users ok !"
