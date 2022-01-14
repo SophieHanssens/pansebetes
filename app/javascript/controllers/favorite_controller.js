@@ -9,15 +9,13 @@ export default class extends Controller {
 
     fetch('/favorites', {
       method: 'POST',
-      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      headers: { 'Accept': "application/json", "Content-Type": "application/json", 'X-CSRF-Token': csrfToken() },
       body: JSON.stringify({
-        user_id: 140,
-        animal_id: 331
+        "user_id": 140,
+        "animal_id": 334
       })
     })
       .then(response => response.json())
-      .then((data) => {
-        console.log(data)
-      });
+      .then((data)=>console.log(data))
   }
 }

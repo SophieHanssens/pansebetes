@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    console
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
   end
 
   def show
@@ -16,12 +15,11 @@ class FavoritesController < ApplicationController
       @favorite_old.destroy!
     else
       @favorite.save!
-      respond_to do |format|
-          format.js
-        end
-      end
     end
-
+    respond_to do |format|
+      format.json { render json: @favorite }
+      format.js
+    end
 
   end
 
@@ -36,26 +34,5 @@ class FavoritesController < ApplicationController
   def favorite_params
     params.require(:favorite).permit(:user_id, :animal_id)
   end
-
-
-
-    # @contacts = Contact.all
-    # @animal = Animal.find(params[:id])
-    # favorites = Favorite.all
-    # favorites.each do |favorite|
-    #   favorite_new = Favorite.new(user_id: current_user.id, animal_id: params[:id])
-    #   if favorite_new.user_id != favorite.user_id || favorite_new.animal_id != favorite.animal_id
-    #     favorite_new.save!
-    #   end
-    # end
-  #   favorite = Favorite.find_by(user_id: current_user.id, animal_id: params[:id])
-  #   if favorite.present?
-  #     favorite.destroy!
-  #   else
-  #     favorite_new = Favorite.new(user_id: current_user.id, animal_id: params[:id])
-  #     favorite_new.save!
-  #   end
-  #   redirect_to animal_path(@animal)
-  # end
 
 end
