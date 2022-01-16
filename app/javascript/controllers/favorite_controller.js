@@ -21,7 +21,6 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data)=>{
         const heartClass = document.querySelector('.fa-heart');
-
         if (data.id === null) {
           heartClass.classList.remove('fas');
           heartClass.classList.add('far');
