@@ -11,7 +11,13 @@
       <div class="title-animal" data-controller="favorite">
         <div class="décalage-titre" data-favorite-target="animal"><%= @animal.name %></div>
         <div id="favdata" class="d-none" data-user=<%= current_user.id %> data-animal=<%= @animal.id %>></div>
-          <i class="far fa-heart" data-action="click->favorite#add"></i>
+          <i
+            <% if @favorite_old.present? %>class="fas fa-heart"
+            <% else %>class="far fa-heart"
+            <% end %>
+            data-action="click->favorite#add">
+          </i>
+            <% console %>
       </div>
       <!-- animal's image -->
       <div class="animal-img">
